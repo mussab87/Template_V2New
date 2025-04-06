@@ -4334,6 +4334,7 @@ input[type=button].btn-block {
 
 .dropdown-menu.show {
     display: block;
+    text-align: right;
 }
 
 .dropdown-header {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.Reflection;
 using System.Security.Claims;
 
 namespace App.Application.Contracts.Repositories.IUserService
@@ -28,7 +29,12 @@ public interface IUserService
     Task<bool> UnlockAccountAsync(string userId);
 
     Task<IEnumerable<string>> GetUserRolesAsync(string userId);
-
     Task<IReadOnlyList<UserDto>> GetAllUsers();
+    Task<PaginatedResult<UserDto>> GetPaginatedUsers(
+        int pageNumber,
+        int pageSize,
+        string searchTerm = "",
+        int sortColumn = 0,
+        string sortDirection = "asc");
 }
 

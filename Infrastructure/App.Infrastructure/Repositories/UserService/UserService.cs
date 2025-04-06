@@ -3,6 +3,7 @@ using Azure.Core;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Security.Claims;
 
 namespace App.Infrastructure.Repositories.UserService
@@ -281,6 +282,102 @@ public class UserService : IUserService
     {
         var users = _mapper.Map<List<UserDto>>(await _userManager.Users.AsNoTracking().ToListAsync());
         return (IReadOnlyList<UserDto>)users;
+    }
+
+    public async Task<PaginatedResult<UserDto>> GetPaginatedUsers(
+        int pageNumber,
+        int pageSize,
+        string searchTerm = "",
+        int sortColumn = 0,
+        string sortDirection = "asc")
+    {
+        // Start with all users
+        IQueryable<User> usersQuery = _userManager.Users;
+
+        // Apply filtering if search term is provided
+        if (!string.IsNullOrWhiteSpace(searchTerm))
+        {
+            searchTerm = searchTerm.ToLower();
+            usersQuery = usersQuery.Where(u =>
+                u.UserName.ToLower().Contains(searchTerm) ||
+                u.Email.ToLower().Contains(searchTerm) ||
+                u.PhoneNumber.Contains(searchTerm) ||
+                (u.FirstName != null && u.FirstName.ToLower().Contains(searchTerm)) ||
+                (u.LastName != null && u.LastName.ToLower().Contains(searchTerm))
+            );
+        }
+
+        // Get total count before pagination
+        var totalCount = await usersQuery.CountAsync();
+
+        // Apply sorting
+        usersQuery = ApplySorting(usersQuery, sortColumn, sortDirection);
+
+        // Apply pagination
+        var pagedUsers = await usersQuery
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        // Map to DTOs
+        var userDtos = pagedUsers.Select(user => new UserDto
+        {
+            Id = user.Id,
+            Username = user.UserName,
+            Email = user.Email,
+            PhoneNumber = user.PhoneNumber,
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            // Map other properties as needed for your datatable
+            // These should correspond to the fields in your datatable columns
+        }).ToList();
+
+        return new PaginatedResult<UserDto>
+        {
+            Items = userDtos,
+            TotalCount = totalCount,
+            PageNumber = pageNumber,
+            PageSize = pageSize
+        };
+    }
+
+    private IQueryable<User> ApplySorting(
+        IQueryable<User> query,
+        int sortColumn,
+        string sortDirection)
+    {
+        // Map column index to property name
+        var columnMap = new Dictionary<int, Expression<Func<User, object>>>
+        {
+            { 0, u => u.Id },
+            { 1, u => u.UserName },
+            { 2, u => u.Email },
+            { 3, u => u.PhoneNumber },
+            { 4, u => u.FirstName },
+            { 5, u => u.LastName }
+            // Add more mappings according to your column structure
+        };
+
+        // Get the property expression based on column index
+        if (columnMap.TryGetValue(sortColumn, out var sortProperty))
+        {
+            // Apply sorting
+            if (sortDirection.ToLower() == "asc")
+            {
+                query = query.OrderBy(sortProperty);
+            }
+            else
+            {
+                query = query.OrderByDescending(sortProperty);
+            }
+        }
+        else
+        {
+            // Default sorting if column not found
+            query = query.OrderBy(u => u.UserName);
+        }
+
+        return query;
     }
 }
 

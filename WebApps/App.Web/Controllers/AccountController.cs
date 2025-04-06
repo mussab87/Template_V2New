@@ -10,6 +10,8 @@ public class AccountController : BaseController
     public AccountController(IServiceProvider serviceProvider) : base(serviceProvider)
     { }
 
+    #region Login
+
     [AllowAnonymous]
     public IActionResult Login()
     {
@@ -138,7 +140,9 @@ public class AccountController : BaseController
 
         return File(captchaBytes, "image/png");
     }
+    #endregion
 
+    #region Reset Password
     [HttpGet]
     public IActionResult ResetPassword(string username = null, bool expired = false)
     {
@@ -219,8 +223,9 @@ public class AccountController : BaseController
 
         return View(model);
     }
+    #endregion
 
-
+    #region Logout
     public async Task<IActionResult> Logout()
     {
         var user = HttpContext.User;
@@ -244,5 +249,6 @@ public class AccountController : BaseController
 
         return RedirectToAction(nameof(Login));
     }
+    #endregion
 }
 

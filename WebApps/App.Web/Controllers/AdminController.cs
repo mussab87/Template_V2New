@@ -12,11 +12,8 @@ public class AdminController : BaseController
     {
         _logger = logger;
     }
-    public IActionResult Index()
-    {
-        return View();
-    }
 
+    #region Get All Users
     public async Task<IActionResult> GetUsers(string searchString, int page = 1, int pageSize = 10)
     {
         // Store the current page size and page in ViewData for persistence
@@ -34,6 +31,16 @@ public class AdminController : BaseController
 
         return View(allUsers.ToPagedList<UserDto>(page, pageSize));
     }
+
+    #endregion
+
+    #region Add New User
+    public async Task<IActionResult> AddUser(string searchString, int page = 1, int pageSize = 10)
+    {
+        return View();
+    }
+
+    #endregion
 
     #region Test Paging    
     public IActionResult TestPaging(string searchString, int page = 1, int pageSize = 10)
@@ -57,7 +64,7 @@ public class AdminController : BaseController
         return View(result.ToPagedList<CountriesDto>(page, pageSize));
     }
 
-    private List<CountriesDto> CreateCountriesList(string searchString = null)
+    protected List<CountriesDto> CreateCountriesList(string searchString = null)
     {
         List<CountriesDto> countryList = new();
         //List<CountriesDto> countryListSearch = new();
@@ -81,5 +88,6 @@ public class AdminController : BaseController
         }
         return (countryList);
     }
+
     #endregion
 }
