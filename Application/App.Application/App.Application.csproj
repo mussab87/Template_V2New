@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Behaviours\**" />
+    <Compile Remove="Contracts\Repositories\**" />
+    <Compile Remove="Exceptions\**" />
+    <Compile Remove="Features\**" />
+    <Compile Remove="Models\**" />
+    <EmbeddedResource Remove="Behaviours\**" />
+    <EmbeddedResource Remove="Contracts\Repositories\**" />
+    <EmbeddedResource Remove="Exceptions\**" />
+    <EmbeddedResource Remove="Features\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Behaviours\**" />
+    <None Remove="Contracts\Repositories\**" />
+    <None Remove="Exceptions\**" />
+    <None Remove="Features\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Contracts\Repositories\CacheService\ICacheService.cs" />
+    <Compile Include="Contracts\Repositories\IGeneric\IGenericRepository.cs" />
+    <Compile Include="Contracts\Repositories\IUnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="Contracts\Repositories\IUserService\IRoleService.cs" />
+    <Compile Include="Contracts\Repositories\IUserService\IUserService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="8.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.14" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.14" />
+
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="10.5.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\App.Domain\App.Domain.csproj" />
+    <ProjectReference Include="..\..\Helper\App.Helper\App.Helper.csproj" />
+  </ItemGroup>
+
+</Project>

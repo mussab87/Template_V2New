@@ -1,0 +1,121 @@
+﻿@model LoginDto
+@{
+    ViewData["Title"] = "تسجيل الدخول";
+    Layout = "_LoginLayout";
+}
+
+<!--begin:Content-->
+<div class="d-flex w-100 flex-center p-15 position-relative overflow-hidden">
+    <div class="login-wrapper">
+        <!--begin:Sign In Form-->
+        <div class="login-signin">
+
+            <div class="login-form login-signin py-11">
+                <!--begin::Form-->
+                <form asp-controller="Account" asp-action="Login" method="post" class="form">
+                    <!--begin::Title-->
+                    <div class="text-center pb-8">
+                        <h2 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">تسجيل الدخول</h2>
+                        <p class="text-muted font-weight-bold">
+                            فضلا أدخل اسم المستخدم وكلمة المرور
+                        </p>
+                    </div>
+                    <!--end::Title-->
+                    <!--begin::Form group-->
+                    <div class="text-center pb-8">
+                        <div class="text-danger" style="font-size: 16px">
+                            @Html.ValidationMessage("error")
+                        </div>
+                        @if (ViewBag.passwordChanged != null)
+                        {
+                            <div class="text-success" style="font-size: 16px">
+                                تم تغيير كلمة المرور بنجاح
+                            </div>
+                        }
+                    </div>
+
+                    <div class="form-group">
+                        <div class="d-flex justify-content-between mt-n5">
+                            <label class="font-size-h6 font-weight-bolder text-dark">اسم المستخدم</label>
+                        </div>
+
+                        <input asp-for="Username" class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="text" name="Username" autocomplete="off" />
+                        <span asp-validation-for="Username" class="alert-danger"></span>
+                    </div>
+                    <!--end::Form group-->
+                    <!--begin::Form group-->
+                    <div class="form-group">
+                        <div class="d-flex justify-content-between mt-n5">
+                            <label class="font-size-h6 font-weight-bolder text-dark pt-5">كلمة المرور</label>
+                        </div>
+                        <input asp-for="Password" class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="password" name="Password" autocomplete="off" />
+                        <span asp-validation-for="Password" class="alert-danger"></span>
+                    </div>
+                    <!--end::Form group-->
+                    <!--begin::Form group-->
+                    <div class="form-group">
+                        <div class="d-flex justify-content-between mt-n5">
+                            <label class="font-size-h6 font-weight-bolder text-dark pt-5">رمز التحقق</label>
+                        </div>
+                        <img src="@Url.Action("Captcha", "Account")" id="captchaImage" style="border-style:inset" />
+                        <a href="javascript:void(0);" onclick="reloadCaptcha()">
+                            <i class="flaticon2-reload" style="width: 20px; height: 20px; margin-right: 5px; cursor: pointer;" title="Reload CAPTCHA"></i>
+                            @* <img src="https://cdn-icons-png.flaticon.com/16/545/545674.png" alt="Reload" title="Reload CAPTCHA"
+                                                 style="width: 20px; height: 20px; margin-right: 5px; cursor: pointer;" /> *@
+                        </a>
+                    </div>
+
+                    <!--begin::Form group-->
+                    <div class="form-group">
+                        <div class="d-flex justify-content-between mt-n5">
+                            <label class="font-size-h6 font-weight-bolder text-dark pt-5">أدخل رمز التحقق</label>
+                        </div>
+                        <input asp-for="CaptchaInput" class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="text" placeholder="أدخل رمز التحقق هنا!" autocomplete="off" />
+                        <span asp-validation-for="CaptchaInput" class="alert-danger"></span>
+                        <span class="alert-danger" style="font-size: 16px">
+                            @Html.ValidationMessage("captchaError")
+                        </span>
+                    </div>
+                    <!--end::Form group-->
+                    <!--end::Form group-->
+                    <!--begin::Form group-->
+                    <div class="form-group">
+                        <div class="d-flex justify-content-between mt-n5">
+                            <a href="#" class="text-primary font-size-h6 font-weight-bolder text-hover-primary pt-5" id="kt_login_forgot">نسيت كلمة المرور ؟</a>
+                        </div>
+                    </div>
+                    <!--end::Form group-->
+                    <!--begin::Action-->
+                    <div class="text-center pt-2">
+                        <button type="submit" class="btn btn-dark font-weight-bolder font-size-h6 px-8 py-4 my-3">تسجيل الدخول</button>
+                    </div>
+                    <!--end::Action-->
+                </form>
+                <!--end::Form-->
+            </div>
+        </div>
+        <!--end:Sign In Form-->
+    </div>
+</div>
+<!--end:Content-->
+<!--begin:Divider-->
+<div class="login-divider">
+    <div></div>
+</div>
+<!--end:Divider-->
+<!--begin:Aside-->
+<div class="d-flex w-100 flex-center p-15">
+    <div class="login-wrapper">
+        <!--begin:Aside Content-->
+        <div class="text-dark-75">
+            <a href="#">
+                <img src="assets/media/logos/logo-letter-13.png" class="max-h-75px" alt="" />
+            </a>
+            <h3 class="mb-8 mt-22 font-weight-bold">اسم النظام يظهر هنا</h3>
+            <p class="mb-15 text-muted font-weight-bold">قالب شامل لكل الانظمة المستخدمة في تطوير النظم</p>
+
+        </div>
+        <!--end:Aside Content-->
+    </div>
+</div>
+<!--end:Aside-->

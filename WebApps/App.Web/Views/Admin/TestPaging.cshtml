@@ -1,0 +1,166 @@
+﻿@model X.PagedList.IPagedList<CountriesDto>
+@{
+    ViewData["Title"] = "المستخدمين";
+    ViewData["action"] = "TestPaging";
+}
+
+<!--begin::Container-->
+<div class="container">
+
+    <!--begin::Card-->
+    <div class="card card-custom">
+        <div class="card-header">
+            <div class="card-title">
+                <span class="card-icon">
+                    <i class="flaticon2-favourite text-primary"></i>
+                </span>
+                <h3 class="card-label">اختبار</h3>
+            </div>
+            <div class="card-toolbar">
+                <!--begin::Dropdown-->
+                <div class="dropdown dropdown-inline mr-2">
+                    <button type="button" class="btn btn-light-primary font-weight-bolder dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="la la-download"></i>Export
+                    </button>
+                    <!--begin::Dropdown Menu-->
+                    <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+                        <ul class="nav flex-column nav-hover">
+                            <li class="nav-header font-weight-bolder text-uppercase text-primary pb-2">Choose an option:</li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon la la-print"></i>
+                                    <span class="nav-text">Print</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon la la-copy"></i>
+                                    <span class="nav-text">Copy</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon la la-file-excel-o"></i>
+                                    <span class="nav-text">Excel</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon la la-file-text-o"></i>
+                                    <span class="nav-text">CSV</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon la la-file-pdf-o"></i>
+                                    <span class="nav-text">PDF</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--end::Dropdown Menu-->
+                </div>
+                <!--end::Dropdown-->
+                &nbsp;
+                <!--begin::Button-->
+                <a href="#" class="btn btn-primary font-weight-bolder">
+                    <i class="la la-plus"></i>New Record
+                </a>
+                <!--end::Button-->
+            </div>
+        </div>
+        <div class="card-body">
+            <!--begin: Search-->
+            <form asp-action="TestPaging" method="get" id="searchForm">
+
+                <div class="row" dir="rtl" style="height: 65px;margin-bottom: -20px;">
+                    <div class="col-sm-12 col-md-6" style="text-align-last: right">
+                        <div id="kt_datatable_filter" class="dataTables_filter">
+                            <label>
+                                <input type="search" name="searchString" value="@ViewData["CurrentFilter"]" class="form-control form-control-sm" placeholder="Search Here" aria-controls="kt_datatable">
+                            </label>
+                            <input type="submit" value="Search" class="btn btn-primary" />
+                            <a asp-action="TestPaging" class="btn btn-secondary">Clear</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6" style="text-align-last: left">
+                        <div class="dataTables_length" id="kt_datatable_length">
+                            <label>
+                                <select name="pageSize" id="pageSizeSelector" aria-controls="kt_datatable" class="custom-select custom-select-sm form-control form-control-sm">
+                                    <option value="10" selected="@(ViewData["CurrentPageSize"] != null && (int)ViewData["CurrentPageSize"] == 10)">10</option>
+                                    <option value="25" selected="@(ViewData["CurrentPageSize"] != null && (int)ViewData["CurrentPageSize"] == 25)">25</option>
+                                    <option value="50" selected="@(ViewData["CurrentPageSize"] != null && (int)ViewData["CurrentPageSize"] == 50)">50</option>
+                                    <option value="100" selected="@(ViewData["CurrentPageSize"] != null && (int)ViewData["CurrentPageSize"] == 100)">100</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!--end: Search-->
+            <!--begin: Datatable-->
+            <table class="table table-bordered table-hover table-checkable" id="kt_datatable" style="margin-top: 13px !important">
+                <thead>
+                    <tr role="row">
+                        <th>Id</th>
+                        <th>English</th>
+                        <th>Arabic</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Any())
+                    {
+                        foreach (var user in Model)
+                        {
+                            <tr>
+                                <td>@user.Id</td>
+                                <td>@user.NameEnglish</td>
+                                <td>
+                                    @user.NameArabic
+                                </td>
+                                <td>
+                                    @user.CreatedDate
+                                </td>
+                                <td>
+                                    <div class="dropdown dropdown-inline">
+
+                                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" data-toggle="dropdown">
+
+                                            <i class="la la-cog"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+
+                                            <ul class="nav nav-hoverable flex-column">
+
+                                                <li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-edit"></i><span class="nav-text">Edit Details</span></a></li>
+                                                <li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-leaf"></i><span class="nav-text">Update Status</span></a></li>
+                                                <li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-print"></i><span class="nav-text">Print</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Edit details">
+
+                                        <i class="la la-edit"></i>
+                                    </a>
+                                    <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Delete">
+
+                                        <i class="la la-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            <!--end: Datatable-->
+
+            <partial name="_PagedListPager" model="Model" />
+        </div>
+    </div>
+
+    <!--end::Card-->
+</div>
+<!--end::Container-->
