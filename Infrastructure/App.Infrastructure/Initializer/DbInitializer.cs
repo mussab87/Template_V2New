@@ -81,7 +81,7 @@ public class DbInitializer : IDbInitializer
             IsActive = true,
             CreatedBy = "System Super Admin"
         };
-        return await _userService.CreateUser(adminUser, "Aa@123456", Roles.SuperAdmin); ;
+        return await _userService.CreateUser(adminUser, "Aa@123456", Roles.SuperAdmin);
     }
 }
 

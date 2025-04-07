@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using X.PagedList.Extensions;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
@@ -35,9 +36,29 @@ public class AdminController : BaseController
     #endregion
 
     #region Add New User
-    public async Task<IActionResult> AddUser(string searchString, int page = 1, int pageSize = 10)
+    public async Task<IActionResult> AddUser()
     {
+        ViewData["roles"] = new SelectList(await _roleService.GetAllRolesAsync(), "Id", "RoleNameArabic");
         return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AddUser(UserDto model)
+    {
+        var roles = await _roleService.GetAllRolesAsync();
+        ViewData["roles"] = new SelectList(roles, "Id", "RoleNameArabic");
+        if (!ModelState.IsValid)
+        {
+            return View(model);
+        }
+        model.UserStatus = true;
+        model.EmailConfirmed = true;
+        model.CreatedBy = User.Identity.Name;
+
+        var selectedRole = roles.FirstOrDefault(r => r.Id == model.RoleId);
+        await _userService.CreateUser(model, "Aa@123456", selectedRole.Name);
+
+        return RedirectToAction(nameof(GetUsers));
     }
 
     #endregion

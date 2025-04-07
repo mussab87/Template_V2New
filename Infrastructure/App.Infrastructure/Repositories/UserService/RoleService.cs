@@ -46,9 +46,10 @@ public class RoleService : IRoleService
         return await _roleManager.DeleteAsync(role);
     }
 
-    public async Task<IList<Role>> GetAllRolesAsync()
+    public async Task<IReadOnlyList<Role>> GetAllRolesAsync()
     {
-        return await Task.FromResult(_roleManager.Roles.ToList());
+        var roles = await Task.FromResult(_roleManager.Roles);
+        return (IReadOnlyList<Role>)roles.ToList();
     }
 
     public async Task AddClaimsToRole(User user, Role role, List<Claim> claims)

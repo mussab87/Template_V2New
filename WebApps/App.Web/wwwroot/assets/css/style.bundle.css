@@ -11343,7 +11343,7 @@ button.bg-white:focus {
 
 .pt-10,
 .py-10 {
-    padding-top: 2.5rem !important;
+    padding-top: 0.5rem !important;
 }
 
 .pr-10,
@@ -20334,7 +20334,7 @@ button.bg-white:focus {
 
     .pb-lg-15,
     .py-lg-15 {
-        padding-bottom: 3.75rem !important;
+        padding-bottom: 0.75rem !important;
     }
 
     .pl-lg-15,
@@ -53003,6 +53003,7 @@ a.text-hover-light,
 
 .text-dark {
     color: #181C32 !important;
+    text-align: justify;
 }
 
 .text-inverse-dark {
@@ -68704,7 +68705,7 @@ code {
 }
 
 .form-group label {
-    font-size: 1rem;
+    font-size: 17px;
     font-weight: 400;
     color: #3F4254;
 }
@@ -69590,7 +69591,7 @@ code {
         }
 
             .accordion .card .card-header .card-title > i {
-                margin-right: 1rem;
+                margin-right: 2rem;
                 font-size: 1.4rem;
                 color: #6993FF;
                 -webkit-transition: all 0.15s ease;
