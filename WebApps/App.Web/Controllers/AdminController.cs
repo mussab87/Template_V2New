@@ -61,7 +61,7 @@ public class AdminController : BaseController
         var selectedRole = roles.FirstOrDefault(r => r.Id == model.RoleId);
         await _userService.CreateUser(model, "Aa@123456", selectedRole.Name);
 
-        return RedirectToAction(nameof(GetUsers));
+        return Json("success");
     }
 
     #endregion

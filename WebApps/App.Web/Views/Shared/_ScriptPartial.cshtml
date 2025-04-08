@@ -39,15 +39,20 @@
                 success: function(result) {
                     // Update just the modal content
                     debugger
-                    $('#userModal .modal-content').empty().html(result);
-                    $('#userModal .modal-content').html(result);
+                    if(result == "success"){
+                        location.reload();
+                    }
+                    else{
+                        $('#userModal .modal-content').empty().html(result);
+                        $('#userModal .modal-content').html(result);
+                    }
                 }
             });
         });
             $(function() {
             // Load partial view into modal when Add User button is clicked
             $("#addEditUserButton").click(function() {
-
+                debugger;
                 $.ajax({
                     url: '@Url.Action("AddEditUser", "Admin")',
                     type: 'GET',
