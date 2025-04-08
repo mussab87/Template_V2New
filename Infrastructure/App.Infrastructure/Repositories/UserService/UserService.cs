@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Security.Claims;
+using X.PagedList.Extensions;
 
 namespace App.Infrastructure.Repositories.UserService
 { }
@@ -285,9 +286,9 @@ public class UserService : IUserService
     }
 
     public async Task<PaginatedResult<UserDto>> GetPaginatedUsers(
-        int pageNumber,
-        int pageSize,
-        string searchTerm = "",
+        int pageNumber = 1,
+        int pageSize = 10,
+        string searchString = "",
         int sortColumn = 0,
         string sortDirection = "asc")
     {
@@ -295,15 +296,15 @@ public class UserService : IUserService
         IQueryable<User> usersQuery = _userManager.Users;
 
         // Apply filtering if search term is provided
-        if (!string.IsNullOrWhiteSpace(searchTerm))
+        if (!string.IsNullOrWhiteSpace(searchString))
         {
-            searchTerm = searchTerm.ToLower();
+            searchString = searchString.ToLower();
             usersQuery = usersQuery.Where(u =>
-                u.UserName.ToLower().Contains(searchTerm) ||
-                u.Email.ToLower().Contains(searchTerm) ||
-                u.PhoneNumber.Contains(searchTerm) ||
-                (u.FirstName != null && u.FirstName.ToLower().Contains(searchTerm)) ||
-                (u.LastName != null && u.LastName.ToLower().Contains(searchTerm))
+                u.UserName.ToLower().Contains(searchString) ||
+                u.Email.ToLower().Contains(searchString) ||
+                u.PhoneNumber.Contains(searchString) ||
+                (u.FirstName != null && u.FirstName.ToLower().Contains(searchString)) ||
+                (u.LastName != null && u.LastName.ToLower().Contains(searchString))
             );
         }
 
@@ -334,7 +335,7 @@ public class UserService : IUserService
 
         return new PaginatedResult<UserDto>
         {
-            Items = userDtos,
+            Items = userDtos.ToPagedList<UserDto>(),
             TotalCount = totalCount,
             PageNumber = pageNumber,
             PageSize = pageSize

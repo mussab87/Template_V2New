@@ -28,6 +28,57 @@
         document.getElementById('pageSizeSelector').addEventListener('change', function() {
         document.getElementById('searchForm').submit();
         });
+
+        $('#userModal').on('submit', 'form', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            debugger
+            $.ajax({
+                url: this.action,
+                type: this.method,
+                data: $(this).serialize(),
+                success: function(result) {
+                    // Update just the modal content
+                    debugger
+                    $('#userModal .modal-content').empty().html(result);
+                    $('#userModal .modal-content').html(result);
+                }
+            });
+        });
+            $(function() {
+            // Load partial view into modal when Add User button is clicked
+            $("#addEditUserButton").click(function() {
+
+                $.ajax({
+                    url: '@Url.Action("AddEditUser", "Admin")',
+                    type: 'GET',
+                    success: function(response) {
+                        $('#modalContent').html(response);
+                        $('#userModal').modal('show');
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+
+            // Function to handle successful user addition
+            window.onUserAdded = function(response) {
+                debugger
+                if (response.success) {
+                    // Close modal
+                    $('#userModal').modal('hide');
+
+                    // Refresh datatable
+                    $('#kt_datatable').KTDatatable().reload();
+
+                    // Show success notification
+                    toastr.success('User added successfully!');
+                } else {
+                    // Show validation errors or other messages
+                    $('#resultMessage').html('<div class="alert alert-danger">' + response.message + '</div>');
+                }
+            };
+        });
     </script>
 
     <!--end::Page Scripts-->

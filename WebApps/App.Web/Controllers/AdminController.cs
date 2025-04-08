@@ -15,41 +15,44 @@ public class AdminController : BaseController
     }
 
     #region Get All Users
-    public async Task<IActionResult> GetUsers(string searchString, int page = 1, int pageSize = 10)
+    public async Task<IActionResult> GetUsers(string searchString = "", int page = 1, int pageSize = 10)
     {
         // Store the current page size and page in ViewData for persistence
         ViewData["CurrentPageSize"] = pageSize;
         ViewData["CurrentPage"] = page;
+        ViewData["CurrentFilter"] = searchString;
 
-        var allUsers = await _userService.GetAllUsers();
-        if (!string.IsNullOrEmpty(searchString))
-        {
-            allUsers = allUsers.Where(x => x.Username.Contains(searchString)
-                        || x.FirstName.Contains(searchString)
-                || x.LastName.Contains(searchString)).ToList();
-            ViewData["CurrentFilter"] = searchString;
-        }
+        //var allUsers = await _userService.GetAllUsers();
+        var allUsers = await _userService.GetPaginatedUsers(page, pageSize, searchString);
+        //if (!string.IsNullOrEmpty(searchString))
+        //{
+        //    allUsers = allUsers.Where(x => x.Username.Contains(searchString)
+        //                || x.FirstName.Contains(searchString)
+        //        || x.LastName.Contains(searchString)).ToList();
+        //    ViewData["CurrentFilter"] = searchString;
+        //}
 
-        return View(allUsers.ToPagedList<UserDto>(page, pageSize));
+        return View(allUsers);
     }
 
     #endregion
 
     #region Add New User
-    public async Task<IActionResult> AddUser()
+    public async Task<IActionResult> AddEditUser()
     {
         ViewData["roles"] = new SelectList(await _roleService.GetAllRolesAsync(), "Id", "RoleNameArabic");
-        return View();
+        return PartialView("AddEditUser");
     }
 
     [HttpPost]
-    public async Task<IActionResult> AddUser(UserDto model)
+    public async Task<IActionResult> AddEditUser(UserDto model)
     {
         var roles = await _roleService.GetAllRolesAsync();
         ViewData["roles"] = new SelectList(roles, "Id", "RoleNameArabic");
         if (!ModelState.IsValid)
         {
-            return View(model);
+            //return View(model);
+            return PartialView("AddEditUser", model);
         }
         model.UserStatus = true;
         model.EmailConfirmed = true;

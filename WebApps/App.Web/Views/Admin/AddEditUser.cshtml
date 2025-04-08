@@ -1,0 +1,191 @@
+﻿@model UserDto;
+
+<!-- Button trigger modal-->
+<!-- Modal-->
+<form id="addUserForm" asp-controller="Admin" asp-action="AddEditUser" method="post" data-ajax="true" data-ajax-method="post" data-ajax-update="#resultMessage" data-ajax-success="onUserAdded">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i aria-hidden="true" class="ki ki-close"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!--begin::Container-->
+            <div class="container">
+                <!--begin::Card-->
+                <div class="card card-custom card-transparent">
+                    <div class="card-body p-0">
+                        <!--begin::Wizard-->
+                        <div class="wizard wizard-4">
+                            <!--begin::Card-->
+                            <div class="card card-custom card-shadowless rounded-top-0">
+                                <div class="accordion accordion-solid accordion-toggle-plus" id="accordionExample6">
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="card-title" data-toggle="collapse" data-target="#userInformation">
+                                                <i class="flaticon2-user"></i>
+                                                &nbsp;&nbsp;
+                                                <h3>
+                                                    بيانات المستخدم
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div id="userInformation" class="collapse show" data-parent="#accordionExample6">
+                                            <div class="card-body p-0">
+                                                <div class="row justify-content-center py-8 px-8 py-lg-15 px-lg-10">
+                                                    <div class="col-xl-12 col-xxl-10">
+                                                        <!--begin::Wizard Form-->
+
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-xl-9">
+                                                                <!--begin::Wizard Step 1-->
+                                                                <div class="my-5 step">
+                                                                    <h3 class="text-dark font-weight-bold mb-10">بيانات حساب المستخدم:</h3>
+                                                                    <!--begin::Group-->
+                                                                    <div class="form-group row">
+                                                                        <label asp-for="Username" class="col-xl-3 col-lg-3 col-form-label"></label>
+                                                                        <div class="col-lg-9 col-xl-9">
+                                                                            <input class="form-control form-control-solid form-control-lg" asp-for="Username" type="text" />
+                                                                            <span asp-validation-for="Username" class="alert-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end::Group-->
+                                                                    <!--begin::Group-->
+                                                                    <div class="form-group row">
+                                                                        <label asp-for="FirstName" class="col-xl-3 col-lg-3 col-form-label"></label>
+                                                                        <div class="col-lg-9 col-xl-9">
+                                                                            <input class="form-control form-control-solid form-control-lg" asp-for="FirstName" type="text" />
+                                                                            <span asp-validation-for="FirstName" class="alert-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end::Group-->
+                                                                    <!--begin::Group-->
+                                                                    <div class="form-group row">
+                                                                        <label asp-for="LastName" class="col-xl-3 col-lg-3 col-form-label"></label>
+                                                                        <div class="col-lg-9 col-xl-9">
+                                                                            <input class="form-control form-control-solid form-control-lg" asp-for="LastName" type="text" />
+                                                                            <span asp-validation-for="LastName" class="alert-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end::Group-->
+                                                                    <!--begin::Group-->
+                                                                    <div class="form-group row">
+                                                                        <label asp-for="FirstNameArabic" class="col-xl-3 col-lg-3 col-form-label"></label>
+                                                                        <div class="col-lg-9 col-xl-9">
+                                                                            <input class="form-control form-control-solid form-control-lg" asp-for="FirstNameArabic" type="text" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end::Group-->
+                                                                    <!--begin::Group-->
+                                                                    <div class="form-group row">
+                                                                        <label asp-for="LastNameArabic" class="col-xl-3 col-lg-3 col-form-label"></label>
+                                                                        <div class="col-lg-9 col-xl-9">
+                                                                            <input class="form-control form-control-solid form-control-lg" asp-for="LastNameArabic" type="text" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end::Group-->
+                                                                    <!--begin::Group-->
+                                                                    <div class="form-group row">
+                                                                        <label asp-for="Email" class="col-xl-3 col-lg-3 col-form-label"></label>
+                                                                        <div class="col-lg-9 col-xl-9">
+                                                                            <div class="input-group input-group-solid input-group-lg">
+                                                                                <div class="input-group-prepend">
+                                                                                    <span class="input-group-text">
+                                                                                        <i class="la la-at"></i>
+                                                                                    </span>
+                                                                                </div>
+                                                                                <input type="text" asp-for="Email" class="form-control form-control-solid form-control-lg" />
+
+                                                                            </div>
+                                                                            <span asp-validation-for="Email" class="alert-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end::Group-->
+                                                                    <!--begin::Group-->
+                                                                    <div class="form-group row">
+                                                                        <label asp-for="IsActive" class="col-form-label col-xl-3 col-lg-3"></label>
+                                                                        <div class="col-xl-9 col-lg-9">
+                                                                            <select asp-for="IsActive" class="form-control form-control-lg form-control-solid">
+                                                                                <option value="">اختر من القائمة</option>
+                                                                                <option value="true">مفعل</option>
+                                                                                <option value="false">غير مفعل</option>
+                                                                            </select>
+                                                                            <span asp-validation-for="IsActive" class="alert-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Wizard Step 1-->
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Wizard Form-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="card-title collapsed" data-toggle="collapse" data-target="#roleSection">
+                                                <i class="flaticon-lock"></i>
+                                                &nbsp;&nbsp;
+                                                <h3>
+                                                    صلاحية المستخدم
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div id="roleSection" class="collapse" data-parent="#accordionExample6">
+                                            <div class="card-body p-0">
+                                                <div class="row justify-content-center py-8 px-8 py-lg-15 px-lg-10">
+                                                    <div class="col-xl-12 col-xxl-10">
+                                                        <!--begin::Wizard Form-->
+
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-xl-9">
+                                                                <!--begin::Wizard Step 1-->
+                                                                <div class="my-5 step">
+                                                                    <h3 class="text-dark font-weight-bold mb-10">صلاحية المستخدم في النظام:</h3>
+                                                                    <!--begin::Group-->
+                                                                    <div class="form-group row">
+                                                                        <label asp-for="RoleId" class="col-form-label col-xl-3 col-lg-3"></label>
+                                                                        <div class="col-xl-9 col-lg-9">
+                                                                            <select asp-for="RoleId" class="form-control form-control-lg form-control-solid" asp-items="@ViewBag.roles">
+                                                                                <option value="">اختر من القائمة</option>
+
+                                                                            </select>
+                                                                            <span asp-validation-for="RoleId" class="alert-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Wizard Step 1-->
+                                                            </div>
+                                                        </div>
+
+                                                        <!--end::Wizard Form-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--begin::Body-->
+                                <!--end::Body-->
+                            </div>
+                            <!--end::Card-->
+                        </div>
+                        <!--end::Wizard-->
+                    </div>
+                </div>
+                <!--end::Card-->
+            </div>
+            <!--end::Container-->
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-success font-weight-bolder">
+                حفظ
+            </button>
+        </div>
+    </div>
+</form>

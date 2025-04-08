@@ -31,9 +31,9 @@ public interface IUserService
     Task<IEnumerable<string>> GetUserRolesAsync(string userId);
     Task<IReadOnlyList<UserDto>> GetAllUsers();
     Task<PaginatedResult<UserDto>> GetPaginatedUsers(
-        int pageNumber,
-        int pageSize,
-        string searchTerm = "",
+        int pageNumber = 1,
+        int pageSize = 10,
+        string searchString = "",
         int sortColumn = 0,
         string sortDirection = "asc");
 }

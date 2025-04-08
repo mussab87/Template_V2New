@@ -1,4 +1,4 @@
-﻿@model X.PagedList.IPagedList<UserDto>
+﻿@model PaginatedResult<UserDto>
 @{
     ViewData["Title"] = "المستخدمين";
     ViewData["action"] = "GetUsers";
@@ -18,11 +18,19 @@
             </div>
             <div class="card-toolbar">
                 <!--begin::Button-->
-                <a href="/Admin/AddUser" class="btn btn-primary font-weight-bolder">
+                <a id="addEditUserButton" class="btn btn-primary font-weight-bolder">
                     إضافة مستخدم
                     <i class="la la-plus"></i>
                 </a>
-                <!--end::Button-->
+                <!-- Modal Container -->
+                <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl" role="document">
+                        <div id="modalContent">
+                            <partial name="AddEditUser" model="@Model.UserDto" />
+                        </div>
+
+                    </div>
+                </div>
                 &nbsp;
                 <!--begin::Dropdown-->
                 <div class="dropdown dropdown-inline mr-2">
@@ -72,6 +80,9 @@
             </div>
         </div>
         <div class="card-body">
+
+
+
             <!--begin: Search-->
             <form asp-action="@ViewData["action"]" method="get" id="searchForm">
                 <div class="row" dir="rtl" style="height: 65px;margin-bottom: -20px;">
@@ -112,9 +123,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if (Model.Any())
+                    @if (Model.Items.Any())
                     {
-                        foreach (var user in Model)
+                        foreach (var user in Model.Items)
                         {
                             <tr>
                                 <td>@user.FirstName @user.LastName</td>
@@ -165,7 +176,7 @@
             </table>
             <!--end: Datatable-->
 
-            <partial name="_PagedListPager" model="Model" />
+            <partial name="_PagedListPager" model="Model.Items" />
         </div>
 
     </div>
@@ -173,3 +184,5 @@
     <!--end::Card-->
 </div>
 <!--end::Container-->
+
+@* <script src="https://cdn.jsdelivr.net/npm/jquery-ajax-unobtrusive@3.2.6/dist/jquery.unobtrusive-ajax.min.js"></script> *@
