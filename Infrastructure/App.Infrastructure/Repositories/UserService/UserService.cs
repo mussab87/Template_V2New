@@ -78,6 +78,9 @@ public class UserService : IUserService
 
     public async Task<User> CreateUser(UserDto user, string password, string roleName)
     {
+        user.UserStatus = true;
+        user.EmailConfirmed = true;
+
         User newUser = new User()
         {
             Id = user.Id,

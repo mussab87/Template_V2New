@@ -18,7 +18,7 @@
             </div>
             <div class="card-toolbar">
                 <!--begin::Button-->
-                <a id="addEditUserButton" class="btn btn-primary font-weight-bolder">
+                <a id="addUserButton" class="btn btn-primary font-weight-bolder">
                     إضافة مستخدم
                     <i class="la la-plus"></i>
                 </a>
@@ -154,17 +154,24 @@
 
                                             <ul class="nav nav-hoverable flex-column">
 
-                                                <li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-edit"></i><span class="nav-text">Edit Details</span></a></li>
-                                                <li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-leaf"></i><span class="nav-text">Update Status</span></a></li>
-                                                <li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-print"></i><span class="nav-text">Print</span></a></li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="nav-icon la la-edit"></i>
+                                                        <span class="nav-text">
+                                                            تعديل كلمة المرور
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-leaf"></i><span class="nav-text">تفعيل المستخدم</span></a></li>
+                                                <li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-print"></i><span class="nav-text">طباعة</span></a></li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Edit details">
+                                    <a id="updateUserButton" onclick="updateUserButton('@user.Id')" class="btn btn-sm btn-clean btn-icon" title="تعديل المستخدم">
 
                                         <i class="la la-edit"></i>
                                     </a>
-                                    <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Delete">
+                                    <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="حذف المستخدم">
 
                                         <i class="la la-trash"></i>
                                     </a>

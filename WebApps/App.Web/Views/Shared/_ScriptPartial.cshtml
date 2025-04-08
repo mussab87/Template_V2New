@@ -41,6 +41,8 @@
                     debugger
                     if(result == "success"){
                         location.reload();
+                        // Show success notification
+                    toastr.success(result.data);
                     }
                     else{
                         $('#userModal .modal-content').empty().html(result);
@@ -51,10 +53,10 @@
         });
             $(function() {
             // Load partial view into modal when Add User button is clicked
-            $("#addEditUserButton").click(function() {
+            $("#addUserButton").click(function() {
                 debugger;
                 $.ajax({
-                    url: '@Url.Action("AddEditUser", "Admin")',
+                    url: '@Url.Action("AddEditUser", "Admin", new { actionType = (int)ActionTypeEnum.Add })',
                     type: 'GET',
                     success: function(response) {
                         $('#modalContent').html(response);
@@ -66,24 +68,25 @@
                 });
             });
 
-            // Function to handle successful user addition
-            window.onUserAdded = function(response) {
-                debugger
-                if (response.success) {
-                    // Close modal
-                    $('#userModal').modal('hide');
+            $("#updateUserButton").click(function() {
 
-                    // Refresh datatable
-                    $('#kt_datatable').KTDatatable().reload();
-
-                    // Show success notification
-                    toastr.success('User added successfully!');
-                } else {
-                    // Show validation errors or other messages
-                    $('#resultMessage').html('<div class="alert alert-danger">' + response.message + '</div>');
-                }
-            };
+            });
         });
+
+        function updateUserButton(selectedUserId){
+            debugger;
+                $.ajax({
+                    url: '@Url.Action("AddEditUser", "Admin", new { actionType = (int)ActionTypeEnum.Update })' + '&userId=' + selectedUserId,
+                    type: 'GET',
+                    success: function(response) {
+                        $('#modalContent').html(response);
+                        $('#userModal').modal('show');
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+        }
     </script>
 
     <!--end::Page Scripts-->

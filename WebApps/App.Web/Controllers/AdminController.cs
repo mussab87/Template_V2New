@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using X.PagedList.Extensions;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
@@ -38,30 +39,91 @@ public class AdminController : BaseController
     #endregion
 
     #region Add New User
-    public async Task<IActionResult> AddEditUser()
+    public async Task<IActionResult> AddEditUser(int? actionType, string userId)
     {
-        ViewData["roles"] = new SelectList(await _roleService.GetAllRolesAsync(), "Id", "RoleNameArabic");
-        return PartialView("AddEditUser");
+        UserDto userDtoModel = null;
+        try
+        {
+            ViewData["roles"] = new SelectList(await _roleService.GetAllRolesAsync(), "Id", "RoleNameArabic");
+
+            if (actionType == 0)
+                userDtoModel = new UserDto();
+
+            if (actionType == 1)
+            {
+                userDtoModel = _mapper.Map<UserDto>(await _userService.GetUserByIdAsync(userId));
+                if (userDtoModel == null)
+                {
+                    return PartialView("AddEditUser", userDtoModel);
+                }
+                userDtoModel.ActionType = 1;
+                //get user role and add to dto
+                userDtoModel.RoleId = userDtoModel.RoleId;
+            }
+            return PartialView("AddEditUser", userDtoModel);
+        }
+        catch (Exception ex)
+        {
+            ModelState.AddModelError("", "حدث خطأ!" + ex.ToString());
+            return PartialView("AddEditUser", userDtoModel);
+        }
+
     }
 
     [HttpPost]
     public async Task<IActionResult> AddEditUser(UserDto model)
     {
-        var roles = await _roleService.GetAllRolesAsync();
-        ViewData["roles"] = new SelectList(roles, "Id", "RoleNameArabic");
-        if (!ModelState.IsValid)
+        try
         {
-            //return View(model);
+            var roles = await _roleService.GetAllRolesAsync();
+            ViewData["roles"] = new SelectList(roles, "Id", "RoleNameArabic");
+
+            //Add new user
+            if (model.ActionType == 0)
+            {
+                if (!ModelState.IsValid)
+                {
+                    //return View(model);
+                    return PartialView("AddEditUser", model);
+                }
+
+                model.CreatedBy = User.Identity.Name;
+                //get selected role to Add, assign default password th user for first login
+                var selectedRole = roles.FirstOrDefault(r => r.Id == model.RoleId);
+                //Add new user
+                await _userService.CreateUser(model, "Aa@123456", selectedRole.Name);
+
+                return Ok(new { success = true, data = "تم الحفظ بنجاح" });
+            }
+
+            //Update Exist user
+            if (model.ActionType == 1)
+            {
+                if (!ModelState.IsValid)
+                {
+                    //return View(model);
+                    return PartialView("AddEditUser", model);
+                }
+
+                //get that user for update
+                var selectedUser = await _userService.GetUserByIdAsync(model.Id);
+
+                selectedUser.LastModifiedBy = User.Identity.Name;
+                selectedUser.LastModifiedDate = DateTime.Now;
+
+                //update user
+                await _userService.UpdateUserAsync(_mapper.Map<User>(model));
+
+                return Ok(new { success = true, data = "تم الحفظ بنجاح" });
+            }
+
             return PartialView("AddEditUser", model);
         }
-        model.UserStatus = true;
-        model.EmailConfirmed = true;
-        model.CreatedBy = User.Identity.Name;
-
-        var selectedRole = roles.FirstOrDefault(r => r.Id == model.RoleId);
-        await _userService.CreateUser(model, "Aa@123456", selectedRole.Name);
-
-        return Json("success");
+        catch (Exception ex)
+        {
+            ModelState.AddModelError("", "حدث خطأ اثناء حفظ البيانات !" + ex.ToString());
+            return PartialView("AddEditUser", model);
+        }
     }
 
     #endregion

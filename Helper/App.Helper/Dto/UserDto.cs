@@ -13,7 +13,7 @@ public class UserDto
     [Display(Name = "اسم المستخدم:")]
     [Required(ErrorMessage = "حقل إجباري")]
     //[Remote(action: "IsUsernameInUse", controller: "SuperAdmin")]    
-    public required string Username { get; set; }
+    public string Username { get; set; }
 
     [Display(Name = "الاسم الاول:")]
     [Required(ErrorMessage = "حقل إجباري")]
@@ -36,7 +36,7 @@ public class UserDto
     //[Remote(action: "IsEmailInUse", controller: "SuperAdmin")]
     [Display(Name = "البريد الالكتروني:")]
     [Required(ErrorMessage = "حقل إجباري")]
-    public required string Email { get; set; } = "test@gg.com";
+    public string Email { get; set; } = "test@gg.com";
 
     public bool EmailConfirmed { get; set; } = false;
 
@@ -61,6 +61,8 @@ public class UserDto
     [Display(Name = "صلاحية الحساب:")]
     [Required(ErrorMessage = "حقل إجباري")]
     public string RoleId { get; set; }
+
+    public int ActionType { get; set; } = (int)ActionTypeEnum.Add;
 
 }
 

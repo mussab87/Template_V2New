@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 
 namespace App.Web.Controllers;
 public class BaseController : Controller
@@ -11,7 +12,7 @@ public class BaseController : Controller
     protected readonly IEncryptionService _encryptionService;
 
     //public readonly IMediator _mediator;
-    //protected IMapper _mapper;
+    protected readonly IMapper _mapper;
 
     public BaseController(IServiceProvider serviceProvider)
     {
@@ -21,9 +22,9 @@ public class BaseController : Controller
         _cache = serviceProvider.GetRequiredService<ICacheService>();
         _unitOfWork = serviceProvider.GetRequiredService<IUnitOfWork>();
         _encryptionService = serviceProvider.GetRequiredService<IEncryptionService>();
+        _mapper = serviceProvider.GetRequiredService<IMapper>();
         //_roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-        //_mediator = serviceProvider.GetRequiredService<IMediator>();
-        //_mapper = serviceProvider.GetRequiredService<IMapper>();
+        //_mediator = serviceProvider.GetRequiredService<IMediator>();        
     }
 }
 
