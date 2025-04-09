@@ -21,7 +21,8 @@ public interface IUserService
 
     Task<IdentityResult> ChangePasswordAsync(User user, string currentPassword, string newPassword);
 
-    Task<IdentityResult> UpdateUserAsync(User user);
+    Task<IdentityResult> UpdateUserAsync(UserDto updatedUser);
+    Task<IdentityResult> UpdateUserAsync(User updatedUser);
 
     Task<bool> IsPasswordInRecentHistoryAsync(string userId, string oldPassword, string newPassword, int historyCount = 3);
 

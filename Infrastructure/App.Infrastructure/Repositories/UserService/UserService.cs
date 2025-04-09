@@ -153,9 +153,37 @@ public class UserService : IUserService
         return await _userManager.ChangePasswordAsync(user, currentPassword, newPassword);
     }
 
-    public async Task<IdentityResult> UpdateUserAsync(User user)
+    public async Task<IdentityResult> UpdateUserAsync(UserDto updatedUser)
     {
-        return await _userManager.UpdateAsync(user);
+        var selectedUser = await _userManager.FindByIdAsync(updatedUser.Id);
+        
+        selectedUser.UserName = updatedUser.Username;
+        selectedUser.FirstName = updatedUser.FirstName;
+        selectedUser.LastName = updatedUser.LastName;
+        selectedUser.FirstNameArabic = updatedUser.FirstNameArabic;
+        selectedUser.LastNameArabic = updatedUser.LastNameArabic;
+        selectedUser.Email = updatedUser.Email;
+        selectedUser.IsActive = updatedUser.IsActive;
+        selectedUser.LastModifiedBy = updatedUser.LastModifiedBy;
+        selectedUser.LastModifiedDate = DateTime.Now;
+
+        //get user roles
+        var userRoles = await _dbContext.UserRoles
+                        .Where(u => u.UserId == selectedUser.Id)
+                        .ToListAsync();
+        if (userRoles?.Exists(r=>r.RoleId == updatedUser.RoleId) == false)
+        {
+            var role = userRoles.Where(r => r.RoleId != updatedUser.RoleId).FirstOrDefault();
+            var roleToAdd = _dbContext.Roles.FirstOrDefault(r=>r.Id == role.RoleId);
+            await _userManager.AddToRoleAsync(selectedUser, roleToAdd.Name);
+        }
+        
+        return await _userManager.UpdateAsync(selectedUser);
+    }
+
+    public async Task<IdentityResult> UpdateUserAsync(User updatedUser)
+    {
+        return await _userManager.UpdateAsync(updatedUser);
     }
 
     public async Task<bool> IsPasswordInRecentHistoryAsync(string userId, string oldPassword, string newPassword, int historyCount = 3)

@@ -22,6 +22,15 @@
                             <div class="card card-custom card-shadowless rounded-top-0">
                                 <div class="accordion accordion-solid accordion-toggle-plus" id="accordionExample6">
                                     <input type="hidden" asp-for="ActionType" />
+                                    @if (Model != null && Model.ActionType != null)
+                                    {
+                                        @if (Model.ActionType == (int)ActionTypeEnum.Update)
+                                        {
+                                            <input type="hidden" asp-for="Id" />
+                                        }
+                                    }
+                                    
+                                    
                                     <div class="card">
                                         <div class="card-header">
                                             <div class="card-title" data-toggle="collapse" data-target="#userInformation">

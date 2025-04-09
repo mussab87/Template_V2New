@@ -39,7 +39,7 @@
                 success: function(result) {
                     // Update just the modal content
                     debugger
-                    if(result == "success"){
+                    if(result.success){
                         location.reload();
                         // Show success notification
                     toastr.success(result.data);

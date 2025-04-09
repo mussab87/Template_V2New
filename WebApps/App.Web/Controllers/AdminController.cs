@@ -24,7 +24,7 @@ public class AdminController : BaseController
         ViewData["CurrentFilter"] = searchString;
 
         //var allUsers = await _userService.GetAllUsers();
-        var allUsers = await _userService.GetPaginatedUsers(page, pageSize, searchString);
+        var allUsers = await _userService.GetPaginatedUsers(page, pageSize, searchString, 1, "dsc");
         //if (!string.IsNullOrEmpty(searchString))
         //{
         //    allUsers = allUsers.Where(x => x.Username.Contains(searchString)
@@ -44,7 +44,8 @@ public class AdminController : BaseController
         UserDto userDtoModel = null;
         try
         {
-            ViewData["roles"] = new SelectList(await _roleService.GetAllRolesAsync(), "Id", "RoleNameArabic");
+            var roles = await _roleService.GetAllRolesAsync();
+            ViewData["roles"] = new SelectList(roles, "Id", "RoleNameArabic");
 
             if (actionType == 0)
                 userDtoModel = new UserDto();
@@ -57,8 +58,10 @@ public class AdminController : BaseController
                     return PartialView("AddEditUser", userDtoModel);
                 }
                 userDtoModel.ActionType = 1;
+                userDtoModel.Id = userId;
                 //get user role and add to dto
-                userDtoModel.RoleId = userDtoModel.RoleId;
+                var userRole =  await _userService.GetUserRolesAsync(userId);
+                userDtoModel.RoleId = roles.FirstOrDefault(r=>r.Name == userRole.ToList()[0]).Id;
             }
             return PartialView("AddEditUser", userDtoModel);
         }
@@ -105,14 +108,9 @@ public class AdminController : BaseController
                     return PartialView("AddEditUser", model);
                 }
 
-                //get that user for update
-                var selectedUser = await _userService.GetUserByIdAsync(model.Id);
-
-                selectedUser.LastModifiedBy = User.Identity.Name;
-                selectedUser.LastModifiedDate = DateTime.Now;
-
+                model.LastModifiedBy = User.Identity.Name;
                 //update user
-                await _userService.UpdateUserAsync(_mapper.Map<User>(model));
+                await _userService.UpdateUserAsync(model);
 
                 return Ok(new { success = true, data = "تم الحفظ بنجاح" });
             }
