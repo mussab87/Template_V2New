@@ -29,8 +29,11 @@
                                             <input type="hidden" asp-for="Id" />
                                         }
                                     }
-                                    
-                                    
+                                    <div class="text-center pb-8">
+                                        <div class="text-danger" id="errorAdd" style="font-size: 16px">
+                                        </div>
+                                    </div>
+
                                     <div class="card">
                                         <div class="card-header">
                                             <div class="card-title" data-toggle="collapse" data-target="#userInformation">
@@ -124,6 +127,20 @@
                                                                             <span asp-validation-for="IsActive" class="alert-danger"></span>
                                                                         </div>
                                                                     </div>
+                                                                    <!--end::Group-->
+                                                                    <!--begin::Group-->
+                                                                    <div class="form-group row">
+                                                                        <label asp-for="IsActive" class="col-form-label col-xl-3 col-lg-3"></label>
+                                                                        <div class="col-xl-9 col-lg-9">
+                                                                            <select asp-for="IsDeleted" class="form-control form-control-lg form-control-solid">
+                                                                                <option value="">اختر من القائمة</option>
+                                                                                <option value="true">حساب محذوف</option>
+                                                                                <option value="false">الغاء الحذف</option>
+                                                                            </select>
+                                                                            <span asp-validation-for="IsDeleted" class="alert-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end::Group-->
                                                                 </div>
                                                                 <!--end::Wizard Step 1-->
                                                             </div>
@@ -144,7 +161,7 @@
                                                 </h3>
                                             </div>
                                         </div>
-                                        <div id="roleSection" class="collapse" data-parent="#accordionExample6">
+                                        <div id="roleSection" class="collapse show" data-parent="#accordionExample6">
                                             <div class="card-body p-0">
                                                 <div class="row justify-content-center py-8 px-8 py-lg-15 px-lg-10">
                                                     <div class="col-xl-12 col-xxl-10">

@@ -156,7 +156,7 @@ public class UserService : IUserService
     public async Task<IdentityResult> UpdateUserAsync(UserDto updatedUser)
     {
         var selectedUser = await _userManager.FindByIdAsync(updatedUser.Id);
-        
+
         selectedUser.UserName = updatedUser.Username;
         selectedUser.FirstName = updatedUser.FirstName;
         selectedUser.LastName = updatedUser.LastName;
@@ -164,6 +164,7 @@ public class UserService : IUserService
         selectedUser.LastNameArabic = updatedUser.LastNameArabic;
         selectedUser.Email = updatedUser.Email;
         selectedUser.IsActive = updatedUser.IsActive;
+        selectedUser.IsDeleted = updatedUser.IsDeleted;
         selectedUser.LastModifiedBy = updatedUser.LastModifiedBy;
         selectedUser.LastModifiedDate = DateTime.Now;
 
@@ -171,13 +172,13 @@ public class UserService : IUserService
         var userRoles = await _dbContext.UserRoles
                         .Where(u => u.UserId == selectedUser.Id)
                         .ToListAsync();
-        if (userRoles?.Exists(r=>r.RoleId == updatedUser.RoleId) == false)
+        if (userRoles?.Exists(r => r.RoleId == updatedUser.RoleId) == false)
         {
             var role = userRoles.Where(r => r.RoleId != updatedUser.RoleId).FirstOrDefault();
-            var roleToAdd = _dbContext.Roles.FirstOrDefault(r=>r.Id == role.RoleId);
+            var roleToAdd = _dbContext.Roles.FirstOrDefault(r => r.Id == role.RoleId);
             await _userManager.AddToRoleAsync(selectedUser, roleToAdd.Name);
         }
-        
+
         return await _userManager.UpdateAsync(selectedUser);
     }
 
@@ -223,6 +224,10 @@ public class UserService : IUserService
         // Check if account is already locked
         if ((bool)!user?.IsActive)
             return new LoginResult { Success = false, Message = "تم تعطيل الحساب، فضلا تواصل مع الدعم الفني" };
+
+        // Check if account was deleted
+        if ((bool)user?.IsDeleted)
+            return new LoginResult { Success = false, Message = "تم حذف الحساب، فضلا تواصل مع الدعم الفني" };
 
         // Validate password
         var passwordResult = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, password);
@@ -324,7 +329,7 @@ public class UserService : IUserService
         string sortDirection = "asc")
     {
         // Start with all users
-        IQueryable<User> usersQuery = _userManager.Users;
+        IQueryable<User> usersQuery = _userManager.Users.AsNoTracking();
 
         // Apply filtering if search term is provided
         if (!string.IsNullOrWhiteSpace(searchString))
@@ -352,21 +357,22 @@ public class UserService : IUserService
             .ToListAsync();
 
         // Map to DTOs
-        var userDtos = pagedUsers.Select(user => new UserDto
-        {
-            Id = user.Id,
-            Username = user.UserName,
-            Email = user.Email,
-            PhoneNumber = user.PhoneNumber,
-            FirstName = user.FirstName,
-            LastName = user.LastName,
-            // Map other properties as needed for your datatable
-            // These should correspond to the fields in your datatable columns
-        }).ToList();
+        var userDtos = _mapper.Map<List<UserDto>>(pagedUsers);
+        //var userDtos = pagedUsers.Select(user => new UserDto
+        //{
+        //    Id = user.Id,
+        //    Username = user.UserName,
+        //    Email = user.Email,
+        //    PhoneNumber = user.PhoneNumber,
+        //    FirstName = user.FirstName,
+        //    LastName = user.LastName,
+        //    // Map other properties as needed for your datatable
+        //    // These should correspond to the fields in your datatable columns
+        //}).ToList();
 
         return new PaginatedResult<UserDto>
         {
-            Items = userDtos.ToPagedList<UserDto>(),
+            Items = userDtos.ToPagedList<UserDto>(pageNumber, pageSize),
             TotalCount = totalCount,
             PageNumber = pageNumber,
             PageSize = pageSize

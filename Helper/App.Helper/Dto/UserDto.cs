@@ -48,6 +48,10 @@ public class UserDto
     [Required(ErrorMessage = "حقل إجباري")]
     public bool? IsActive { get; set; } = true;
 
+    [Display(Name = "حالة الحذف:")]
+    [Required(ErrorMessage = "حقل إجباري")]
+    public bool? IsDeleted { get; set; } = false;
+
     public string CreatedBy { get; set; }
     public DateTime? CreatedDate { get; set; }
     public string LastModifiedBy { get; set; }

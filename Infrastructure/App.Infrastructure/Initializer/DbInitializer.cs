@@ -79,6 +79,7 @@ public class DbInitializer : IDbInitializer
             UserStatus = true,
             FirstLogin = true,
             IsActive = true,
+            IsDeleted = false,
             CreatedBy = "System Super Admin"
         };
         return await _userService.CreateUser(adminUser, "Aa@123456", Roles.SuperAdmin);

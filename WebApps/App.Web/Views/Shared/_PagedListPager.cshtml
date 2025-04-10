@@ -1,4 +1,4 @@
-﻿@model IPagedList
+﻿@model X.PagedList.IPagedList
 
 @{
     var currentPage = ViewData["CurrentPage"] ?? 1;
@@ -11,7 +11,7 @@
             @Html.PagedListPager(
                      Model,
                      page => Url.Action(ViewData["action"] as string,
-                     new { page = page, searchString = currentFilter, pageSize = pageSize }),
+                     new { page = Model.PageNumber, searchString = currentFilter, pageSize = Model.PageSize }),
                      new X.PagedList.Mvc.Core.PagedListRenderOptions
             {
                 DisplayItemSliceAndTotal = true,

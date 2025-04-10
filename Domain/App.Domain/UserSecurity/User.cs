@@ -14,6 +14,7 @@ public class User : IdentityUser<string>
     public bool? MonthLockStatus { get; set; }
     public bool? UserStatus { get; set; }
     public bool? IsActive { get; set; }
+    public bool? IsDeleted { get; set; }
 
     //public DateTime? LastPasswordChangedDate { get; set; } = DateTime.UtcNow;
 

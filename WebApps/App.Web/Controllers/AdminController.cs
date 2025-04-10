@@ -24,14 +24,7 @@ public class AdminController : BaseController
         ViewData["CurrentFilter"] = searchString;
 
         //var allUsers = await _userService.GetAllUsers();
-        var allUsers = await _userService.GetPaginatedUsers(page, pageSize, searchString, 1, "dsc");
-        //if (!string.IsNullOrEmpty(searchString))
-        //{
-        //    allUsers = allUsers.Where(x => x.Username.Contains(searchString)
-        //                || x.FirstName.Contains(searchString)
-        //        || x.LastName.Contains(searchString)).ToList();
-        //    ViewData["CurrentFilter"] = searchString;
-        //}
+        var allUsers = await _userService.GetPaginatedUsers(page, pageSize, searchString, 1);
 
         return View(allUsers);
     }
@@ -60,8 +53,8 @@ public class AdminController : BaseController
                 userDtoModel.ActionType = 1;
                 userDtoModel.Id = userId;
                 //get user role and add to dto
-                var userRole =  await _userService.GetUserRolesAsync(userId);
-                userDtoModel.RoleId = roles.FirstOrDefault(r=>r.Name == userRole.ToList()[0]).Id;
+                var userRole = await _userService.GetUserRolesAsync(userId);
+                userDtoModel.RoleId = roles.FirstOrDefault(r => r.Name == userRole.ToList()[0]).Id;
             }
             return PartialView("AddEditUser", userDtoModel);
         }
@@ -124,6 +117,31 @@ public class AdminController : BaseController
         }
     }
 
+    #endregion
+
+    #region Delete user
+    [HttpPost]
+    public async Task<IActionResult> DeleteUser(string userId)
+    {
+        try
+        {
+            var user = await _userService.GetUserByIdAsync(userId);
+            if (user == null)
+                return Json(new { success = true, data = "هذا المستخدم غير موجود حاليا، فضلا تواصل مع الدعم الفني" });
+
+            //update user IsDeleted
+            user.IsDeleted = true;
+            user.IsActive = false;
+            var result = await _userService.UpdateUserAsync(user);
+            return Json(new { success = true, data = "تم الحفظ بنجاح" });
+
+        }
+        catch (Exception ex)
+        {
+            ModelState.AddModelError("", "حدث خطأ اثناء حفظ البيانات !" + ex.ToString());
+            return Json(new { success = false, data = "حدث خطأ اثناء حفظ البانات، فضلا تواصل مع الدعم الفني" + ex.ToString() });
+        }
+    }
     #endregion
 
     #region Test Paging    

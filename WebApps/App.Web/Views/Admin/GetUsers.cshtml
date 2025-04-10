@@ -81,7 +81,11 @@
         </div>
         <div class="card-body">
 
-
+            <div class="text-center pb-8">
+                <div class="text-danger" id="errorUsers" style="font-size: 16px">
+                    <label id="error"></label>
+                </div>
+            </div>
 
             <!--begin: Search-->
             <form asp-action="@ViewData["action"]" method="get" id="searchForm">
@@ -100,6 +104,7 @@
                         <div class="dataTables_length" id="kt_datatable_length">
                             <label>
                                 <select name="pageSize" id="pageSizeSelector" aria-controls="kt_datatable" class="custom-select custom-select-sm form-control form-control-sm">
+                                    @* <option value="2" selected="@(ViewData["CurrentPageSize"] != null && (int)ViewData["CurrentPageSize"] == 2)">2</option> *@
                                     <option value="10" selected="@(ViewData["CurrentPageSize"] != null && (int)ViewData["CurrentPageSize"] == 10)">10</option>
                                     <option value="25" selected="@(ViewData["CurrentPageSize"] != null && (int)ViewData["CurrentPageSize"] == 25)">25</option>
                                     <option value="50" selected="@(ViewData["CurrentPageSize"] != null && (int)ViewData["CurrentPageSize"] == 50)">50</option>
@@ -119,6 +124,7 @@
                         <th>الاسم</th>
                         <th>اسم المستخدم</th>
                         <th>حالة الحساب</th>
+                        <th>حذف الحساب</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -131,17 +137,39 @@
                                 <td>@user.FirstName @user.LastName</td>
                                 <td>@user.Username</td>
                                 <td>
-                                    @user.IsActive
-                                    @* @{
+                                    @{
                                         if ((bool)user.IsActive)
                                         {
-                                            <b>مفعل</b>
+                                            <span style="width: 137px;">
+                                                <span class="label label-success label-dot mr-2">
+                                                </span>
+                                                <span class="font-weight-bold text-success">
+                                                    <b>مفعل</b>
+                                                </span>
+                                            </span>
                                         }
                                         else
                                         {
-                                            <b>غير مفعل</b>
+                                            <span style="width: 137px;">
+                                                <span class="label label-danger label-dot mr-2">
+                                                </span>
+                                                <span class="font-weight-bold text-danger">
+                                                    <b>غير مفعل</b>
+                                                </span>
+                                            </span>
+
                                         }
-                                    } *@
+                                    }
+                                </td>
+                                <td>
+                                    @if (user.IsDeleted == true)
+                                    {
+                                        <span style="width: 137px;">
+                                            <span class="label font-weight-bold label-lg  label-light-danger label-inline">
+                                                <b>تم الحذف</b>
+                                            </span>
+                                        </span>
+                                    }
                                 </td>
                                 <td>
                                     <div class="dropdown dropdown-inline">
@@ -171,10 +199,20 @@
 
                                         <i class="la la-edit"></i>
                                     </a>
-                                    <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="حذف المستخدم">
+                                    @if (user.IsDeleted == true)
+                                    {
+                                        <a href="#" class="btn btn-sm btn-clean btn-icon" title="حذف المستخدم">
 
-                                        <i class="la la-trash"></i>
-                                    </a>
+                                            <i class="la la-trash"></i>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a onclick="deleteUserButton('@user.Id')" class="btn btn-sm btn-clean btn-icon" title="حذف المستخدم">
+
+                                            <i class="la la-trash"></i>
+                                        </a>
+                                    }
                                 </td>
                             </tr>
                         }
