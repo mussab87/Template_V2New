@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
-using Azure.Core;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Security.Claims;
 using X.PagedList.Extensions;
@@ -148,9 +146,10 @@ public class UserService : IUserService
         return true;
     }
 
-    public async Task<IdentityResult> ChangePasswordAsync(User user, string currentPassword, string newPassword)
+    public async Task<IdentityResult> ChangePasswordAsync(User user, ResetPasswordDto model)
     {
-        return await _userManager.ChangePasswordAsync(user, currentPassword, newPassword);
+        return await _userManager.ResetPasswordAsync(user, model.Token, model.NewPassword);
+        //_userManager.ChangePasswordAsync(user, currentPassword, newPassword);
     }
 
     public async Task<IdentityResult> UpdateUserAsync(UserDto updatedUser)
@@ -163,11 +162,12 @@ public class UserService : IUserService
         selectedUser.FirstNameArabic = updatedUser.FirstNameArabic;
         selectedUser.LastNameArabic = updatedUser.LastNameArabic;
         selectedUser.Email = updatedUser.Email;
-        selectedUser.IsActive = updatedUser.IsActive;
-        selectedUser.IsDeleted = updatedUser.IsDeleted;
+        selectedUser.IsActive = (bool)updatedUser.IsDeleted ? false : updatedUser.IsActive;
+        selectedUser.IsDeleted =  updatedUser.IsDeleted;
         selectedUser.LastModifiedBy = updatedUser.LastModifiedBy;
         selectedUser.LastModifiedDate = DateTime.Now;
 
+        
         //get user roles
         var userRoles = await _dbContext.UserRoles
                         .Where(u => u.UserId == selectedUser.Id)
@@ -416,6 +416,11 @@ public class UserService : IUserService
         }
 
         return query;
+    }
+
+    public async Task<string> GeneratePasswordResetTokenAsync(User user)
+    {
+        return await _userManager.GeneratePasswordResetTokenAsync(user);
     }
 }
 

@@ -20,8 +20,7 @@
     <script src="~/assets/js/pages/crud/datatables/data-sources/html.js"></script>
     <script>
         // Workaround to fix style of text for showing items .. through ..
-        // Problem related to Boostrap 4 according to issue in link below
-        // https://github.com/dncuug/X.PagedList/issues/127
+        // Problem related to Boostrap 4 according to issue in link below      
         $(document).ready(function () {
         $('ul.pagination > li.disabled > a').addClass('page-link');
         });
@@ -146,11 +145,3 @@
 
     <!--end::Page Scripts-->
 }
-
-@* @if (ViewBag.Title == "اضافة مستخدم")
-{
-    <!--begin::Page Scripts(used by this page)-->
-    <script src="~/assets/js/pages/custom/user/add-user.js"></script>
-    <!--end::Page Scripts-->
-} *@
-<!--end::Page Scripts-->

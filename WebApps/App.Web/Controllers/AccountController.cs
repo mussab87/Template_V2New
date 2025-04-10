@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace App.Web.Controllers;
 public class AccountController : BaseController
@@ -84,6 +85,7 @@ public class AccountController : BaseController
             //Check first login - in case was yes: navigate into change password 
             if ((bool)user.FirstLogin)
             {
+                var token = await _userService.GeneratePasswordResetTokenAsync(user);
                 return RedirectToAction("ResetPassword", new { username = model.Username, expired = true });
             }
 
@@ -144,13 +146,20 @@ public class AccountController : BaseController
 
     #region Reset Password
     [HttpGet]
-    public IActionResult ResetPassword(string username = null, bool expired = false)
+    public async Task<IActionResult> ResetPassword(string username = null, bool expired = false, bool adminResetUserPassword = false)
     {
+        var user = await _userService.FindByNameAsync(username);
+        var token =  await _userService.GeneratePasswordResetTokenAsync(user);
         var model = new ResetPasswordDto
         {
+            Token = token,
             Username = username,
-            IsExpired = expired
+            IsExpired = expired,
+            AdminResetUserPassword = adminResetUserPassword
         };
+
+        if (adminResetUserPassword)
+            model.CurrentPassword = _encryptionService.Encrypt("123456");
         return View(model);
     }
 
@@ -172,27 +181,27 @@ public class AccountController : BaseController
 
         // Validate current password first
         var isCurrentPasswordValid = await _userService.CheckPasswordAsync(user, model.CurrentPassword);
-        if (!isCurrentPasswordValid)
+        if (!isCurrentPasswordValid && !model.AdminResetUserPassword)
         {
             ModelState.AddModelError("CurrentPassword", "كلمة المرور الحالية غير مطابقة");
             return View(model);
         }
 
         // Validate that the new password is different from current            
-        if (model.CurrentPassword == model.NewPassword)
+        if (model.CurrentPassword == model.NewPassword && !model.AdminResetUserPassword)
         {
             ModelState.AddModelError("NewPassword", "كلمة المرور الجديدة يجب ان تكون مختلفة عن القديمة");
             return View(model);
         }
 
         //To Do: check also last 3 password must not be same
-        if (await _userService.IsPasswordInRecentHistoryAsync(user.Id, model.CurrentPassword, model.NewPassword, 3))
+        if (await _userService.IsPasswordInRecentHistoryAsync(user.Id, model.CurrentPassword, model.NewPassword, 3) && !model.AdminResetUserPassword)
         {
             ModelState.AddModelError("NewPassword", "كلمة المرور الجديدة يجب ان تكون مختلفة عن اخر 3 كلمات مرور مستخدمة من قبل");
             return View(model);
         }
         // Change the password
-        var result = await _userService.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
+        var result = await _userService.ChangePasswordAsync(user, model);
 
         if (result.Succeeded)
         {
@@ -213,6 +222,13 @@ public class AccountController : BaseController
             await _userService.UpdateUserAsync(user);
 
             ViewBag.passwordChanged = "true";
+
+            if(model.AdminResetUserPassword)
+            {
+                ModelState.AddModelError("success", "تم تعديل كلمة المرور بنجاح");
+                return View(model);
+            }
+            
             return RedirectToAction("Login");
         }
 

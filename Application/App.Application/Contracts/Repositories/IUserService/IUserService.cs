@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using System.Reflection;
 using System.Security.Claims;
 
 namespace App.Application.Contracts.Repositories.IUserService
@@ -19,7 +18,7 @@ public interface IUserService
     Task<List<UserLoginLog>> GetUserLoginLogAsync(string userId);
     Task<bool> CreateUserLoginLogAsync(UserLoginLogDto userLoginLogDto);
 
-    Task<IdentityResult> ChangePasswordAsync(User user, string currentPassword, string newPassword);
+    Task<IdentityResult> ChangePasswordAsync(User user, ResetPasswordDto resetPasswordDto);
 
     Task<IdentityResult> UpdateUserAsync(UserDto updatedUser);
     Task<IdentityResult> UpdateUserAsync(User updatedUser);
@@ -31,6 +30,8 @@ public interface IUserService
 
     Task<IEnumerable<string>> GetUserRolesAsync(string userId);
     Task<IReadOnlyList<UserDto>> GetAllUsers();
+
+    Task<string> GeneratePasswordResetTokenAsync(User user);
     Task<PaginatedResult<UserDto>> GetPaginatedUsers(
         int pageNumber = 1,
         int pageSize = 10,

@@ -2,12 +2,13 @@
 
 namespace App.Helper.Dto
 { }
-public class ResetPasswordDto
+public class    ResetPasswordDto
 {
     [Display(Name = "اسم المستخدم")]
     public string Username { get; set; }
-
+    public string Token { get; set; }    
     public bool IsExpired { get; set; }
+    public bool AdminResetUserPassword { get; set; }
 
     [Required(ErrorMessage = "حقل اجباري")]
     [DataType(DataType.Password)]

@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using X.PagedList.Extensions;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace App.Web.Controllers;
 
@@ -31,7 +29,7 @@ public class AdminController : BaseController
 
     #endregion
 
-    #region Add New User
+    #region Add Edit New User
     public async Task<IActionResult> AddEditUser(int? actionType, string userId)
     {
         UserDto userDtoModel = null;
@@ -78,13 +76,10 @@ public class AdminController : BaseController
             if (model.ActionType == 0)
             {
                 if (!ModelState.IsValid)
-                {
-                    //return View(model);
                     return PartialView("AddEditUser", model);
-                }
 
                 model.CreatedBy = User.Identity.Name;
-                //get selected role to Add, assign default password th user for first login
+                //get selected role to Add, set default password th user for first login
                 var selectedRole = roles.FirstOrDefault(r => r.Id == model.RoleId);
                 //Add new user
                 await _userService.CreateUser(model, "Aa@123456", selectedRole.Name);
@@ -96,10 +91,7 @@ public class AdminController : BaseController
             if (model.ActionType == 1)
             {
                 if (!ModelState.IsValid)
-                {
-                    //return View(model);
                     return PartialView("AddEditUser", model);
-                }
 
                 model.LastModifiedBy = User.Identity.Name;
                 //update user

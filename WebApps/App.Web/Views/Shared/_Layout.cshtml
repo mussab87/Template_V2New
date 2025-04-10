@@ -213,13 +213,13 @@
                     <div class="navi-link">
                         <div class="symbol symbol-40 bg-light mr-3">
                             <div class="symbol-label">
-                                <span class="svg-icon svg-icon-md svg-icon-success">
-                                    <!--begin::Svg Icon | path:assets/media/svg/icons/General/Notification2.svg-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <span class="svg-icon menu-icon">
+                                    <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Adress-book2.svg-->
+                                    <svg viewBox="0 0 24 24" width="24px" height="24px" version="1.1">
+                                        <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
                                             <rect x="0" y="0" width="24" height="24" />
-                                            <path d="M13.2070325,4 C13.0721672,4.47683179 13,4.97998812 13,5.5 C13,8.53756612 15.4624339,11 18.5,11 C19.0200119,11 19.5231682,10.9278328 20,10.7929675 L20,17 C20,18.6568542 18.6568542,20 17,20 L7,20 C5.34314575,20 4,18.6568542 4,17 L4,7 C4,5.34314575 5.34314575,4 7,4 L13.2070325,4 Z" fill="#000000" />
-                                            <circle fill="#000000" opacity="0.3" cx="18.5" cy="5.5" r="2.5" />
+                                            <path opacity="0.3" fill="#000000" d="M 18 2 L 20 2 C 21.6569 2 23 3.34315 23 5 L 23 19 C 23 20.6569 21.6569 22 20 22 L 18 22 L 18 2 Z" />
+                                            <path fill="#000000" d="M 5 2 L 17 2 C 18.6569 2 20 3.34315 20 5 L 20 19 C 20 20.6569 18.6569 22 17 22 L 5 22 C 4.44772 22 4 21.5523 4 21 L 4 3 C 4 2.44772 4.44772 2 5 2 Z M 12 11 C 13.1046 11 14 10.1046 14 9 C 14 7.89543 13.1046 7 12 7 C 10.8954 7 10 7.89543 10 9 C 10 10.1046 10.8954 11 12 11 Z M 7.00036 16.4995 C 6.98863 16.662 7.26484 17 7.40417 17 C 11.4637 17 14.5228 17 16.5815 17 C 16.9988 17 17.0053 16.6222 16.9988 16.5 C 16.836 13.4332 14.6507 12 11.9907 12 C 9.36773 12 7.2157 13.5166 7.00036 16.4995 Z" />
                                         </g>
                                     </svg>
                                     <!--end::Svg Icon-->
@@ -237,29 +237,27 @@
                 </a>
                 <!--end:Item-->
                 <!--begin::Item-->
-                <a href="custom/apps/user/profile-3.html" class="navi-item">
+                <a asp-controller="Account" asp-action="ResetPassword" asp-route-username="@userName" asp-route-expired="false" asp-route-adminResetUserPassword="false" class="navi-item">
                     <div class="navi-link">
                         <div class="symbol symbol-40 bg-light mr-3">
                             <div class="symbol-label">
-                                <span class="svg-icon svg-icon-md svg-icon-warning">
-                                    <!--begin::Svg Icon | path:assets/media/svg/icons/Shopping/Chart-bar1.svg-->
+                                <span class="svg-icon svg-icon-primary svg-icon-2x">
+                                    <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\legacy\metronic\theme\html\demo2\dist/../src/media/svg/icons\Code\Lock-overturning.svg-->
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <rect x="0" y="0" width="24" height="24" />
-                                            <rect fill="#000000" opacity="0.3" x="12" y="4" width="3" height="13" rx="1.5" />
-                                            <rect fill="#000000" opacity="0.3" x="7" y="9" width="3" height="8" rx="1.5" />
-                                            <path d="M5,19 L20,19 C20.5522847,19 21,19.4477153 21,20 C21,20.5522847 20.5522847,21 20,21 L4,21 C3.44771525,21 3,20.5522847 3,20 L3,4 C3,3.44771525 3.44771525,3 4,3 C4.55228475,3 5,3.44771525 5,4 L5,19 Z" fill="#000000" fill-rule="nonzero" />
-                                            <rect fill="#000000" opacity="0.3" x="17" y="11" width="3" height="6" rx="1.5" />
+                                            <path d="M7.38979581,2.8349582 C8.65216735,2.29743306 10.0413491,2 11.5,2 C17.2989899,2 22,6.70101013 22,12.5 C22,18.2989899 17.2989899,23 11.5,23 C5.70101013,23 1,18.2989899 1,12.5 C1,11.5151324 1.13559454,10.5619345 1.38913364,9.65805651 L3.31481075,10.1982117 C3.10672013,10.940064 3,11.7119264 3,12.5 C3,17.1944204 6.80557963,21 11.5,21 C16.1944204,21 20,17.1944204 20,12.5 C20,7.80557963 16.1944204,4 11.5,4 C10.54876,4 9.62236069,4.15592757 8.74872191,4.45446326 L9.93948308,5.87355717 C10.0088058,5.95617272 10.0495583,6.05898805 10.05566,6.16666224 C10.0712834,6.4423623 9.86044965,6.67852665 9.5847496,6.69415008 L4.71777931,6.96995273 C4.66931162,6.97269931 4.62070229,6.96837279 4.57348157,6.95710938 C4.30487471,6.89303938 4.13906482,6.62335149 4.20313482,6.35474463 L5.33163823,1.62361064 C5.35654118,1.51920756 5.41437908,1.4255891 5.49660017,1.35659741 C5.7081375,1.17909652 6.0235153,1.2066885 6.2010162,1.41822583 L7.38979581,2.8349582 Z" fill="#000000" opacity="0.3" />
+                                            <path d="M14.5,11 C15.0522847,11 15.5,11.4477153 15.5,12 L15.5,15 C15.5,15.5522847 15.0522847,16 14.5,16 L9.5,16 C8.94771525,16 8.5,15.5522847 8.5,15 L8.5,12 C8.5,11.4477153 8.94771525,11 9.5,11 L9.5,10.5 C9.5,9.11928813 10.6192881,8 12,8 C13.3807119,8 14.5,9.11928813 14.5,10.5 L14.5,11 Z M12,9 C11.1715729,9 10.5,9.67157288 10.5,10.5 L10.5,11 L13.5,11 L13.5,10.5 C13.5,9.67157288 12.8284271,9 12,9 Z" fill="#000000" />
                                         </g>
-                                    </svg>
-                                    <!--end::Svg Icon-->
+                                    </svg><!--end::Svg Icon-->
                                 </span>
                             </div>
                         </div>
-                        <div class="navi-text">
+                       
+                            <div class="navi-text">
                             <div class="font-weight-bold">تغيير كلمة المرور</div>
-                            @* <div class="text-muted">Inbox and tasks</div> *@
                         </div>
+                        
                     </div>
                 </a>
                 <!--end:Item-->
