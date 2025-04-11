@@ -1,7 +1,7 @@
-﻿@model PaginatedResult<UserDto>
+﻿@model PaginatedResult<RoleDto>
 @{
-    ViewData["Title"] = "المستخدمين";
-    ViewData["action"] = "GetUsers";
+    ViewData["Title"] = "الصلاحيات";
+    ViewData["action"] = "GetRoles";
 
     ViewData["PageSize"] = Model.PageSize;
     ViewData["SearchString"] = Model.SearchString;
@@ -17,19 +17,19 @@
                 <span class="card-icon">
                     <i class="flaticon2-favourite text-primary"></i>
                 </span>
-                <h3 class="card-label">المستخدمين</h3>
+                <h3 class="card-label">صلاحيات النظام</h3>
             </div>
             <div class="card-toolbar">
                 <!--begin::Button-->
-                <a id="addUserButton" class="btn btn-primary font-weight-bolder">
-                    إضافة مستخدم
+                <a id="addRoleButton" class="btn btn-primary font-weight-bolder">
+                    إضافة صلاحية
                     <i class="la la-plus"></i>
                 </a>
                 <!-- Modal Container -->
-                <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
+                <div class="modal fade" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-xl" role="document">
                         <div id="modalContent">
-                            <partial name="AddEditUser" model="@Model.UserDto" />
+                            <partial name="AddEditRole" model="@Model.RoleDto" />
                         </div>
 
                     </div>
@@ -98,48 +98,28 @@
                 <thead>
                     <tr role="row">
 
-                        <th>الاسم</th>
-                        <th>اسم المستخدم</th>
-                        <th>حالة الحساب</th>
-                        <th>حذف الحساب</th>
+                        <th>اسم الصلاحية</th>
+                        <th>اسم الصلاحية عربي</th>
+                        <th>وصف الصلاحية</th>
+                        <th>ادخال بواسطة</th>
+                        <th>تاريخ الانشاء</th>
+                        <th>حالة الحذف</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     @if (Model.Items.Any())
                     {
-                        foreach (var user in Model.Items)
+                        foreach (var role in Model.Items)
                         {
                             <tr>
-                                <td>@user.FirstName @user.LastName</td>
-                                <td>@user.Username</td>
+                                <td>@role.Name</td>
+                                <td>@role.RoleNameArabic</td>
+                                <td>@role.Description</td>
+                                <td>@role.CreatedById</td>
+                                <td>@role.CreatedDate.Value.ToString("yyyy/MM/dd")</td>
                                 <td>
-                                    @{
-                                        if ((bool)user.IsActive)
-                                        {
-                                            <span style="width: 137px;">
-                                                <span class="label label-success label-dot mr-2">
-                                                </span>
-                                                <span class="font-weight-bold text-success">
-                                                    <b>مفعل</b>
-                                                </span>
-                                            </span>
-                                        }
-                                        else
-                                        {
-                                            <span style="width: 137px;">
-                                                <span class="label label-danger label-dot mr-2">
-                                                </span>
-                                                <span class="font-weight-bold text-danger">
-                                                    <b>غير مفعل</b>
-                                                </span>
-                                            </span>
-
-                                        }
-                                    }
-                                </td>
-                                <td>
-                                    @if (user.IsDeleted == true)
+                                    @if (role.IsDeleted == true)
                                     {
                                         <span style="width: 137px;">
                                             <span class="label font-weight-bold label-lg  label-light-danger label-inline">
@@ -149,54 +129,30 @@
                                     }
                                 </td>
                                 <td>
-                                    <div class="dropdown dropdown-inline">
-
-                                        <a href="#" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon" data-toggle="dropdown">
-
-                                            <i class="la la-cog"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-
-                                            <ul class="nav nav-hoverable flex-column" style="margin-right:-30px">
-
-                                                <li class="nav-item">
-                                                    <a asp-controller="Account" asp-action="ResetPassword" asp-route-username="@user.Username" asp-route-expired="false" asp-route-adminResetUserPassword="true" class="nav-link">
-                                                        <i class="nav-icon la la-edit"></i>
-                                                        <span class="nav-text">
-                                                            تعديل كلمة المرور
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                @* <li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-leaf"></i><span class="nav-text">تفعيل المستخدم</span></a></li> *@
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#">
-                                                        <i class="nav-icon la la-print">
-
-                                                        </i>
-                                                        <span class="nav-text">طباعة</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <a id="updateUserButton" onclick="updateUserButton('@user.Id')" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon" title="تعديل المستخدم">
+                                    <a id="updateRoleButton" onclick="updateRoleButton('@role.Id')" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon" title="تعديل الصلاحية">
 
                                         <i class="la la-edit"></i>
                                     </a>
-                                    @if (user.IsDeleted == true)
+                                    @if (role.IsDeleted == true)
                                     {
-                                        <a href="#" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon" title="حذف المستخدم">
+                                        <a href="#" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon" title="حذف الصلاحية">
 
                                             <i class="la la-trash"></i>
                                         </a>
                                     }
                                     else
                                     {
-                                        <a onclick="deleteUserButton('@user.Id')" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon" title="حذف المستخدم">
+                                        <a onclick="deleteRoleButton('@role.Id')" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon" title="حذف الصلاحية">
 
                                             <i class="la la-trash"></i>
                                         </a>
                                     }
+
+                                    <a id="addUpdateRolePermission" onclick="addUpdateRolePermissionButton('@role.Id')" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon" title="صلاحيات الشاشات">
+
+                                        <i class="flaticon2-document">
+                                        </i>
+                                    </a>
                                 </td>
                             </tr>
                         }

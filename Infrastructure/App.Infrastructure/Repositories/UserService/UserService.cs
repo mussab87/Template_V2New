@@ -163,11 +163,11 @@ public class UserService : IUserService
         selectedUser.LastNameArabic = updatedUser.LastNameArabic;
         selectedUser.Email = updatedUser.Email;
         selectedUser.IsActive = (bool)updatedUser.IsDeleted ? false : updatedUser.IsActive;
-        selectedUser.IsDeleted =  updatedUser.IsDeleted;
+        selectedUser.IsDeleted = updatedUser.IsDeleted;
         selectedUser.LastModifiedBy = updatedUser.LastModifiedBy;
         selectedUser.LastModifiedDate = DateTime.Now;
 
-        
+
         //get user roles
         var userRoles = await _dbContext.UserRoles
                         .Where(u => u.UserId == selectedUser.Id)
@@ -350,32 +350,15 @@ public class UserService : IUserService
         // Apply sorting
         usersQuery = ApplySorting(usersQuery, sortColumn, sortDirection);
 
-        // Apply pagination
-        var pagedUsers = await usersQuery
-            .Skip((pageNumber - 1) * pageSize)
-            .Take(pageSize)
-            .ToListAsync();
-
         // Map to DTOs
-        var userDtos = _mapper.Map<List<UserDto>>(pagedUsers);
-        //var userDtos = pagedUsers.Select(user => new UserDto
-        //{
-        //    Id = user.Id,
-        //    Username = user.UserName,
-        //    Email = user.Email,
-        //    PhoneNumber = user.PhoneNumber,
-        //    FirstName = user.FirstName,
-        //    LastName = user.LastName,
-        //    // Map other properties as needed for your datatable
-        //    // These should correspond to the fields in your datatable columns
-        //}).ToList();
-
+        var userDtos = _mapper.Map<List<UserDto>>(usersQuery);
         return new PaginatedResult<UserDto>
         {
             Items = userDtos.ToPagedList<UserDto>(pageNumber, pageSize),
             TotalCount = totalCount,
             PageNumber = pageNumber,
-            PageSize = pageSize
+            PageSize = pageSize,
+            SearchString = searchString
         };
     }
 

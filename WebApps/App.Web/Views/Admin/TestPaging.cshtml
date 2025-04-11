@@ -1,7 +1,11 @@
-﻿@model X.PagedList.IPagedList<CountriesDto>
+﻿@* @model PaginatedResult<CountriesDto> *@
+@model PaginatedResult<CountriesDto>
 @{
     ViewData["Title"] = "المستخدمين";
     ViewData["action"] = "TestPaging";
+
+    ViewData["PageSize"] = Model.PageSize;
+    ViewData["SearchString"] = Model.SearchString;
 }
 
 <!--begin::Container-->
@@ -71,33 +75,7 @@
         </div>
         <div class="card-body">
             <!--begin: Search-->
-            <form asp-action="TestPaging" method="get" id="searchForm">
-
-                <div class="row" dir="rtl" style="height: 65px;margin-bottom: -20px;">
-                    <div class="col-sm-12 col-md-6" style="text-align-last: right">
-                        <div id="kt_datatable_filter" class="dataTables_filter">
-                            <label>
-                                <input type="search" name="searchString" value="@ViewData["CurrentFilter"]" class="form-control form-control-sm" placeholder="Search Here" aria-controls="kt_datatable">
-                            </label>
-                            <input type="submit" value="Search" class="btn btn-primary" />
-                            <a asp-action="TestPaging" class="btn btn-secondary">Clear</a>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 col-md-6" style="text-align-last: left">
-                        <div class="dataTables_length" id="kt_datatable_length">
-                            <label>
-                                <select name="pageSize" id="pageSizeSelector" aria-controls="kt_datatable" class="custom-select custom-select-sm form-control form-control-sm">
-                                    <option value="10" selected="@(ViewData["CurrentPageSize"] != null && (int)ViewData["CurrentPageSize"] == 10)">10</option>
-                                    <option value="25" selected="@(ViewData["CurrentPageSize"] != null && (int)ViewData["CurrentPageSize"] == 25)">25</option>
-                                    <option value="50" selected="@(ViewData["CurrentPageSize"] != null && (int)ViewData["CurrentPageSize"] == 50)">50</option>
-                                    <option value="100" selected="@(ViewData["CurrentPageSize"] != null && (int)ViewData["CurrentPageSize"] == 100)">100</option>
-                                </select>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </form>
+            <partial name="_PagedListSearch" />
             <!--end: Search-->
             <!--begin: Datatable-->
             <table class="table table-bordered table-hover table-checkable" id="kt_datatable" style="margin-top: 13px !important">
@@ -111,9 +89,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if (Model.Any())
+                    @if (Model.Items.Any())
                     {
-                        foreach (var user in Model)
+                        foreach (var user in Model.Items)
                         {
                             <tr>
                                 <td>@user.Id</td>
@@ -157,7 +135,7 @@
             </table>
             <!--end: Datatable-->
 
-            <partial name="_PagedListPager" model="Model" />
+            <partial name="_PagedListPagerPartial" model="Model" />
         </div>
     </div>
 

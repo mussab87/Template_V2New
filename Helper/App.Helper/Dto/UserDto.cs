@@ -48,7 +48,7 @@ public class UserDto
     [Required(ErrorMessage = "حقل إجباري")]
     public bool? IsActive { get; set; } = true;
 
-    [Display(Name = "حالة الحذف:")]
+    [Display(Name = "حذف المستخدم:")]
     [Required(ErrorMessage = "حقل إجباري")]
     public bool? IsDeleted { get; set; } = false;
 

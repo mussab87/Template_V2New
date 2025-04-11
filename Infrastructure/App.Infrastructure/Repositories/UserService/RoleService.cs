@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 using System.Security.Claims;
+using X.PagedList.Extensions;
 
 namespace App.Infrastructure.Repositories.UserService
 { }
@@ -8,11 +11,13 @@ public class RoleService : IRoleService
 {
     private readonly RoleManager<Role> _roleManager;
     private readonly AppDbContext _dbContext;
+    private readonly IMapper _mapper;
 
-    public RoleService(RoleManager<Role> roleManager, AppDbContext dbContext)
+    public RoleService(RoleManager<Role> roleManager, AppDbContext dbContext, IMapper mapper)
     {
         _roleManager = roleManager;
         _dbContext = dbContext;
+        _mapper = mapper;
     }
 
     public async Task<Role?> FindByNameAsync(string roleName)
@@ -31,8 +36,11 @@ public class RoleService : IRoleService
         {
             Id = role.Id,
             Name = role.Name,
-            RoleNameArabic = role.Name,
-            CreatedById = role.CreatedById
+            RoleNameArabic = role.RoleNameArabic,
+            Description = role.Description,
+            IsDeleted = role.IsDeleted,
+            CreatedById = role.CreatedById,
+            CreatedDate = DateTime.Now
         };
         return await _roleManager.CreateAsync(newRole);
     }
@@ -118,6 +126,104 @@ public class RoleService : IRoleService
         }
 
         return claims;
+    }
+
+    public async Task<PaginatedResult<RoleDto>> GetPaginatedRoles(
+    int pageNumber = 1,
+    int pageSize = 10,
+    string searchString = "",
+    int sortColumn = 0,
+    string sortDirection = "asc")
+    {
+        // Start with all users
+        IQueryable<Role> roleQuery = _roleManager.Roles.AsNoTracking();
+
+        // Apply filtering if search term is provided
+        if (!string.IsNullOrWhiteSpace(searchString))
+        {
+            searchString = searchString.ToLower();
+            roleQuery = roleQuery.Where(u =>
+                u.Name.ToLower().Contains(searchString) ||
+                u.RoleNameArabic.ToLower().Contains(searchString) ||
+                u.Description.Contains(searchString)
+            );
+        }
+
+        // Get total count before pagination
+        var totalCount = await roleQuery.CountAsync();
+
+        // Apply sorting
+        roleQuery = ApplySorting(roleQuery, sortColumn, sortDirection);
+
+        // Map to DTOs
+        var roleDtos = _mapper.Map<List<RoleDto>>(roleQuery);
+        return new PaginatedResult<RoleDto>
+        {
+            Items = roleDtos.ToPagedList<RoleDto>(pageNumber, pageSize),
+            TotalCount = totalCount,
+            PageNumber = pageNumber,
+            PageSize = pageSize,
+            SearchString = searchString
+        };
+    }
+
+    private IQueryable<Role> ApplySorting(
+        IQueryable<Role> query,
+        int sortColumn,
+        string sortDirection)
+    {
+        // Map column index to property name
+        var columnMap = new Dictionary<int, Expression<Func<Role, object>>>
+    {
+        { 0, u => u.Id },
+        { 1, u => u.Name },
+        { 2, u => u.RoleNameArabic },
+        { 3, u => u.Description },
+        { 4, u => u.CreatedDate }
+        // Add more mappings according to your column structure
+    };
+
+        // Get the property expression based on column index
+        if (columnMap.TryGetValue(sortColumn, out var sortProperty))
+        {
+            // Apply sorting
+            if (sortDirection.ToLower() == "asc")
+            {
+                query = query.OrderBy(sortProperty);
+            }
+            else
+            {
+                query = query.OrderByDescending(sortProperty);
+            }
+        }
+        else
+        {
+            // Default sorting if column not found
+            query = query.OrderByDescending(u => u.CreatedDate);
+        }
+
+        return query;
+    }
+
+    public async Task<Role> FindByIdAsync(string Id)
+    {
+        return await _roleManager.FindByIdAsync(Id);
+    }
+
+    public async Task<IdentityResult> UpdateRoleAsync(RoleDto role)
+    {
+        var existRole = await _roleManager.FindByNameAsync(role.Name);
+        if (existRole == null)
+            return IdentityResult.Failed(new IdentityError { Description = "Role already exists." });
+
+        existRole.Name = role.Name;
+        existRole.RoleNameArabic = role.RoleNameArabic;
+        existRole.Description = role.Description;
+        existRole.IsDeleted = role.IsDeleted;
+        existRole.LastModifiedById = role.CreatedById;
+        existRole.LastModifiedDate = DateTime.Now;
+
+        return await _roleManager.UpdateAsync(existRole);
     }
 }
 

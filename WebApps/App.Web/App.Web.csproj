@@ -36,4 +36,8 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="X.PagedList.Mvc.Core" Version="10.5.7" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\media\loading\" />
+  </ItemGroup>
 </Project>

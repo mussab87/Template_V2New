@@ -1,0 +1,129 @@
+﻿<script src="~/assets/js/pages/widgets.js"></script>
+<script src="~/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+<script src="~/assets/js/pages/crud/datatables/data-sources/html.js"></script>
+
+<script>
+    // Workaround to fix style of text for showing items .. through ..
+    // Problem related to Boostrap 4 according to issue in link below
+    $(document).ready(function () {
+    $('ul.pagination > li.disabled > a').addClass('page-link');
+    });
+    document.getElementById('pageSizeSelector').addEventListener('change', function() {
+    document.getElementById('searchForm').submit();
+    });
+
+    $('#roleModal').on('submit', 'form', function(e) {
+        e.preventDefault(); // Prevent default form submission
+        debugger
+        $.ajax({
+            url: this.action,
+            type: this.method,
+            data: $(this).serialize(),
+            success: function(result) {
+                // Update just the modal content
+                debugger
+                if(result.success){
+                    window.location.reload();
+                    // Show success notification
+                toastr.success(result.data);
+                }
+                else{
+                    $('#roleModal .modal-content').empty().html(result);
+                    $('#roleModal .modal-content').html(result);
+                }
+            }
+        });
+    });
+        $(function() {
+        // Load partial view into modal when Add User button is clicked
+        $("#addRoleButton").click(function() {
+
+            $.ajax({
+                url: '@Url.Action("AddEditRole", "Admin", new { actionType = (int)ActionTypeEnum.Add })',
+                type: 'GET',
+                success: function(response) {
+                    $('#modalContent').html(response);
+                    $('#roleModal').modal('show');
+                    $("#exampleModalLabel").text("إضافة صلاحية");
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        });
+    });
+
+    function updateRoleButton(selectedRoleId){
+
+            $.ajax({
+                url: '@Url.Action("AddEditRole", "Admin", new { actionType = (int)ActionTypeEnum.Update })' + '&roleId=' + selectedRoleId,
+                type: 'GET',
+                success: function(response) {
+                    $('#modalContent').html(response);
+                    $('#roleModal').modal('show');
+                    $("#exampleModalLabel").text("تعديل الصلاحية");
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+    }
+
+    function deleteRoleButton(selectedRoleId){
+        debugger;
+                   Swal.fire({
+            text: "هل انت متأكد من حذف هذه الصلاحية",
+            icon: "info",
+            showCancelButton: true,
+            buttonsStyling: false,
+            confirmButtonText: "نعم ،احذف الصلاحية",
+            cancelButtonText: "لا، الغاء",
+            customClass: {
+                confirmButton: "btn font-weight-bold btn-success",
+                cancelButton: "btn font-weight-bold btn-warning"
+            }
+        }).then(function (result) {
+            if (result.value) {
+               // Submit form
+               $.ajax({
+                url: '@Url.Action("DeleteRole", "Admin")',
+                type: 'POST',
+                data: { roleId: selectedRoleId },
+                success: function(response) {
+                    if(response.success)
+                    {
+                        Swal.fire({
+                    text: response.data,
+                    icon: "success",
+                    buttonsStyling: false,
+                    confirmButtonText: "اغلاق",
+                    customClass: {
+                        confirmButton: "btn font-weight-bold btn-primary",
+                    }
+                }).then(function (result) {
+                window.location.reload();
+                });
+
+                    }
+                    else{
+                        toastr.success(response.data);
+                    }
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+            } else if (result.dismiss === 'cancel') {
+                Swal.fire({
+                    text: "لم يتم حفظ التعديلات",
+                    icon: "error",
+                    buttonsStyling: false,
+                    confirmButtonText: "اغلاق",
+                    customClass: {
+                        confirmButton: "btn font-weight-bold btn-primary",
+                    }
+                });
+            }
+        });
+    }
+</script>

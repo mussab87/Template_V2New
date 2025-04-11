@@ -11305,7 +11305,8 @@ button.bg-white:focus {
 
 .pb-8,
 .py-8 {
-    padding-bottom: 2rem !important;
+    padding-bottom: 0rem !important;
+    margin-top: -20px
 }
 
 .pl-8,
@@ -59048,7 +59049,7 @@ button {
 
 .btn.btn-primary {
     color: #FFFFFF;
-    background-color: #6993FF;
+    background-color: #1BC5BD !important;
     border-color: #6993FF;
 }
 
@@ -59073,7 +59074,7 @@ button {
 
     .btn.btn-primary:hover:not(.btn-text):not(:disabled):not(.disabled), .btn.btn-primary:focus:not(.btn-text), .btn.btn-primary.focus:not(.btn-text) {
         color: #FFFFFF;
-        background-color: #4A7DFF;
+        background-color: #1BC5BD !important;
         border-color: #4A7DFF;
     }
 
@@ -59273,7 +59274,7 @@ button {
 
     .btn.btn-light-primary:hover:not(.btn-text):not(:disabled):not(.disabled), .btn.btn-light-primary:focus:not(.btn-text), .btn.btn-light-primary.focus:not(.btn-text) {
         color: #FFFFFF;
-        background-color: #6993FF;
+        background-color: #1BC5BD !important;
         border-color: transparent;
     }
 
@@ -59729,19 +59730,19 @@ button {
     }
 
 .btn.btn-hover-primary:not(:disabled):not(.disabled):active:not(.btn-text), .btn.btn-hover-primary:not(:disabled):not(.disabled).active, .show > .btn.btn-hover-primary.dropdown-toggle, .show .btn.btn-hover-primary.btn-dropdown {
-    color: #FFFFFF !important;
-    background-color: #6993FF !important;
-    border-color: #6993FF !important;
+    color: #1BC5BD !important;
+    background-color: #1BC5BD !important;
+    border-color: #1BC5BD !important;
 }
 
     .btn.btn-hover-primary:not(:disabled):not(.disabled):active:not(.btn-text) i, .btn.btn-hover-primary:not(:disabled):not(.disabled).active i, .show > .btn.btn-hover-primary.dropdown-toggle i, .show .btn.btn-hover-primary.btn-dropdown i {
-        color: #FFFFFF !important;
+        color: #1BC5BD !important;
     }
 
     .btn.btn-hover-primary:not(:disabled):not(.disabled):active:not(.btn-text) .svg-icon svg g [fill], .btn.btn-hover-primary:not(:disabled):not(.disabled).active .svg-icon svg g [fill], .show > .btn.btn-hover-primary.dropdown-toggle .svg-icon svg g [fill], .show .btn.btn-hover-primary.btn-dropdown .svg-icon svg g [fill] {
         -webkit-transition: fill 0.3s ease;
         transition: fill 0.3s ease;
-        fill: #FFFFFF !important;
+        fill: #1BC5BD !important;
     }
 
     .btn.btn-hover-primary:not(:disabled):not(.disabled):active:not(.btn-text) .svg-icon svg:hover g [fill], .btn.btn-hover-primary:not(:disabled):not(.disabled).active .svg-icon svg:hover g [fill], .show > .btn.btn-hover-primary.dropdown-toggle .svg-icon svg:hover g [fill], .show .btn.btn-hover-primary.btn-dropdown .svg-icon svg:hover g [fill] {
@@ -59750,7 +59751,7 @@ button {
     }
 
     .btn.btn-hover-primary:not(:disabled):not(.disabled):active:not(.btn-text).dropdown-toggle:after, .btn.btn-hover-primary:not(:disabled):not(.disabled).active.dropdown-toggle:after, .show > .btn.btn-hover-primary.dropdown-toggle.dropdown-toggle:after, .show .btn.btn-hover-primary.btn-dropdown.dropdown-toggle:after {
-        color: #FFFFFF !important;
+        color: #1BC5BD !important;
     }
 
 .btn.btn-hover-primary.btn-clean {
@@ -59763,7 +59764,7 @@ button {
 }
 
 .btn.btn-hover-bg-primary:not(:disabled):not(.disabled):active:not(.btn-text), .btn.btn-hover-bg-primary:not(:disabled):not(.disabled).active, .show > .btn.btn-hover-bg-primary.dropdown-toggle, .show .btn.btn-hover-bg-primary.btn-dropdown {
-    background-color: #6993FF !important;
+    background-color: #1BC5BD !important;
     border-color: #6993FF !important;
 }
 
@@ -65951,7 +65952,7 @@ button {
     }
 
 .btn.btn-icon-primary i {
-    color: #6993FF;
+    color: #1BC5BD !important;
 }
 
 .btn.btn-icon-primary .svg-icon svg g [fill] {
@@ -69122,9 +69123,9 @@ code {
 }
 
     .modal .modal-header .modal-title {
-        font-weight: 500;
-        font-size: 1.3rem;
-        color: #181C32;
+        font-weight: 800;
+        font-size: 25px;
+        color: #6993FF;
     }
 
         .modal .modal-header .modal-title small {

@@ -1,8 +1,4 @@
-﻿@* @{
-    var user = await _userService.FindByNameAsync(User.Identity.Name);
-} *@
-
-@if (!User.Identity.IsAuthenticated)
+﻿@if (!User.Identity.IsAuthenticated)
 {
     <script>
         window.location.href = '@Url.Action("Login", "Account", new { area = "", returnUrl = Context.Request.Path })';
@@ -132,6 +128,9 @@
                     </div>
                     <!--end::Subheader-->
                     <!--begin::Entry-->
+                    <!--begin::Loading-->
+                    <!--end::Loading-->
+                    <partial name="_Loading" />
                     @RenderBody()
                     <!--end::Entry-->
                 </div>
@@ -253,11 +252,11 @@
                                 </span>
                             </div>
                         </div>
-                       
-                            <div class="navi-text">
+
+                        <div class="navi-text">
                             <div class="font-weight-bold">تغيير كلمة المرور</div>
                         </div>
-                        
+
                     </div>
                 </a>
                 <!--end:Item-->
@@ -320,8 +319,9 @@
     </div>
     <!--end::Scrolltop-->
     <!--begin::script>
-            <partial name="_ScriptPartial" />
+         <partial name="_ScriptPartial" />
         <!--end::script>
+
     </body>
-    <!--end::Body-->
+        <!--end::Body-->
 </html>

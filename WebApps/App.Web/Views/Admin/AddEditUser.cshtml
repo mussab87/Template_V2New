@@ -5,7 +5,7 @@
 <form id="addUserForm" asp-controller="Admin" asp-action="AddEditUser" method="post" data-ajax="true" data-ajax-method="post" data-ajax-update="#resultMessage" data-ajax-success="onUserAdded">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+            <h2 class="modal-title" id="exampleModalLabel"></h2>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <i aria-hidden="true" class="ki ki-close"></i>
             </button>
@@ -134,8 +134,8 @@
                                                                         <div class="col-xl-9 col-lg-9">
                                                                             <select asp-for="IsDeleted" class="form-control form-control-lg form-control-solid">
                                                                                 <option value="">اختر من القائمة</option>
-                                                                                <option value="true">حساب محذوف</option>
-                                                                                <option value="false">الغاء الحذف</option>
+                                                                                <option value="true">نعم</option>
+                                                                                <option value="false">لا</option>
                                                                             </select>
                                                                             <span asp-validation-for="IsDeleted" class="alert-danger"></span>
                                                                         </div>
@@ -208,7 +208,7 @@
             <!--end::Container-->
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">رجوع</button>
             <button type="submit" class="btn btn-success font-weight-bolder">
                 حفظ
             </button>
