@@ -85309,13 +85309,14 @@ code {
 
     .bootstrap-datetimepicker-widget.dropdown-menu {
         border: 0;
-        width: 265px !important;
+        width: 300px !important;
         padding: 0;
     }
 
     .bootstrap-datetimepicker-widget .datepicker {
         width: 100%;
         padding: 10px;
+        margin-right: -20px;
     }
 
         .bootstrap-datetimepicker-widget .datepicker table {
