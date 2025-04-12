@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using IdentityServer4.EntityFramework.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Security.Claims;
 using X.PagedList.Extensions;
 
 namespace App.Web.Controllers;
 
-//[PermissionAuthorize]
+[PermissionAuthorize]
 public class AdminController : BaseController
 {
     private readonly ILogger<AdminController> _logger;
@@ -190,7 +193,6 @@ public class AdminController : BaseController
                     return PartialView("AddEditRole", model);
 
                 model.CreatedById = User.Identity.Name;
-
                 //Add new role
                 await _roleService.CreateRoleAsync(model);
 
@@ -240,6 +242,38 @@ public class AdminController : BaseController
         {
             ModelState.AddModelError("", "حدث خطأ اثناء حفظ البيانات !" + ex.ToString());
             return Json(new { success = false, data = "حدث خطأ اثناء حفظ البانات، فضلا تواصل مع الدعم الفني" + ex.ToString() });
+        }
+    }
+    #endregion
+
+    #region Add Claims (permossions) into Role
+    public async Task<IActionResult> AddPermissions(string roleId)
+    {
+        try
+        {
+            return PartialView("AddPermissions", await _roleService.GetClaimsAddPermissionseAsync(roleId));
+        }
+        catch (Exception ex)
+        {
+            return Json(new { success = false, data = "حدث خطأ اثناء حفظ البانات، فضلا تواصل مع الدعم الفني" + ex.ToString() });
+        }
+
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AddPermissions(RoleClaimsDto model)
+    {
+        try
+        {
+            await _roleService.AddClaimsToRole(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, model);
+
+            TempData["Success"] = "تم حفظ البيانات بنجاح";
+            return PartialView("AddPermissions", model);
+        }
+        catch (Exception ex)
+        {
+            ModelState.AddModelError("", "حدث خطأ اثناء حفظ البيانات !" + ex.ToString());
+            return PartialView("AddPermissions", model);
         }
     }
     #endregion

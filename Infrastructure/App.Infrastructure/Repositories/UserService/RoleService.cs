@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Security.Claims;
 using X.PagedList.Extensions;
@@ -82,6 +84,56 @@ public class RoleService : IRoleService
         }
     }
 
+    public async Task AddClaimsToRole(string userId, RoleClaimsDto roleClaim)
+    {
+        //Get role
+        var role = await FindByIdAsync(roleClaim.RoleId);
+        //Get all the role claims that exists
+        var claims = await _dbContext.RoleClaims.Where(rc => rc.RoleId == roleClaim.RoleId).ToListAsync();
+        var roleClaims = new List<RoleClaim>();
+
+        //remove unselected claims first
+        var unselectClaims = roleClaim.Cliams.Where(rc => rc.IsSelected == false).ToList();
+
+        foreach (var clm in roleClaim.Cliams)
+        {
+            //check claim not selected
+            if (claims.Count > 0)
+            {
+                //check claim exist in role claim - if exist remove it
+                if (!clm.IsSelected)
+                {
+                    if (claims.Exists(rc => rc.ClaimValue == clm.ClaimValue))
+                    {
+                        var claimToRemove = claims.FirstOrDefault(rc => rc.ClaimValue == clm.ClaimValue);
+                        _dbContext.Remove(claimToRemove);
+                        _dbContext.SaveChangesAsync();
+                    }
+                }
+            }
+
+            if (clm.IsSelected && !claims.Exists(rc => rc.ClaimValue == clm.ClaimValue))
+            {
+                var roleClaimToAdd = new RoleClaim
+                {
+                    RoleId = role.Id,
+                    ClaimType = clm.ClaimValue,
+                    ClaimValue = clm.ClaimValue,
+                    Description = clm.Description,
+                    CreatedById = userId
+                };
+                roleClaims.Add(roleClaimToAdd);
+            }
+
+        }
+        // Add list of claims to role
+        if (roleClaims.Count > 0)
+        {
+            await _dbContext.RoleClaims.AddRangeAsync(roleClaims);
+            await _dbContext.SaveChangesAsync(userId);
+        }
+    }
+
     public async Task<bool> RoleExistsAsync(string roleName)
     {
         return await _roleManager.RoleExistsAsync(roleName);
@@ -103,6 +155,38 @@ public class RoleService : IRoleService
         return roleClaims
             .Select(rc => new Claim(rc.ClaimType, rc.ClaimValue))
             .ToList();
+    }
+
+    public async Task<IEnumerable<Claim>> GetRoleClaimsByIdAsync(string Id)
+    {
+        // First get the role ID
+        var role = await FindByIdAsync(Id);
+
+        var roleId = role?.Id;
+
+        if (roleId == null)
+            return new List<Claim>();
+
+        // Then get claims for this role
+        var roleClaims = await _dbContext.RoleClaims.AsNoTracking().Where(r => r.RoleId == roleId).ToListAsync();
+
+        return roleClaims
+            .Select(rc => new Claim(rc.ClaimType, rc.ClaimValue, rc.ClaimNameArabic))
+            .ToList();
+    }
+
+    public async Task<RolePermission> GetClaimsByValueAsync(string value)
+    {
+        var claim = await _dbContext.RoleClaims.AsNoTracking().Where(r => r.ClaimValue == value).FirstOrDefaultAsync();
+        if (claim == null)
+            return new RolePermission();
+        RolePermission rolePermission = new()
+        {
+            ClaimType = claim.ClaimType,
+            ClaimValue = claim.ClaimValue,
+            ClaimNameArabic = claim.ClaimNameArabic,
+        };
+        return rolePermission;
     }
 
     public async Task<IEnumerable<Claim>> GetAllUserClaimsAsync(string userId)
@@ -224,6 +308,42 @@ public class RoleService : IRoleService
         existRole.LastModifiedDate = DateTime.Now;
 
         return await _roleManager.UpdateAsync(existRole);
+    }
+
+    public async Task<RoleClaimsDto> GetClaimsAddPermissionseAsync(string roleId)
+    {
+        var role = await FindByIdAsync(roleId);
+        //get all exist role claims (permissions)
+        var existRoleClaims = await GetRoleClaimsByIdAsync(roleId);
+
+        var model = new RoleClaimsDto
+        {
+            RoleId = roleId,
+            RoleName = role.Name,
+            RoleNameArabic = role.RoleNameArabic
+        };
+
+        // Loop through each claim we have in our application
+        foreach (Claim claim in GetAllClaimsPermissions.GetAllControllerActionsUpdated())
+        {
+            var roleClaim = new RolePermission
+            {
+                ClaimType = claim.Type,
+                ClaimValue = claim.Value
+            };
+            //get claim arabic value if changed in db
+            var claimInDb = await GetClaimsByValueAsync(claim.Value);
+            roleClaim.ClaimNameArabic = claimInDb.ClaimNameArabic;
+
+            // If the role has the claim, set IsSelected property to true, so the checkbox
+            // next to the claim is checked on the UI
+            if (existRoleClaims.Any(c => c.Value == claim.Value))
+                roleClaim.IsSelected = true;
+
+            model.Cliams.Add(roleClaim);
+        }
+
+        return model;
     }
 }
 

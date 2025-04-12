@@ -15,7 +15,15 @@ public interface IRoleService
     Task<bool> RoleExistsAsync(string roleName);
     Task AddClaimsToRole(User user, Role role, List<Claim> claims);
 
+    Task AddClaimsToRole(string userId, RoleClaimsDto roleClaim);
+
     Task<IEnumerable<Claim>> GetRoleClaimsAsync(string roleName);
+
+    Task<IEnumerable<Claim>> GetRoleClaimsByIdAsync(string Id);
+
+    Task<RolePermission> GetClaimsByValueAsync(string value);
+
+    Task<RoleClaimsDto> GetClaimsAddPermissionseAsync(string roleId);
 
     Task<IEnumerable<Claim>> GetAllUserClaimsAsync(string userId);
 

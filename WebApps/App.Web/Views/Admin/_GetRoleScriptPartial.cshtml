@@ -126,4 +126,20 @@
             }
         });
     }
+
+    function addRolePermissionButton(selectedRoleId)
+    {
+        debugger
+        $.ajax({
+                url: '@Url.Action("AddPermissions", "Admin")' + "?roleId=" + selectedRoleId,
+                type: 'GET',
+                success: function(response) {
+                    $('#modalContent').html(response);
+                    $('#roleModal').modal('show');
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+    }
 </script>
