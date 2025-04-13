@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="demo2\src\plugins\bootstrap-session-timeout\**" />
+    <Content Remove="demo2\src\plugins\bootstrap-session-timeout\**" />
+    <EmbeddedResource Remove="demo2\src\plugins\bootstrap-session-timeout\**" />
+    <None Remove="demo2\src\plugins\bootstrap-session-timeout\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Application\App.Application\App.Application.csproj" />
     <ProjectReference Include="..\..\Helper\App.Helper\App.Helper.csproj" />
     <ProjectReference Include="..\..\Infrastructure\App.Infrastructure\App.Infrastructure.csproj" />

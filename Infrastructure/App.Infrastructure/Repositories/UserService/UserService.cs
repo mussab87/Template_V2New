@@ -172,12 +172,21 @@ public class UserService : IUserService
         var userRoles = await _dbContext.UserRoles
                         .Where(u => u.UserId == selectedUser.Id)
                         .ToListAsync();
-        if (userRoles?.Exists(r => r.RoleId == updatedUser.RoleId) == false)
+        //delete exist user role
+        if (userRoles.Count > 0)
         {
-            var role = userRoles.Where(r => r.RoleId != updatedUser.RoleId).FirstOrDefault();
-            var roleToAdd = _dbContext.Roles.FirstOrDefault(r => r.Id == role.RoleId);
-            await _userManager.AddToRoleAsync(selectedUser, roleToAdd.Name);
+            foreach (var role in userRoles) 
+            {
+                var roleToRemove = _dbContext.Roles.FirstOrDefault(r => r.Id == role.RoleId);
+               await _userManager.RemoveFromRoleAsync(selectedUser, roleToRemove.Name);
+            }            
         }
+        //if (userRoles?.Exists(r => r.RoleId == updatedUser.RoleId) == false)
+        //{
+            //var role = userRoles.Where(r => r.RoleId != updatedUser.RoleId).FirstOrDefault();
+            var roleToAdd = _dbContext.Roles.FirstOrDefault(r => r.Id == updatedUser.RoleId);
+            await _userManager.AddToRoleAsync(selectedUser, roleToAdd.Name);
+        //}
 
         return await _userManager.UpdateAsync(selectedUser);
     }
