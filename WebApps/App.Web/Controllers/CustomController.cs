@@ -10,8 +10,12 @@ public class CustomController : BaseController
     public CustomController(IServiceProvider serviceProvider, ILogger<AdminController> logger) : base(serviceProvider)
     {
         _logger = logger;
-    }    
+    }
 
+    /// <summary>
+    /// Bootstrap Features
+    /// </summary>
+    /// <returns></returns>
     #region HijriDate  
     public IActionResult HijriDate()
     {
@@ -82,5 +86,11 @@ public class CustomController : BaseController
         return View();
     }
     #endregion
+
+
+    /// <summary>
+    /// Custom Features
+    /// </summary>
+    /// <returns></returns>
 
 }
