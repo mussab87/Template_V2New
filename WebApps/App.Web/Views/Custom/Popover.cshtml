@@ -1,0 +1,260 @@
+﻿@{
+    ViewBag.Title = "Typography";
+    Layout = "_LayoutFeatures";
+}
+
+<!--begin::Container-->
+<div class="container">	
+	<!--begin::Row-->
+	<div class="row">
+		<div class="col-xl-6">
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Base Example</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>
+							Initialize all popovers on a page by adding the
+							<code>data-toggle</code>attribute.
+						</p>
+						<div class="example-preview">
+							<button type="button" class="btn btn-primary" data-toggle="popover" data-trigger="click" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+						</div>
+						<div class="example-code">
+							<ul class="example-nav nav nav-tabs nav-tabs-line nav-tabs-line-2x nav-tabs-primary" id="myTab" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active" data-toggle="tab" href="#example_code_1_html">HTML</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" data-toggle="tab" href="#example_code_1_js">JS</a>
+								</li>
+							</ul>
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="tab-content">
+								<div class="tab-pane active" id="example_code_1_html" role="tabpanel">
+									<div class="example-highlight">
+										<pre>
+<code class="language-html">
+								&lt;button type="button" class="btn btn-primary" data-toggle="popover" data-trigger="click" title="Example content"&gt;
+									Click to toggle popover
+								&lt;/button&gt;</code>
+</pre>
+									</div>
+								</div>
+								<div class="tab-pane" id="example_code_1_js" role="tabpanel">
+									<div class="example-highlight">
+										<pre>
+<code class="language-javascript">
+								$(function () {
+								  $('[data-toggle="popover"]').popover()
+								})
+								</code>
+</pre>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Directions</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>
+							Four options are available:
+							<strong>top</strong>,
+							<strong>right</strong>,
+							<strong>bottom</strong>, and
+							<strong>left</strong>aligned.
+						</p>
+						<div class="example-preview">
+							<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Example content">Popover on top</button>
+							<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right" data-content="Example content">Popover on right</button>
+							<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Example content">Popover on bottom</button>
+							<button type="button" class="btn btn-secondary mt-1" data-container="body" data-toggle="popover" data-placement="left" data-content="Example content">Popover on left</button>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Example content"&gt;
+							Popover on top
+						&lt;/button&gt;
+
+						&lt;button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right" data-content="Example content"&gt;
+							Popover on right
+						&lt;/button&gt;
+
+						&lt;button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Example content"&gt;
+							Popover on bottom
+						&lt;/button&gt;
+
+						&lt;button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="left" data-content="Example content"&gt;
+							Popover on left
+						&lt;/button&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Disabled Elements</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>Elements with the disabled attribute aren’t interactive, meaning users cannot hover or click them to trigger a popover (or tooltip).</p>
+						<div class="example-preview">
+							<span class="d-inline-block" data-toggle="popover" data-content="Disabled popover">
+								<button class="btn btn-primary" style="pointer-events: none;" type="button" disabled="disabled">Disabled button</button>
+							</span>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;span class="d-inline-block" data-toggle="popover" data-content="Disabled popover"&gt;
+							&lt;button class="btn btn-primary" style="pointer-events: none;" type="button" disabled&gt;Disabled button&lt;/button&gt;
+						&lt;/span&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+		</div>
+		<div class="col-xl-6">
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Dismiss On Next Click</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>
+							Use the
+							<code>focus</code>trigger to dismiss popovers on the user’s next click of a different element than the toggle element.
+						</p>
+						<div class="example-preview">
+							<button tabindex="0" class="btn btn-lg btn-success" role="button" data-toggle="popover" data-trigger="click" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</button>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;a tabindex="0" class="btn btn-primary" role="button" data-toggle="popover" data-trigger="click" title="Dismissible popover" data-content="Example content"&gt;
+							Dismissible popover
+						&lt;/a&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">HTML Content</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>Insert any HTML into the popover.</p>
+						<div class="example-preview">
+							<button type="button" class="btn btn-primary" data-toggle="popover" title="Popover title" data-html="true" data-content="And here's some amazing &lt;span class='label label-inline font-weight-bold label-light-primary'&gt;HTML&lt;/span&gt; content. It's very &lt;code&gt;engaging&lt;/code&gt;. Right?">Click me</button>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;button type="button" class="btn btn-primary" data-toggle="popover" title="Popover title" data-html="true" data-content="And here's some amazing &lt;span class='label label-inline font-weight-bold label-light-primary'&gt;HTML&lt;/span&gt; content. It's very &lt;code&gt;engaging&lt;/code&gt;. Right?"&gt;
+							Click me
+						&lt;/button&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Offset</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>
+							Offset of the popover relative to its target. For more information refer to
+							<a class="font-weight-bold" href="http://tether.io/#offset" target="_blank">Tether's offset docs.</a>
+						</p>
+						<div class="example-preview">
+							<button type="button" class="btn btn-primary mr-2" data-container="body" data-offset="20px 20px" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Example 1</button>
+							<button type="button" class="btn btn-success mr-2" data-container="body" data-offset="-20px -20px" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Example 2</button>
+							<button type="button" class="btn btn-danger" data-container="body" data-offset="60px 0px" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Example 3</button>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;button type="button" class="btn btn-primary mr-2" data-container="body" data-offset="20px 20px" data-toggle="popover" data-placement="top" data-content="Example content"&gt;
+							Example 1
+						&lt;/button&gt;
+						&lt;button type="button" class="btn btn-success mr-2" data-container="body" data-offset="-20px -20px" data-toggle="popover" data-placement="top" data-content="Example content"&gt;
+							Example 2
+						&lt;/button&gt;
+						&lt;button type="button" class="btn btn-danger" data-container="body" data-offset="60px 0px" data-toggle="popover" data-placement="top" data-content="Example content"&gt;
+							Example 3
+						&lt;/button&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+		</div>
+	</div>
+</div>
+<!--end::Container-->
+

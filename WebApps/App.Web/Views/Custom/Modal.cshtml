@@ -1,0 +1,738 @@
+﻿@{
+    ViewBag.Title = "Typography";
+    Layout = "_LayoutFeatures";
+}
+
+<!--begin::Container-->
+<div class="container">	
+	<!--begin::Row-->
+	<div class="row">
+		<div class="col-xl-6">
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Base Example</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>Below is a static modal example (meaning its position and display have been overridden).</p>
+						<div class="example-preview">
+							<div class="modal position-relative d-block" style="z-index: 0" tabindex="-1" role="dialog">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title">Modal Title</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<i aria-hidden="true" class="ki ki-close"></i>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p>Modal body text goes here.</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;div class="modal position-relative d-block" tabindex="-1" role="dialog"&gt;
+							&lt;div class="modal-dialog" role="document"&gt;
+								&lt;div class="modal-content"&gt;
+									&lt;div class="modal-header"&gt;
+										&lt;h5 class="modal-title"&gt;Modal Title&lt;/h5&gt;
+										&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+											&lt;i aria-hidden="true" class="ki ki-close"&gt;&lt;/i&gt;
+										&lt;/button&gt;
+									&lt;/div&gt;
+									&lt;div class="modal-body"&gt;
+										&lt;p&gt;Modal body text goes here.&lt;/p&gt;
+									&lt;/div&gt;
+									&lt;div class="modal-footer"&gt;
+										&lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+										&lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Live Demo</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>Toggle a working modal demo by clicking the button below. It will slide down and fade in from the top of the page.</p>
+						<div class="example-preview">
+							<!-- Button trigger modal-->
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Launch demo modal</button>
+							<!-- Modal-->
+							<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<i aria-hidden="true" class="ki ki-close"></i>
+											</button>
+										</div>
+										<div class="modal-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;!-- Button trigger modal--&gt;
+						&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"&gt;
+							Launch demo modal
+						&lt;/button&gt;
+
+						&lt;!-- Modal--&gt;
+						&lt;div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"&gt;
+							&lt;div class="modal-dialog" role="document"&gt;
+								&lt;div class="modal-content"&gt;
+									&lt;div class="modal-header"&gt;
+										&lt;h5 class="modal-title" id="exampleModalLabel"&gt;Modal Title&lt;/h5&gt;
+										&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+											&lt;i aria-hidden="true" class="ki ki-close"&gt;&lt;/i&gt;
+										&lt;/button&gt;
+									&lt;/div&gt;
+									&lt;div class="modal-body"&gt;
+										...
+									&lt;/div&gt;
+									&lt;div class="modal-footer"&gt;
+										&lt;button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal"&gt;Close&lt;/button&gt;
+										&lt;button type="button" class="btn btn-primary font-weight-bold"&gt;Save changes&lt;/button&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Static Backdrop</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>When backdrop is set to static, the modal will not close when clicking outside it. Click the button below to try it.</p>
+						<div class="example-preview">
+							<!-- Button trigger modal-->
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">Launch demo modal</button>
+							<!-- Modal-->
+							<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<i aria-hidden="true" class="ki ki-close"></i>
+											</button>
+										</div>
+										<div class="modal-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;!-- Button trigger modal--&gt;
+						&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop"&gt;
+							Launch demo modal
+						&lt;/button&gt;
+
+						&lt;!-- Modal--&gt;
+						&lt;div class="modal fade" id="exampleModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true"&gt;
+							&lt;div class="modal-dialog" role="document"&gt;
+								&lt;div class="modal-content"&gt;
+									&lt;div class="modal-header"&gt;
+										&lt;h5 class="modal-title" id="exampleModalLabel"&gt;Modal Title&lt;/h5&gt;
+										&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+											&lt;i aria-hidden="true" class="ki ki-close"&gt;&lt;/i&gt;
+										&lt;/button&gt;
+									&lt;/div&gt;
+									&lt;div class="modal-body"&gt;
+										...
+									&lt;/div&gt;
+									&lt;div class="modal-footer"&gt;
+										&lt;button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal"&gt;Close&lt;/button&gt;
+										&lt;button type="button" class="btn btn-primary font-weight-bold"&gt;Save changes&lt;/button&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Sizes</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>
+							Modals have three optional sizes, available via modifier classes to be placed on a
+							<code>.modal-dialog</code>. These sizes triggers on at certain breakpoints to avoid horizontal scrollbars on narrower viewports.
+						</p>
+						<div class="example-preview">
+							<!-- Button trigger modal-->
+							<button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModalSizeSm">Modal - sm</button>
+							<button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModalSizeDefault">Modal - default</button>
+							<button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModalSizeLg">Modal - lg</button>
+							<button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModalSizeXl">Modal - xl</button>
+							<!--begin::Modal-->
+							<div class="modal fade" id="exampleModalSizeSm" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeSm" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<i aria-hidden="true" class="ki ki-close"></i>
+											</button>
+										</div>
+										<div class="modal-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--end::Modal-->
+							<!--begin::Modal-->
+							<div class="modal fade" id="exampleModalSizeDefault" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeDefault" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<i aria-hidden="true" class="ki ki-close"></i>
+											</button>
+										</div>
+										<div class="modal-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--end::Modal-->
+							<!--begin::Modal-->
+							<div class="modal fade" id="exampleModalSizeLg" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeLg" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<i aria-hidden="true" class="ki ki-close"></i>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--end::Modal-->
+							<!--begin::Modal-->
+							<div class="modal fade" id="exampleModalSizeXl" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeXl" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<i aria-hidden="true" class="ki ki-close"></i>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--end::Modal-->
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;div class="modal fade" id="exampleModalSizeSm" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeSm" aria-hidden="true"&gt;
+							&lt;div class="modal-dialog modal-dialog-centered modal-sm" role="document"&gt;
+								...
+							&lt;/div&gt;
+						&lt;/div&gt;
+
+						&lt;div class="modal fade" id="exampleModalSizeLg" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeLg" aria-hidden="true"&gt;
+							&lt;div class="modal-dialog modal-dialog-centered" role="document"&gt;
+								...
+							&lt;/div&gt;
+						&lt;/div&gt;
+
+						&lt;div class="modal fade" id="exampleModalSizeLg" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeLg" aria-hidden="true"&gt;
+							&lt;div class="modal-dialog modal-dialog-centered modal-lg" role="document"&gt;
+								...
+							&lt;/div&gt;
+						&lt;/div&gt;
+
+						&lt;div class="modal fade" id="exampleModalSizeSm" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeSm" aria-hidden="true"&gt;
+							&lt;div class="modal-dialog modal-dialog-centered modal-xl" role="document"&gt;
+								...
+							&lt;/div&gt;
+						&lt;/div&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+		</div>
+		<div class="col-xl-6">
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Scrolling Long Content</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example mb-10">
+						<p>When modals become too long for the user’s viewport or device, they scroll independently from the page itself. Try the demo below.</p>
+						<div class="example-preview">
+							<!-- Button trigger modal-->
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Launch demo modal</button>
+							<!-- Modal-->
+							<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<i aria-hidden="true" class="ki ki-close"></i>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;!-- Button trigger modal--&gt;
+						&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"&gt;
+							Launch demo modal
+						&lt;/button&gt;
+
+						&lt;!-- Modal--&gt;
+						&lt;div class="modal fade" id="exampleModalLong" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true"&gt;
+							&lt;div class="modal-dialog" role="document"&gt;
+								&lt;div class="modal-content"&gt;
+									&lt;div class="modal-header"&gt;
+										&lt;h5 class="modal-title" id="exampleModalLabel"&gt;Modal Title&lt;/h5&gt;
+										&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+											&lt;i aria-hidden="true" class="ki ki-close"&gt;&lt;/i&gt;
+										&lt;/button&gt;
+									&lt;/div&gt;
+									&lt;div class="modal-body"&gt;
+										...
+									&lt;/div&gt;
+									&lt;div class="modal-footer"&gt;
+										&lt;button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal"&gt;Close&lt;/button&gt;
+										&lt;button type="button" class="btn btn-primary font-weight-bold"&gt;Save changes&lt;/button&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+					<!--begin::Example-->
+					<div class="example mb-10">
+						<p>
+							Create a scrollable modal body by adding
+							<code>.modal-dialog-scrollable</code>to
+							<code>.modal-dialog</code>.
+						</p>
+						<div class="example-preview">
+							<!-- Button trigger modal-->
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">Launch demo modal</button>
+							<!-- Modal-->
+							<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollable" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-scrollable" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<i aria-hidden="true" class="ki ki-close"></i>
+											</button>
+										</div>
+										<div class="modal-body" style="height: 300px;">
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;!-- Button trigger modal--&gt;
+						&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable"&gt;
+							Launch demo modal
+						&lt;/button&gt;
+
+						&lt;!-- Modal--&gt;
+						&lt;div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true"&gt;
+							&lt;div class="modal-dialog modal-dialog-scrollable" role="document"&gt;
+								&lt;div class="modal-content"&gt;
+									&lt;div class="modal-header"&gt;
+										&lt;h5 class="modal-title" id="exampleModalLabel"&gt;Modal Title&lt;/h5&gt;
+										&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+											&lt;i aria-hidden="true" class="ki ki-close"&gt;&lt;/i&gt;
+										&lt;/button&gt;
+									&lt;/div&gt;
+									&lt;div class="modal-body" style="height: 300px;"&gt;
+										...
+									&lt;/div&gt;
+									&lt;div class="modal-footer"&gt;
+										&lt;button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal"&gt;Close&lt;/button&gt;
+										&lt;button type="button" class="btn btn-primary font-weight-bold"&gt;Save changes&lt;/button&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+					<!--begin::Example-->
+					<div class="example">
+						<p>
+							Add
+							<code>data-scroll="true"</code>and
+							<code>data-height="300"</code>attributes to
+							<code>.modal-body</code>to use
+							<a href="" class="font-weight-bold">Perfect Scrollbar</a>based scrolling.
+						</p>
+						<div class="example-preview">
+							<!-- Button trigger modal-->
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCustomScrollable">Launch demo modal</button>
+							<!-- Modal-->
+							<div class="modal fade" id="exampleModalCustomScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalCustomScrollable" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-scrollable" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<i aria-hidden="true" class="ki ki-close"></i>
+											</button>
+										</div>
+										<div class="modal-body">
+											<div data-scroll="true" data-height="300">
+												<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+												<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+												<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+												<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+												<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+												<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+												<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+												<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;!-- Button trigger modal--&gt;
+						&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCustomScrollable"&gt;
+							Launch demo modal
+						&lt;/button&gt;
+
+						&lt;!-- Modal--&gt;
+						&lt;div class="modal fade" id="exampleModalCustomScrollable" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true"&gt;
+							&lt;div class="modal-dialog modal-dialog-scrollable" role="document"&gt;
+								&lt;div class="modal-content"&gt;
+									&lt;div class="modal-header"&gt;
+										&lt;h5 class="modal-title" id="exampleModalLabel"&gt;Modal Title&lt;/h5&gt;
+										&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+											&lt;i aria-hidden="true" class="ki ki-close"&gt;&lt;/i&gt;
+										&lt;/button&gt;
+									&lt;/div&gt;
+									&lt;div class="modal-body"&gt;
+										&lt;div data-scroll="true" data-height="300"&gt;
+											...
+										&lt;div&gt;
+									&lt;/div&gt;
+									&lt;div class="modal-footer"&gt;
+										&lt;button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal"&gt;Close&lt;/button&gt;
+										&lt;button type="button" class="btn btn-primary font-weight-bold"&gt;Save changes&lt;/button&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Vertically Centered</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>
+							Add
+							<code>.modal-dialog-centered</code>to
+							<code>.modal-dialog</code>to vertically center the modal.
+						</p>
+						<div class="example-preview">
+							<!-- Button trigger modal-->
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Launch demo modal</button>
+							<!-- Modal-->
+							<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<i aria-hidden="true" class="ki ki-close"></i>
+											</button>
+										</div>
+										<div class="modal-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;!-- Button trigger modal--&gt;
+						&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"&gt;
+							Launch demo modal
+						&lt;/button&gt;
+
+						&lt;!-- Modal--&gt;
+						&lt;div class="modal fade" id="exampleModalCenter" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true"&gt;
+							&lt;div class="modal-dialog modal-dialog-centered" role="document"&gt;
+								&lt;div class="modal-content"&gt;
+									...
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Tooltips And Popovers</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>Tooltips and popovers can be placed within modals as needed. When modals are closed, any tooltips and popovers within are also automatically dismissed.</p>
+						<div class="example-preview">
+							<!-- Button trigger modal-->
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalPopovers">Launch demo modal</button>
+							<!-- Modal-->
+							<div class="modal fade" id="exampleModalPopovers" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<i aria-hidden="true" class="ki ki-close"></i>
+											</button>
+										</div>
+										<div class="modal-body">
+											<h5>Popover in a modal</h5>
+											<p>
+												This
+												<a href="#" role="button" class="btn btn-secondary" data-toggle="popover" title="Popover title" data-content="Popover body content is set in this attribute.">button</a>triggers a popover on click.
+											</p>
+											<hr>
+											<h5>Tooltips in a modal</h5>
+											<p>
+												<a href="#" title="Tooltip" data-toggle="tooltip">This link</a>and
+												<a href="#" title="Tooltip" data-toggle="tooltip">that link</a>have tooltips on hover.
+											</p>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+											</div>
+											<div class="example-code">
+												<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+												<div class="example-highlight">
+													<pre>
+<code class="language-html">
+						&lt;div class="modal-body"&gt;
+							&lt;h5&gt;Popover in a modal&lt;/h5&gt;
+							&lt;p&gt;
+								This &lt;a href="#" role="button" class="btn btn-secondary" data-toggle="popover" title="Popover title" data-content="Popover body content is set in this attribute."&gt;button&lt;/a&gt; triggers a popover on click.
+							&lt;/p&gt;
+							&lt;hr&gt;
+
+							&lt;h5&gt;Tooltips in a modal&lt;/h5&gt;
+							&lt;p&gt;
+								&lt;a href="#" title="Tooltip" data-toggle="tooltip"&gt;This link&lt;/a&gt; and
+								&lt;a href="#" title="Tooltip" data-toggle="tooltip"&gt;that link&lt;/a&gt; have tooltips on hover.
+							&lt;/p&gt;
+						&lt;/div&gt;</code>
+</pre>
+												</div>
+											</div>
+											<!--end::Example-->
+											<!--end::Card-->
+											<!--end::Row-->
+											</hr>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--end::Container-->
+

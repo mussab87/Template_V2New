@@ -1,0 +1,292 @@
+﻿@{
+    ViewBag.Title = "Typography";
+    Layout = "_LayoutFeatures";
+}
+
+<!--begin::Container-->
+<div class="container">	
+	<!--begin::Row-->
+	<div class="row">
+		<div class="col-xl-6">
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Base Example</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>
+							Initialize all tooltips on a page by adding their
+							<code>data-toggle</code>attribute.
+						</p>
+						<div class="example-preview">
+							<button type="button" class="btn btn-primary" data-toggle="tooltip" title="Some amazing content!">Hover to toggle tooltip</button>
+						</div>
+						<div class="example-code">
+							<ul class="example-nav nav nav-tabs nav-tabs-line nav-tabs-line-2x nav-tabs-primary" id="myTab" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active" data-toggle="tab" href="#example_code_1_html">HTML</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" data-toggle="tab" href="#example_code_1_js">JS</a>
+								</li>
+							</ul>
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="tab-content">
+								<div class="tab-pane active" id="example_code_1_html" role="tabpanel">
+									<div class="example-highlight">
+										<pre>
+<code class="language-html">
+								&lt;button type="button" class="btn btn-primary" data-toggle="tooltip" title="Some amazing content!"&gt;
+									Hover to toggle tooltip
+								&lt;/button&gt;</code>
+</pre>
+									</div>
+								</div>
+								<div class="tab-pane" id="example_code_1_js" role="tabpanel">
+									<div class="example-highlight">
+										<pre>
+<code class="language-javascript">
+								$(function () {
+								  $('[data-toggle="tooltip"]').tooltip()
+								})
+								</code>
+</pre>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Directions</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>
+							Four options are available:
+							<strong>top</strong>,
+							<strong>right</strong>,
+							<strong>bottom</strong>, and
+							<strong>left</strong>aligned.
+						</p>
+						<div class="example-preview">
+							<button type="button" class="btn btn-secondary" data-container="body" data-toggle="tooltip" data-placement="top" title="Example title">Tooltip on top</button>
+							<button type="button" class="btn btn-secondary" data-container="body" data-toggle="tooltip" data-placement="right" title="Example title">Tooltip on right</button>
+							<button type="button" class="btn btn-secondary" data-container="body" data-toggle="tooltip" data-placement="bottom" title="Example title">Tooltip on bottom</button>
+							<button type="button" class="btn btn-secondary" data-container="body" data-toggle="tooltip" data-placement="left" title="Example title">Tooltip on left</button>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;button type="button" class="btn btn-secondary" data-container="body" data-toggle="tooltip" data-placement="top" title="Example content"&gt;
+							tooltip on top
+						&lt;/button&gt;
+
+						&lt;button type="button" class="btn btn-secondary" data-container="body" data-toggle="tooltip" data-placement="right" title="Example content"&gt;
+							tooltip on right
+						&lt;/button&gt;
+
+						&lt;button type="button" class="btn btn-secondary" data-container="body" data-toggle="tooltip" data-placement="bottom" title="Example content"&gt;
+							tooltip on bottom
+						&lt;/button&gt;
+
+						&lt;button type="button" class="btn btn-secondary" data-container="body" data-toggle="tooltip" data-placement="left" title="Example content"&gt;
+							tooltip on left
+						&lt;/button&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Disabled Elements</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>Elements with the disabled attribute aren’t interactive, meaning users cannot hover or click them to trigger a tooltip.</p>
+						<div class="example-preview">
+							<span class="d-inline-block" data-toggle="tooltip" title="Disabled tooltip">
+								<button class="btn btn-primary" style="pointer-events: none;" type="button" disabled="disabled">Disabled button</button>
+							</span>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;span class="d-inline-block" data-toggle="tooltip" title="Disabled tooltip"&gt;
+							&lt;button class="btn btn-primary" style="pointer-events: none;" type="button" disabled&gt;Disabled button&lt;/button&gt;
+						&lt;/span&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+		</div>
+		<div class="col-xl-6">
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Dark Theme</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>
+							Use the
+							<code>data-theme="dark"</code>to have tooltip with dark theme.
+						</p>
+						<div class="example-preview">
+							<button class="btn btn-lg btn-danger" data-toggle="tooltip" data-theme="dark" title="Dark theme">Dark theme</button>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;button class="btn btn-lg btn-danger" data-toggle="tooltip" data-theme="dark" title="Dark theme"&gt;Dark theme&lt;/button&gt;
+						</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Dismiss On Next Click</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>
+							Use the
+							<code>focus</code>trigger to dismiss tooltips on the user’s next click of a different element than the toggle element.
+						</p>
+						<div class="example-preview">
+							<button tabindex="0" class="btn btn-lg btn-success" role="button" data-toggle="tooltip" data-trigger="click" title="Dismissible tooltip">Dismissible tooltip</button>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;a tabindex="0" class="btn btn-primary" role="button" data-toggle="tooltip" data-trigger="click" title="Dismissible tooltip"&gt;
+							Dismissible tooltip
+						&lt;/a&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">HTML Content</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>Insert any HTML into the tooltip.</p>
+						<div class="example-preview">
+							<button type="button" class="btn btn-primary" data-toggle="tooltip" data-trigger="focus" data-html="true" title="And here's some amazing &lt;span class='label label-inline font-weight-bold label-light-primary'&gt;HTML&lt;/span&gt; content. It's very &lt;code&gt;engaging&lt;/code&gt;. Right?">Click me</button>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;button type="button" class="btn btn-primary" data-toggle="tooltip" data-trigger="focus" data-html="true" title="And here's some amazing &lt;span class='label label-inline font-weight-bold label-light-primary'&gt;HTML&lt;/span&gt; content. It's very &lt;code&gt;engaging&lt;/code&gt;. Right?"&gt;
+							Click me
+						&lt;/button&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Offset</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>
+							Offset of the tooltip relative to its target. For more information refer to
+							<a href="http://tether.io/#offset" target="_blank">Tether's offset docs.</a>
+						</p>
+						<div class="example-preview">
+							<button type="button" class="btn btn-primary mr-2" data-container="body" data-trigger="focus" data-offset="20px 20px" data-toggle="tooltip" data-placement="top" title="Example tooltip!">Example 1</button>
+							<button type="button" class="btn btn-success mr-2" data-container="body" data-trigger="focus" data-offset="-20px -20px" data-toggle="tooltip" data-placement="top" title="Example tooltip!">Example 2</button>
+							<button type="button" class="btn btn-danger" data-container="body" data-trigger="focus" data-offset="60px 0px" data-toggle="tooltip" data-placement="top" title="Example tooltip!">Example 3</button>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;button type="button" class="btn btn-primary mr-2" data-container="body" data-trigger="focus" data-offset="20px 20px" data-toggle="tooltip" data-placement="top" title="Example tooltip!"&gt;
+							Example 1
+						&lt;/button&gt;
+						&lt;button type="button" class="btn btn-success mr-2" data-container="body" data-trigger="focus" data-offset="-20px -20px" data-toggle="tooltip" data-placement="top" title="Example tooltip!"&gt;
+							Example 2
+						&lt;/button&gt;
+						&lt;button type="button" class="btn btn-danger" data-container="body" data-trigger="focus" data-offset="60px 0px" data-toggle="tooltip" data-placement="top" title="Example tooltip!"&gt;
+							Example 3
+						&lt;/button&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+		</div>
+	</div>
+</div>
+<!--end::Container-->
+
