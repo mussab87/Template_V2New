@@ -1,0 +1,430 @@
+﻿@{
+	ViewBag.Title = "Utilities";
+    Layout = "_LayoutFeatures";
+}
+
+<!--begin::Container-->
+<div class="container">
+	
+	<!--begin::Card-->
+	<div class="card card-custom gutter-b">
+		<div class="card-body">
+			<div class="example example-basic">
+				Wrap draggable zone with
+				<code>.draggable-zone</code>and define draggable elements with
+				<code>.draggable</code>and let drag &amp; drop through
+				<code>.draggable-handle</code>element.
+			</div>
+			<!--begin: Example-->
+			<div class="example example-compact mt-5">
+				<div class="example-tools justify-content-center">
+					<span class="example-toggle" data-toggle="tooltip" title="View code"></span>
+					<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+				</div>
+				<div class="example-code">
+					<ul class="example-nav nav nav-tabs nav-bold nav-tabs-line nav-tabs-line-2x">
+						<li class="nav-item">
+							<a class="nav-link active" data-toggle="tab" href="#example_code_includes">Includes</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-toggle="tab" href="#example_code_html">HTML</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-toggle="tab" href="#example_code_js">JS</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="example_code_includes" role="tabpanel">
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;!-- used--&gt;
+						&lt;script src="assets/plugins/custom/draggable/draggable.bundle.js" type="text/javascript"&gt;&lt;/script&gt;
+						</code>
+</pre>
+							</div>
+						</div>
+						<div class="tab-pane" id="example_code_html" role="tabpanel">
+							<div class="example-highlight">
+								<pre style="height:400px">
+<code class="language-html">
+						&lt;div class="row"&gt;
+						 &lt;div class="col-lg-6 draggable-zone"&gt;
+						  &lt;!--begin::Card--&gt;
+						  &lt;div class="card card-custom gutter-b draggable"&gt;
+						   &lt;div class="card-header"&gt;
+							&lt;div class="card-title"&gt;
+							 &lt;h3 class="card-label"&gt;Card 1 &lt;/h3&gt;
+							&lt;/div&gt;
+							&lt;div class="card-toolbar"&gt;
+							 &lt;a href="#" class="btn btn-icon btn-sm btn-hover-light-primary draggable-handle"&gt;
+							 &lt;i class="ki ki-menu "&gt;&lt;/i&gt;
+							 &lt;/a&gt;
+							&lt;/div&gt;
+						   &lt;/div&gt;
+						   &lt;div class="card-body"&gt;
+							...
+						   &lt;/div&gt;
+						  &lt;/div&gt;
+						  &lt;!--end::Card--&gt;
+						  &lt;!--begin::Card--&gt;
+						  &lt;div class="card card-custom gutter-b draggable"&gt;
+						   &lt;div class="card-header"&gt;
+							&lt;div class="card-title"&gt;
+							 &lt;h3 class="card-label"&gt;Card 2&lt;/h3&gt;
+							&lt;/div&gt;
+							&lt;div class="card-toolbar"&gt;
+							 &lt;a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle"&gt;
+							 &lt;i class="ki ki-menu "&gt;&lt;/i&gt;
+							 &lt;/a&gt;
+							&lt;/div&gt;
+						   &lt;/div&gt;
+						   &lt;div class="card-body"&gt;
+							...
+						   &lt;/div&gt;
+						  &lt;/div&gt;
+						  &lt;!--end::Card--&gt;
+						  &lt;!--begin::Card--&gt;
+						  &lt;div class="card card-custom gutter-b draggable"&gt;
+						   &lt;div class="card-header"&gt;
+							&lt;div class="card-title"&gt;
+							 &lt;h3 class="card-label"&gt;Card 3&lt;/h3&gt;
+							&lt;/div&gt;
+							&lt;div class="card-toolbar"&gt;
+							 &lt;a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle"&gt;
+							 &lt;i class="ki ki-menu "&gt;&lt;/i&gt;
+							 &lt;/a&gt;
+							&lt;/div&gt;
+						   &lt;/div&gt;
+						   &lt;div class="card-body"&gt;
+							...
+						   &lt;/div&gt;
+						  &lt;/div&gt;
+						  &lt;!--end::Card--&gt;
+						  &lt;!--begin::Card--&gt;
+						  &lt;div class="card card-custom gutter-b draggable"&gt;
+						   &lt;div class="card-header"&gt;
+							&lt;div class="card-title"&gt;
+							 &lt;h3 class="card-label"&gt;Card 4&lt;/h3&gt;
+							&lt;/div&gt;
+							&lt;div class="card-toolbar"&gt;
+							 &lt;a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle"&gt;
+							 &lt;i class="ki ki-menu "&gt;&lt;/i&gt;
+							 &lt;/a&gt;
+							&lt;/div&gt;
+						   &lt;/div&gt;
+						   &lt;div class="card-body"&gt;
+							...
+						   &lt;/div&gt;
+						  &lt;/div&gt;
+						  &lt;!--end::Card--&gt;
+						  &lt;!--begin::Card--&gt;
+						  &lt;div class="card card-custom gutter-b draggable"&gt;
+						   &lt;div class="card-header"&gt;
+							&lt;div class="card-title"&gt;
+							 &lt;h3 class="card-label"&gt;Card 5&lt;/h3&gt;
+							&lt;/div&gt;
+							&lt;div class="card-toolbar"&gt;
+							 &lt;a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle"&gt;
+							 &lt;i class="ki ki-menu "&gt;&lt;/i&gt;
+							 &lt;/a&gt;
+							&lt;/div&gt;
+						   &lt;/div&gt;
+						   &lt;div class="card-body"&gt;
+							...
+						   &lt;/div&gt;
+						  &lt;/div&gt;
+						  &lt;!--end::Card--&gt;
+						 &lt;/div&gt;
+						 &lt;div class="col-lg-6 draggable-zone"&gt;
+						  &lt;!--begin::Card--&gt;
+						  &lt;div class="card card-custom gutter-b draggable"&gt;
+						   &lt;div class="card-header"&gt;
+							&lt;div class="card-title"&gt;
+							 &lt;h3 class="card-label"&gt;Card 6&lt;/h3&gt;
+							&lt;/div&gt;
+							&lt;div class="card-toolbar"&gt;
+							 &lt;a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle"&gt;
+							 &lt;i class="ki ki-menu "&gt;&lt;/i&gt;
+							 &lt;/a&gt;
+							&lt;/div&gt;
+						   &lt;/div&gt;
+						   &lt;div class="card-body"&gt;
+							...
+						   &lt;/div&gt;
+						  &lt;/div&gt;
+						  &lt;!--end::Card--&gt;
+						  &lt;!--begin::Card--&gt;
+						  &lt;div class="card card-custom gutter-b draggable"&gt;
+						   &lt;div class="card-header"&gt;
+							&lt;div class="card-title"&gt;
+							 &lt;h3 class="card-label"&gt;Card 7&lt;/h3&gt;
+							&lt;/div&gt;
+							&lt;div class="card-toolbar"&gt;
+							 &lt;a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle"&gt;
+							 &lt;i class="ki ki-menu "&gt;&lt;/i&gt;
+							 &lt;/a&gt;
+							&lt;/div&gt;
+						   &lt;/div&gt;
+						   &lt;div class="card-body"&gt;
+							...
+						   &lt;/div&gt;
+						  &lt;/div&gt;
+						  &lt;!--end::Card--&gt;
+						  &lt;!--begin::Card--&gt;
+						  &lt;div class="card card-custom gutter-b draggable"&gt;
+						   &lt;div class="card-header"&gt;
+							&lt;div class="card-title"&gt;
+							 &lt;h3 class="card-label"&gt;Card 8&lt;/h3&gt;
+							&lt;/div&gt;
+							&lt;div class="card-toolbar"&gt;
+							 &lt;a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle"&gt;
+							 &lt;i class="ki ki-menu "&gt;&lt;/i&gt;
+							 &lt;/a&gt;
+							&lt;/div&gt;
+						   &lt;/div&gt;
+						   &lt;div class="card-body"&gt;
+							...
+						   &lt;/div&gt;
+						  &lt;/div&gt;
+						  &lt;!--end::Card--&gt;
+						  &lt;!--begin::Card--&gt;
+						  &lt;div class="card card-custom gutter-b draggable"&gt;
+						   &lt;div class="card-header"&gt;
+							&lt;div class="card-title"&gt;
+							 &lt;h3 class="card-label"&gt;Card 9&lt;/h3&gt;
+							&lt;/div&gt;
+							&lt;div class="card-toolbar"&gt;
+							 &lt;a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle"&gt;
+							 &lt;i class="ki ki-menu "&gt;&lt;/i&gt;
+							 &lt;/a&gt;
+							&lt;/div&gt;
+						   &lt;/div&gt;
+						   &lt;div class="card-body"&gt;
+							...
+						   &lt;/div&gt;
+						  &lt;/div&gt;
+						  &lt;!--end::Card--&gt;
+						  &lt;!--begin::Card--&gt;
+						  &lt;div class="card card-custom gutter-b draggable"&gt;
+						   &lt;div class="card-header"&gt;
+							&lt;div class="card-title"&gt;
+							 &lt;h3 class="card-label"&gt;Card 10&lt;/h3&gt;
+							&lt;/div&gt;
+							&lt;div class="card-toolbar"&gt;
+							 &lt;a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle"&gt;
+							 &lt;i class="ki ki-menu "&gt;&lt;/i&gt;
+							 &lt;/a&gt;
+							&lt;/div&gt;
+						   &lt;/div&gt;
+						   &lt;div class="card-body"&gt;
+							...
+						   &lt;/div&gt;
+						  &lt;/div&gt;
+						  &lt;!--end::Card--&gt;
+						 &lt;/div&gt;
+						&lt;/div&gt;
+						</code>
+</pre>
+							</div>
+						</div>
+						<div class="tab-pane" id="example_code_js">
+							<div class="example-highlight">
+								<pre style="height:400px">
+<code class="language-js">
+							var KTCardDraggable = function () {
+							 return {
+							  //main function to initiate the module
+							  init: function () {
+							   var containers = document.querySelectorAll('.draggable-zone');
+
+							   if (containers.length === 0) {
+								return false;
+							   }
+
+							   var swappable = new Sortable.default(containers, {
+								draggable: '.draggable',
+								handle: '.draggable .draggable-handle',
+								mirror: {
+								 appendTo: 'body',
+								 constrainDimensions: true
+								}
+							   });
+							  }
+							 };
+							}();
+
+							jQuery(document).ready(function () {
+							 KTCardDraggable.init();
+							});
+						</code>
+</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--end: Example-->
+		</div>
+	</div>
+	<!--end::Card-->
+	<!--begin::Row-->
+	<div class="row">
+		<div class="col-lg-6 draggable-zone">
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b draggable">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Card 1</h3>
+					</div>
+					<div class="card-toolbar">
+						<a href="#" class="btn btn-icon btn-sm btn-hover-light-primary draggable-handle">
+							<i class="ki ki-menu"></i>
+						</a>
+					</div>
+				</div>
+				<div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b draggable">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Card 2</h3>
+					</div>
+					<div class="card-toolbar">
+						<a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle">
+							<i class="ki ki-menu"></i>
+						</a>
+					</div>
+				</div>
+				<div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b draggable">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Card 3</h3>
+					</div>
+					<div class="card-toolbar">
+						<a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle">
+							<i class="ki ki-menu"></i>
+						</a>
+					</div>
+				</div>
+				<div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b draggable">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Card 4</h3>
+					</div>
+					<div class="card-toolbar">
+						<a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle">
+							<i class="ki ki-menu"></i>
+						</a>
+					</div>
+				</div>
+				<div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b draggable">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Card 5</h3>
+					</div>
+					<div class="card-toolbar">
+						<a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle">
+							<i class="ki ki-menu"></i>
+						</a>
+					</div>
+				</div>
+				<div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+			</div>
+			<!--end::Card-->
+		</div>
+		<div class="col-lg-6 draggable-zone">
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b draggable">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Card 6</h3>
+					</div>
+					<div class="card-toolbar">
+						<a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle">
+							<i class="ki ki-menu"></i>
+						</a>
+					</div>
+				</div>
+				<div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b draggable">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Card 7</h3>
+					</div>
+					<div class="card-toolbar">
+						<a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle">
+							<i class="ki ki-menu"></i>
+						</a>
+					</div>
+				</div>
+				<div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b draggable">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Card 8</h3>
+					</div>
+					<div class="card-toolbar">
+						<a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle">
+							<i class="ki ki-menu"></i>
+						</a>
+					</div>
+				</div>
+				<div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b draggable">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Card 9</h3>
+					</div>
+					<div class="card-toolbar">
+						<a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle">
+							<i class="ki ki-menu"></i>
+						</a>
+					</div>
+				</div>
+				<div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b draggable">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Card 10</h3>
+					</div>
+					<div class="card-toolbar">
+						<a href="#" class="btn btn-icon btn-hover-light-primary draggable-handle">
+							<i class="ki ki-menu"></i>
+						</a>
+					</div>
+				</div>
+				<div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+			</div>
+			<!--end::Card-->
+		</div>
+	</div>
+	<!--end:: Row-->
+</div>
+<!--end::Container-->

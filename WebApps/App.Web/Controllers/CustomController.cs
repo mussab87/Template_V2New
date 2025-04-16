@@ -92,5 +92,266 @@ public class CustomController : BaseController
     /// Custom Features
     /// </summary>
     /// <returns></returns>
+    #region Utilities  
+    public IActionResult Utilities()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Accordions  
+    public IActionResult Accordions()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Label  
+    public IActionResult Label()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Pulse  
+    public IActionResult Pulse()
+    {
+        return View();
+    }
+    #endregion
+
+    #region LineTabs  
+    public IActionResult LineTabs()
+    {
+        return View();
+    }
+    #endregion
+
+    #region AdvanceNavs  
+    public IActionResult AdvanceNavs()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Timeline  
+    public IActionResult Timeline()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Pagination  
+    public IActionResult Pagination()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Symbol  
+    public IActionResult Symbol()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Spinners  
+    public IActionResult Spinners()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Iconbox  
+    public IActionResult Iconbox()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Callout  
+    public IActionResult Callout()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Ribbons  
+    public IActionResult Ribbons()
+    {
+        return View();
+    }
+    #endregion
+
+
+
+    /// <summary>
+    /// Icons Features
+    /// </summary>
+    /// <returns></returns>
+    #region SVGIcons  
+    public IActionResult SVGIcons()
+    {
+        return View();
+    }
+    #endregion
+
+    #region CustomIcons  
+    public IActionResult CustomIcons()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Flaticon  
+    public IActionResult Flaticon()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Fontawesome5  
+    public IActionResult Fontawesome5()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Lineawesome  
+    public IActionResult Lineawesome()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Socicons  
+    public IActionResult Socicons()
+    {
+        return View();
+    }
+    #endregion
+
+
+
+    /// <summary>
+    /// Cards Features
+    /// </summary>
+    /// <returns></returns>
+    #region GeneralCards  
+    public IActionResult GeneralCards()
+    {
+        return View();
+    }
+    #endregion
+
+    #region StackedCards  
+    public IActionResult StackedCards()
+    {
+        return View();
+    }
+    #endregion
+
+    #region TabbedCards  
+    public IActionResult TabbedCards()
+    {
+        return View();
+    }
+    #endregion
+
+    #region DraggableCards  
+    public IActionResult DraggableCards()
+    {
+        return View();
+    }
+    #endregion
+
+    #region CardsTools  
+    public IActionResult CardsTools()
+    {
+        return View();
+    }
+    #endregion
+
+    #region StickyCards  
+    public IActionResult StickyCards()
+    {
+        return View();
+    }
+    #endregion
+
+    #region StretchedCards  
+    public IActionResult StretchedCards()
+    {
+        return View();
+    }
+    #endregion
+
+
+    /// <summary>
+    /// Widgets Features
+    /// </summary>
+    /// <returns></returns>
+    #region Lists  
+    public IActionResult Lists()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Stats  
+    public IActionResult Stats()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Charts  
+    public IActionResult Charts()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Mixed  
+    public IActionResult Mixed()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Feeds  
+    public IActionResult Feeds()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Engage  
+    public IActionResult Engage()
+    {
+        return View();
+    }
+    #endregion
+
+    #region BaseTables  
+    public IActionResult BaseTables()
+    {
+        return View();
+    }
+    #endregion
+
+    #region AdvanceTables  
+    public IActionResult AdvanceTables()
+    {
+        return View();
+    }
+    #endregion
+
+    #region NavPanels  
+    public IActionResult NavPanels()
+    {
+        return View();
+    }
+    #endregion
 
 }

@@ -1,0 +1,724 @@
+﻿@{
+	ViewBag.Title = "Utilities";
+    Layout = "_LayoutFeatures";
+}
+
+<!--begin::Container-->
+<div class="container">
+	
+	<!--begin::Row-->
+	<div class="row">
+		<div class="col-xl-6">
+			<!--begin::Example-->
+			<!--begin::Card-->
+			<div class="card card-custom">
+				<div class="card-header card-header-tabs-line">
+					<div class="card-title">
+						<h3 class="card-label">Card Title</h3>
+					</div>
+					<div class="card-toolbar">
+						<ul class="nav nav-tabs nav-bold nav-tabs-line">
+							<li class="nav-item">
+								<a class="nav-link active" data-toggle="tab" href="#kt_tab_pane_1_2">Week</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#kt_tab_pane_2_2">Month</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Year</a>
+								<div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_2">Action</a>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_2">Another action</a>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_2">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_2">Separated link</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="tab-content">
+						<div class="tab-pane fade show active" id="kt_tab_pane_1_2" role="tabpanel">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+						<div class="tab-pane fade" id="kt_tab_pane_2_2" role="tabpanel">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+						<div class="tab-pane fade" id="kt_tab_pane_3_2" role="tabpanel">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+					</div>
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Code example-->
+			<div class="example example-compact mt-1 gutter-b">
+				<div class="example-tools">
+					<span class="example-toggle" data-toggle="tooltip" title="View code"></span>
+					<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+				</div>
+				<div class="example-code">
+					<div class="example-highlight">
+						<pre style="height:300px">
+<code class="language-html">
+				&lt;div class="card card-custom"&gt;
+				 &lt;div class="card-header card-header-tabs-line"&gt;
+				  &lt;div class="card-title"&gt;
+				   &lt;h3 class="card-label"&gt;Card Title&lt;/h3&gt;
+				  &lt;/div&gt;
+				  &lt;div class="card-toolbar"&gt;
+				   &lt;ul class="nav nav-tabs nav-bold nav-tabs-line"&gt;
+					&lt;li class="nav-item"&gt;
+					 &lt;a class="nav-link active" data-toggle="tab" href="#kt_tab_pane_1_2"&gt;Week&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li class="nav-item"&gt;
+					 &lt;a class="nav-link" data-toggle="tab" href="#kt_tab_pane_2_2"&gt;Month&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li class="nav-item dropdown"&gt;
+					 &lt;a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"&gt;Year&lt;/a&gt;
+					 &lt;div class="dropdown-menu dropdown-menu-sm dropdown-menu-right"&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_2"&gt;Action&lt;/a&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_2"&gt;Another action&lt;/a&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_2"&gt;Something else here&lt;/a&gt;
+					  &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_2"&gt;Separated link&lt;/a&gt;
+					 &lt;/div&gt;
+					&lt;/li&gt;
+				   &lt;/ul&gt;
+				  &lt;/div&gt;
+				 &lt;/div&gt;
+				 &lt;div class="card-body"&gt;
+				  &lt;div class="tab-content"&gt;
+				   &lt;div class="tab-pane fade show active" id="kt_tab_pane_1_2" role="tabpanel"&gt;
+					...
+				   &lt;/div&gt;
+				   &lt;div class="tab-pane fade" id="kt_tab_pane_2_2" role="tabpanel"&gt;
+					...
+				   &lt;/div&gt;
+				   &lt;div class="tab-pane fade" id="kt_tab_pane_3_2" role="tabpanel"&gt;
+					...
+				   &lt;/div&gt;
+				  &lt;/div&gt;
+				 &lt;/div&gt;
+				&lt;/div&gt;
+				</code>
+</pre>
+					</div>
+				</div>
+			</div>
+			<!--end::Code example-->
+			<!--end::Example-->
+			<!--begin::Example-->
+			<!--begin::Card-->
+			<div class="card card-custom">
+				<div class="card-header card-header-tabs-line">
+					<div class="card-title">
+						<h3 class="card-label">Card Title With Icons</h3>
+					</div>
+					<div class="card-toolbar">
+						<ul class="nav nav-tabs nav-bold nav-tabs-line">
+							<li class="nav-item">
+								<a class="nav-link active" data-toggle="tab" href="#kt_tab_pane_1_3">
+									<span class="nav-icon">
+										<i class="flaticon2-chat-1"></i>
+									</span>
+									<span class="nav-text">Week</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#kt_tab_pane_2_3">
+									<span class="nav-icon">
+										<i class="flaticon2-drop"></i>
+									</span>
+									<span class="nav-text">Month</span>
+								</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+									<span class="nav-icon">
+										<i class="flaticon2-gear"></i>
+									</span>
+									<span class="nav-text">Year</span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_3">Action</a>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_3">Another action</a>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_3">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_3">Separated link</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="tab-content">
+						<div class="tab-pane fade show active" id="kt_tab_pane_1_3" role="tabpanel" aria-labelledby="kt_tab_pane_1_3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+						<div class="tab-pane fade" id="kt_tab_pane_2_3" role="tabpanel" aria-labelledby="kt_tab_pane_2_3">Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+						<div class="tab-pane fade" id="kt_tab_pane_3_3" role="tabpanel" aria-labelledby="kt_tab_pane_3_3">Aldus PageMaker including versions lorem Ipsum has been the industry's standard. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+					</div>
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Code example-->
+			<div class="example example-compact mt-1 gutter-b">
+				<div class="example-tools">
+					<span class="example-toggle" data-toggle="tooltip" title="View code"></span>
+					<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+				</div>
+				<div class="example-code">
+					<div class="example-highlight">
+						<pre style="height:300px">
+<code class="language-html">
+				&lt;div class="card card-custom"&gt;
+				 &lt;div class="card-header card-header-tabs-line"&gt;
+				  &lt;div class="card-title"&gt;
+				   &lt;h3 class="card-label"&gt;Card Title With Icons&lt;/h3&gt;
+				  &lt;/div&gt;
+				  &lt;div class="card-toolbar"&gt;
+				   &lt;ul class="nav nav-tabs nav-bold nav-tabs-line"&gt;
+					&lt;li class="nav-item"&gt;
+					 &lt;a class="nav-link active" data-toggle="tab" href="#kt_tab_pane_1_3"&gt;
+						 &lt;span class="nav-icon"&gt;&lt;i class="flaticon2-chat-1"&gt;&lt;/i&gt;&lt;/span&gt;
+						 &lt;span class="nav-text"&gt;Week&lt;/span&gt;
+					 &lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li class="nav-item"&gt;
+					 &lt;a class="nav-link" data-toggle="tab" href="#kt_tab_pane_2_3"&gt;
+						 &lt;span class="nav-icon"&gt;&lt;i class="flaticon2-drop"&gt;&lt;/i&gt;&lt;/span&gt;
+						 &lt;span class="nav-text"&gt;Month&lt;/span&gt;
+					 &lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li class="nav-item dropdown"&gt;
+					 &lt;a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"&gt;
+						 &lt;span class="nav-icon"&gt;&lt;i class="flaticon2-gear"&gt;&lt;/i&gt;&lt;/span&gt;
+						 &lt;span class="nav-text"&gt;Year&lt;/span&gt;
+					 &lt;/a&gt;
+					 &lt;div class="dropdown-menu dropdown-menu-sm dropdown-menu-right"&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_3"&gt;Action&lt;/a&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_3"&gt;Another action&lt;/a&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_3"&gt;Something else here&lt;/a&gt;
+					  &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_3"&gt;Separated link&lt;/a&gt;
+					 &lt;/div&gt;
+					&lt;/li&gt;
+				   &lt;/ul&gt;
+				  &lt;/div&gt;
+				 &lt;/div&gt;
+				 &lt;div class="card-body"&gt;
+				  &lt;div class="tab-content"&gt;
+				   &lt;div class="tab-pane fade show active" id="kt_tab_pane_1_3" role="tabpanel" aria-labelledby="kt_tab_pane_1_3"&gt;
+					...
+				   &lt;/div&gt;
+				   &lt;div class="tab-pane fade" id="kt_tab_pane_2_3" role="tabpanel" aria-labelledby="kt_tab_pane_2_3"&gt;
+					...
+				   &lt;/div&gt;
+				   &lt;div class="tab-pane fade" id="kt_tab_pane_3_3" role="tabpanel" aria-labelledby="kt_tab_pane_3_3"&gt;
+					...
+				   &lt;/div&gt;
+				  &lt;/div&gt;
+				 &lt;/div&gt;
+				&lt;/div&gt;
+				</code>
+</pre>
+					</div>
+				</div>
+			</div>
+			<!--end::Code example-->
+			<!--end::Example-->
+			<!--begin::Example-->
+			<!--begin::Card-->
+			<div class="card card-custom">
+				<div class="card-header card-header-tabs-line">
+					<div class="card-toolbar">
+						<ul class="nav nav-tabs nav-bold nav-tabs-line">
+							<li class="nav-item">
+								<a class="nav-link active" data-toggle="tab" href="#kt_tab_pane_1_4">
+									<span class="nav-icon">
+										<i class="flaticon2-chat-1"></i>
+									</span>
+									<span class="nav-text">Week</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#kt_tab_pane_2_4">
+									<span class="nav-icon">
+										<i class="flaticon2-drop"></i>
+									</span>
+									<span class="nav-text">Month</span>
+								</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+									<span class="nav-icon">
+										<i class="flaticon2-gear"></i>
+									</span>
+									<span class="nav-text">Year</span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-sm dropdown-menu-left">
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_4">Action</a>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_4">Another action</a>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_4">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_4">Separated link</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="card-toolbar">
+						<div class="dropdown dropdown-inline">
+							<button type="button" class="btn btn-hover-light-primary btn-icon btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="ki ki-bold-more-hor"></i>
+							</button>
+							<div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<a class="dropdown-item" href="#">Something else here</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Separated link</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="tab-content">
+						<div class="tab-pane fade show active" id="kt_tab_pane_1_4" role="tabpanel" aria-labelledby="kt_tab_pane_1_4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+						<div class="tab-pane fade" id="kt_tab_pane_2_4" role="tabpanel" aria-labelledby="kt_tab_pane_2_4">Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+						<div class="tab-pane fade" id="kt_tab_pane_3_4" role="tabpanel" aria-labelledby="kt_tab_pane_3_4">Aldus PageMaker including versions lorem Ipsum has been the industry's standard. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+					</div>
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Code example-->
+			<div class="example example-compact mt-1">
+				<div class="example-tools">
+					<span class="example-toggle" data-toggle="tooltip" title="View code"></span>
+					<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+				</div>
+				<div class="example-code">
+					<div class="example-highlight">
+						<pre style="height:300px">
+<code class="language-html">
+				&lt;div class="card card-custom"&gt;
+				 &lt;div class="card-header card-header-tabs-line"&gt;
+				  &lt;div class="card-toolbar"&gt;
+				   &lt;ul class="nav nav-tabs nav-bold nav-tabs-line"&gt;
+					&lt;li class="nav-item"&gt;
+					 &lt;a class="nav-link active" data-toggle="tab" href="#kt_tab_pane_1_4"&gt;
+					 &lt;span class="nav-icon"&gt;&lt;i class="flaticon2-chat-1"&gt;&lt;/i&gt;&lt;/span&gt;
+					 &lt;span class="nav-text"&gt;Week&lt;/span&gt;
+					 &lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li class="nav-item"&gt;
+					 &lt;a class="nav-link" data-toggle="tab" href="#kt_tab_pane_2_4"&gt;
+					 &lt;span class="nav-icon"&gt;&lt;i class="flaticon2-drop"&gt;&lt;/i&gt;&lt;/span&gt;
+					 &lt;span class="nav-text"&gt;Month&lt;/span&gt;
+					 &lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li class="nav-item dropdown"&gt;
+					 &lt;a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"&gt;
+					 &lt;span class="nav-icon"&gt;&lt;i class="flaticon2-gear"&gt;&lt;/i&gt;&lt;/span&gt;
+					 &lt;span class="nav-text"&gt;Year&lt;/span&gt;
+					 &lt;/a&gt;
+					 &lt;div class="dropdown-menu dropdown-menu-sm dropdown-menu-left"&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_4"&gt;Action&lt;/a&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_4"&gt;Another action&lt;/a&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_4"&gt;Something else here&lt;/a&gt;
+					  &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_4"&gt;Separated link&lt;/a&gt;
+					 &lt;/div&gt;
+					&lt;/li&gt;
+				   &lt;/ul&gt;
+				  &lt;/div&gt;
+				  &lt;div class="card-toolbar"&gt;
+				   &lt;div class="dropdown dropdown-inline"&gt;
+					&lt;button type="button" class="btn btn-hover-light-primary btn-icon btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+					&lt;i class="ki ki-bold-more-hor "&gt;&lt;/i&gt;
+					&lt;/button&gt;
+					&lt;div class="dropdown-menu dropdown-menu-sm dropdown-menu-right"&gt;
+					 &lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+					 &lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+					 &lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+					 &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+					 &lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;
+					&lt;/div&gt;
+				   &lt;/div&gt;
+				  &lt;/div&gt;
+				 &lt;/div&gt;
+				 &lt;div class="card-body"&gt;
+				  &lt;div class="tab-content"&gt;
+				   &lt;div class="tab-pane fade show active" id="kt_tab_pane_1_4" role="tabpanel" aria-labelledby="kt_tab_pane_1_4"&gt;
+					...
+				   &lt;/div&gt;
+				   &lt;div class="tab-pane fade" id="kt_tab_pane_2_4" role="tabpanel" aria-labelledby="kt_tab_pane_2_4"&gt;
+					...
+				   &lt;/div&gt;
+				   &lt;div class="tab-pane fade" id="kt_tab_pane_3_4" role="tabpanel" aria-labelledby="kt_tab_pane_3_4"&gt;
+					...
+				   &lt;/div&gt;
+				  &lt;/div&gt;
+				 &lt;/div&gt;
+				&lt;/div&gt;
+				</code>
+</pre>
+					</div>
+				</div>
+			</div>
+			<!--end::Code example-->
+			<!--end::Example-->
+		</div>
+		<div class="col-xl-6">
+			<!--begin::Example-->
+			<!--begin::Card-->
+			<div class="card card-custom">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Card Title</h3>
+					</div>
+					<div class="card-toolbar">
+						<ul class="nav nav-bold nav-pills">
+							<li class="nav-item">
+								<a class="nav-link active" data-toggle="tab" href="#kt_tab_pane_7_1">Week</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#kt_tab_pane_7_2">Month</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Year</a>
+								<div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_7_3">Action</a>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_7_3">Another action</a>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_7_3">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_7_3">Separated link</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="tab-content">
+						<div class="tab-pane fade show active" id="kt_tab_pane_7_1" role="tabpanel" aria-labelledby="kt_tab_pane_7_1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+						<div class="tab-pane fade" id="kt_tab_pane_7_2" role="tabpanel" aria-labelledby="kt_tab_pane_7_2">Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+						<div class="tab-pane fade" id="kt_tab_pane_7_3" role="tabpanel" aria-labelledby="kt_tab_pane_7_3">Aldus PageMaker including versions lorem Ipsum has been the industry's standard. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+					</div>
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Code example-->
+			<div class="example example-compact mt-1 gutter-b">
+				<div class="example-tools">
+					<span class="example-toggle" data-toggle="tooltip" title="View code"></span>
+					<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+				</div>
+				<div class="example-code">
+					<div class="example-highlight">
+						<pre style="height:300px">
+<code class="language-html">
+				&lt;div class="card card-custom"&gt;
+				 &lt;div class="card-header"&gt;
+				  &lt;div class="card-title"&gt;
+				   &lt;h3 class="card-label"&gt;Card Title&lt;/h3&gt;
+				  &lt;/div&gt;
+				  &lt;div class="card-toolbar"&gt;
+				   &lt;ul class="nav nav-bold nav-pills"&gt;
+					&lt;li class="nav-item"&gt;
+					 &lt;a class="nav-link active" data-toggle="tab" href="#kt_tab_pane_7_1"&gt;Week&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li class="nav-item"&gt;
+					 &lt;a class="nav-link" data-toggle="tab" href="#kt_tab_pane_7_2"&gt;Month&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li class="nav-item dropdown"&gt;
+					 &lt;a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"&gt;
+						 Year
+					 &lt;/a&gt;
+					 &lt;div class="dropdown-menu dropdown-menu-sm dropdown-menu-right"&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_7_3"&gt;Action&lt;/a&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_7_3"&gt;Another action&lt;/a&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_7_3"&gt;Something else here&lt;/a&gt;
+					  &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_7_3"&gt;Separated link&lt;/a&gt;
+					 &lt;/div&gt;
+					&lt;/li&gt;
+				   &lt;/ul&gt;
+				  &lt;/div&gt;
+				 &lt;/div&gt;
+				 &lt;div class="card-body"&gt;
+				  &lt;div class="tab-content"&gt;
+				   &lt;div class="tab-pane fade show active" id="kt_tab_pane_7_1" role="tabpanel" aria-labelledby="kt_tab_pane_7_1"&gt;
+					...
+				   &lt;/div&gt;
+				   &lt;div class="tab-pane fade" id="kt_tab_pane_7_2" role="tabpanel" aria-labelledby="kt_tab_pane_7_2"&gt;
+					...
+				   &lt;/div&gt;
+				   &lt;div class="tab-pane fade" id="kt_tab_pane_7_3" role="tabpanel" aria-labelledby="kt_tab_pane_7_3"&gt;
+					...
+				   &lt;/div&gt;
+				  &lt;/div&gt;
+				 &lt;/div&gt;
+				&lt;/div&gt;
+				</code>
+</pre>
+					</div>
+				</div>
+			</div>
+			<!--end::Code example-->
+			<!--end::Example-->
+			<!--begin::Example-->
+			<!--begin::Card-->
+			<div class="card card-custom">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Card Title With Icons</h3>
+					</div>
+					<div class="card-toolbar">
+						<ul class="nav nav-light-success nav-bold nav-pills">
+							<li class="nav-item">
+								<a class="nav-link active" data-toggle="tab" href="#kt_tab_pane_4_1">
+									<span class="nav-icon">
+										<i class="flaticon2-chat-1"></i>
+									</span>
+									<span class="nav-text">Week</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#kt_tab_pane_4_2">
+									<span class="nav-icon">
+										<i class="flaticon2-drop"></i>
+									</span>
+									<span class="nav-text">Month</span>
+								</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+									<span class="nav-icon">
+										<i class="flaticon2-gear"></i>
+									</span>
+									<span class="nav-text">Year</span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_4_3">Action</a>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_4_3">Another action</a>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_4_3">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_4_3">Separated link</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="tab-content">
+						<div class="tab-pane fade show active" id="kt_tab_pane_4_1" role="tabpanel" aria-labelledby="kt_tab_pane_4_1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+						<div class="tab-pane fade" id="kt_tab_pane_4_2" role="tabpanel" aria-labelledby="kt_tab_pane_4_2">Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+						<div class="tab-pane fade" id="kt_tab_pane_4_3" role="tabpanel" aria-labelledby="kt_tab_pane_4_3">Aldus PageMaker including versions lorem Ipsum has been the industry's standard. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+					</div>
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Code example-->
+			<div class="example example-compact mt-1 gutter-b">
+				<div class="example-tools">
+					<span class="example-toggle" data-toggle="tooltip" title="View code"></span>
+					<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+				</div>
+				<div class="example-code">
+					<div class="example-highlight">
+						<pre style="height:300px">
+<code class="language-html">
+				&lt;div class="card card-custom"&gt;
+				 &lt;div class="card-header"&gt;
+				  &lt;div class="card-title"&gt;
+				   &lt;h3 class="card-label"&gt;Card Title With Icons&lt;/h3&gt;
+				  &lt;/div&gt;
+				  &lt;div class="card-toolbar"&gt;
+				   &lt;ul class="nav nav-light-success nav-bold nav-pills"&gt;
+					&lt;li class="nav-item"&gt;
+					 &lt;a class="nav-link active" data-toggle="tab" href="#kt_tab_pane_4_1"&gt;
+						 &lt;span class="nav-icon"&gt;&lt;i class="flaticon2-chat-1"&gt;&lt;/i&gt;&lt;/span&gt;
+						 &lt;span class="nav-text"&gt;Week&lt;/span&gt;
+					 &lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li class="nav-item"&gt;
+					 &lt;a class="nav-link" data-toggle="tab" href="#kt_tab_pane_4_2"&gt;
+						 &lt;span class="nav-icon"&gt;&lt;i class="flaticon2-drop"&gt;&lt;/i&gt;&lt;/span&gt;
+						 &lt;span class="nav-text"&gt;Month&lt;/span&gt;
+					 &lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li class="nav-item dropdown"&gt;
+					 &lt;a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"&gt;
+						 &lt;span class="nav-icon"&gt;&lt;i class="flaticon2-gear"&gt;&lt;/i&gt;&lt;/span&gt;
+						 &lt;span class="nav-text"&gt;Year&lt;/span&gt;
+					 &lt;/a&gt;
+					 &lt;div class="dropdown-menu dropdown-menu-sm dropdown-menu-right"&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_4_3"&gt;Action&lt;/a&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_4_3"&gt;Another action&lt;/a&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_4_3"&gt;Something else here&lt;/a&gt;
+					  &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_4_3"&gt;Separated link&lt;/a&gt;
+					 &lt;/div&gt;
+					&lt;/li&gt;
+				   &lt;/ul&gt;
+				  &lt;/div&gt;
+				 &lt;/div&gt;
+				 &lt;div class="card-body"&gt;
+				  &lt;div class="tab-content"&gt;
+				   &lt;div class="tab-pane fade show active" id="kt_tab_pane_4_1" role="tabpanel" aria-labelledby="kt_tab_pane_4_1"&gt;
+					...
+				   &lt;/div&gt;
+				   &lt;div class="tab-pane fade" id="kt_tab_pane_4_2" role="tabpanel" aria-labelledby="kt_tab_pane_4_2"&gt;
+					...
+				   &lt;/div&gt;
+				   &lt;div class="tab-pane fade" id="kt_tab_pane_4_3" role="tabpanel" aria-labelledby="kt_tab_pane_4_3"&gt;
+					...
+				   &lt;/div&gt;
+				  &lt;/div&gt;
+				 &lt;/div&gt;
+				&lt;/div&gt;
+				</code>
+</pre>
+					</div>
+				</div>
+			</div>
+			<!--end::Code example-->
+			<!--end::Example-->
+			<!--begin::Example-->
+			<!--begin::Card-->
+			<div class="card card-custom">
+				<div class="card-header">
+					<div class="card-toolbar">
+						<ul class="nav nav-light-danger nav-bold nav-pills">
+							<li class="nav-item">
+								<a class="nav-link active" data-toggle="tab" href="#kt_tab_pane_5_1">
+									<span class="nav-icon">
+										<i class="flaticon2-chat-1"></i>
+									</span>
+									<span class="nav-text">Week</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#kt_tab_pane_5_2">
+									<span class="nav-icon">
+										<i class="flaticon2-drop"></i>
+									</span>
+									<span class="nav-text">Month</span>
+								</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+									<span class="nav-icon">
+										<i class="flaticon2-gear"></i>
+									</span>
+									<span class="nav-text">Year</span>
+								</a>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_5_3">Action</a>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_5_3">Another action</a>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_5_3">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_5_3">Separated link</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="card-toolbar">
+						<div class="dropdown dropdown-inline">
+							<button type="button" class="btn btn-hover-light-primary btn-icon btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="ki ki-bold-more-hor"></i>
+							</button>
+							<div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<a class="dropdown-item" href="#">Something else here</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Separated link</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="tab-content">
+						<div class="tab-pane fade show active" id="kt_tab_pane_5_1" role="tabpanel" aria-labelledby="kt_tab_pane_5_1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+						<div class="tab-pane fade" id="kt_tab_pane_5_2" role="tabpanel" aria-labelledby="kt_tab_pane_5_2">Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+						<div class="tab-pane fade" id="kt_tab_pane_5_3" role="tabpanel" aria-labelledby="kt_tab_pane_5_3">Aldus PageMaker including versions lorem Ipsum has been the industry's standard. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+					</div>
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Code example-->
+			<div class="example example-compact mt-1">
+				<div class="example-tools">
+					<span class="example-toggle" data-toggle="tooltip" title="View code"></span>
+					<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+				</div>
+				<div class="example-code">
+					<div class="example-highlight">
+						<pre style="height:300px">
+<code class="language-html">
+				&lt;div class="card card-custom"&gt;
+				 &lt;div class="card-header"&gt;
+				  &lt;div class="card-toolbar"&gt;
+				   &lt;ul class="nav nav-light-danger nav-bold nav-pills"&gt;
+					&lt;li class="nav-item"&gt;
+					 &lt;a class="nav-link active" data-toggle="tab" href="#kt_tab_pane_5_1"&gt;
+						 &lt;span class="nav-icon"&gt;&lt;i class="flaticon2-chat-1"&gt;&lt;/i&gt;&lt;/span&gt;
+						 &lt;span class="nav-text"&gt;Week&lt;/span&gt;
+					 &lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li class="nav-item"&gt;
+					 &lt;a class="nav-link" data-toggle="tab" href="#kt_tab_pane_5_2"&gt;
+						 &lt;span class="nav-icon"&gt;&lt;i class="flaticon2-drop"&gt;&lt;/i&gt;&lt;/span&gt;
+						 &lt;span class="nav-text"&gt;Month&lt;/span&gt;
+					 &lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li class="nav-item dropdown"&gt;
+					 &lt;a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"&gt;
+						 &lt;span class="nav-icon"&gt;&lt;i class="flaticon2-gear"&gt;&lt;/i&gt;&lt;/span&gt;
+						 &lt;span class="nav-text"&gt;Year&lt;/span&gt;
+					 &lt;/a&gt;
+					 &lt;div class="dropdown-menu"&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_5_3"&gt;Action&lt;/a&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_5_3"&gt;Another action&lt;/a&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_5_3"&gt;Something else here&lt;/a&gt;
+					  &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+					  &lt;a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_5_3"&gt;Separated link&lt;/a&gt;
+					 &lt;/div&gt;
+					&lt;/li&gt;
+				   &lt;/ul&gt;
+				  &lt;/div&gt;
+				  &lt;div class="card-toolbar"&gt;
+				   &lt;div class="dropdown dropdown-inline"&gt;
+					&lt;button type="button" class="btn btn-hover-light-primary btn-icon btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+						 &lt;i class="ki ki-bold-more-hor "&gt;&lt;/i&gt;
+					&lt;/button&gt;
+					&lt;div class="dropdown-menu dropdown-menu-sm dropdown-menu-right"&gt;
+					 &lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+					 &lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+					 &lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+					 &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+					 &lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;
+					&lt;/div&gt;
+				   &lt;/div&gt;
+				  &lt;/div&gt;
+				 &lt;/div&gt;
+				 &lt;div class="card-body"&gt;
+				  &lt;div class="tab-content"&gt;
+				   &lt;div class="tab-pane fade show active" id="kt_tab_pane_5_1" role="tabpanel" aria-labelledby="kt_tab_pane_5_1"&gt;
+					...
+				   &lt;/div&gt;
+				   &lt;div class="tab-pane fade" id="kt_tab_pane_5_2" role="tabpanel" aria-labelledby="kt_tab_pane_5_2"&gt;
+					...
+				   &lt;/div&gt;
+				   &lt;div class="tab-pane fade" id="kt_tab_pane_5_3" role="tabpanel" aria-labelledby="kt_tab_pane_5_3"&gt;
+					...
+				   &lt;/div&gt;
+				  &lt;/div&gt;
+				 &lt;/div&gt;
+				&lt;/div&gt;
+				</code>
+</pre>
+					</div>
+				</div>
+			</div>
+			<!--end::Code example-->
+			<!--end::Example-->
+		</div>
+	</div>
+	<!--end::Row-->
+</div>
+<!--end::Container-->

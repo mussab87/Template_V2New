@@ -1,0 +1,564 @@
+﻿@{
+	ViewBag.Title = "Utilities";
+    Layout = "_LayoutFeatures";
+}
+
+<!--begin::Container-->
+<div class="container">	
+	<!--begin::Row-->
+	<div class="row">
+		<div class="col-xl-6">
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Background Colors</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>Standard and custom Bootstrap background color utilities:</p>
+						<div class="example-preview">
+							<p class="bg-primary text-white py-2 px-4">.bg-primary</p>
+							<p class="bg-secondary py-2 px-4">.bg-secondary</p>
+							<p class="bg-success text-white py-2 px-4">.bg-success</p>
+							<p class="bg-danger text-white py-2 px-4">.bg-danger</p>
+							<p class="bg-warning text-white py-2 px-4">.bg-warning</p>
+							<p class="bg-info text-white py-2 px-4">.bg-info</p>
+							<p class="bg-light text-dark py-2 px-4">.bg-light</p>
+							<p class="bg-dark text-white py-2 px-4">.bg-dark</p>
+							<p class="bg-gray-100 text-dark-50 py-2 px-4">.bg-gray-100</p>
+							<p class="bg-gray-200 text-dark-50 py-2 px-4">.bg-gray-200</p>
+							<p class="bg-gray-300 text-dark-50 py-2 px-4">.bg-gray-300</p>
+							<p class="bg-gray-400 text-dark-50 py-2 px-4">.bg-gray-400</p>
+							<p class="bg-gray-500 text-dark-50 py-2 px-4">.bg-gray-500</p>
+							<p class="bg-gray-600 text-white py-2 px-4">.bg-gray-600</p>
+							<p class="bg-gray-700 text-white py-2 px-4">.bg-gray-700</p>
+							<p class="bg-gray-800 text-white py-2 px-4">.bg-gray-800</p>
+							<p class="bg-gray-900 text-white py-2 px-4">.bg-gray-900</p>
+							<p class="bg-white text-dark py-2 px-4">.bg-white</p>
+							<p class="bg-transparent text-dark py-2 px-4">.bg-transparent</p>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;p class="bg-primary text-white py-2 px-4"&gt;.bg-primary&lt;/p&gt;
+						&lt;p class="bg-secondary py-2 px-4"&gt;.bg-secondary&lt;/p&gt;
+						&lt;p class="bg-success text-white py-2 px-4"&gt;.bg-success&lt;/p&gt;
+						&lt;p class="bg-danger text-white py-2 px-4"&gt;.bg-danger&lt;/p&gt;
+						&lt;p class="bg-warning text-white py-2 px-4"&gt;.bg-warning&lt;/p&gt;
+						&lt;p class="bg-info text-white py-2 px-4"&gt;.bg-info&lt;/p&gt;
+						&lt;p class="bg-light text-dark py-2 px-4"&gt;.bg-light&lt;/p&gt;
+						&lt;p class="bg-dark text-white py-2 px-4"&gt;.bg-dark&lt;/p&gt;
+						&lt;p class="bg-gray-100 text-dark-50 py-2 px-4"&gt;.bg-gray-100&lt;/p&gt;
+						&lt;p class="bg-gray-200 text-dark-50 py-2 px-4"&gt;.bg-gray-200&lt;/p&gt;
+						&lt;p class="bg-gray-300 text-dark-50 py-2 px-4"&gt;.bg-gray-300&lt;/p&gt;
+						&lt;p class="bg-gray-400 text-dark-50 py-2 px-4"&gt;.bg-gray-400&lt;/p&gt;
+						&lt;p class="bg-gray-500 text-dark-50 py-2 px-4"&gt;.bg-gray-500&lt;/p&gt;
+						&lt;p class="bg-gray-600 text-white py-2 px-4"&gt;.bg-gray-600&lt;/p&gt;
+						&lt;p class="bg-gray-700 text-white py-2 px-4"&gt;.bg-gray-700&lt;/p&gt;
+						&lt;p class="bg-gray-800 text-white py-2 px-4"&gt;.bg-gray-800&lt;/p&gt;
+						&lt;p class="bg-gray-900 text-white py-2 px-4"&gt;.bg-gray-900&lt;/p&gt;
+						&lt;p class="bg-white text-dark py-2 px-4"&gt;.bg-white&lt;/p&gt;
+						&lt;p class="bg-transparent text-dark py-2 px-4"&gt;.bg-transparent&lt;/p&gt;
+						</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Hover Background Colors</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example mb-15">
+						<p>
+							Use custom
+							<code>.bg-hover-{color}</code>class to set a hover background color:
+						</p>
+						<div class="example-preview">
+							<div class="d-flex">
+								<div class="bg-gray-200 bg-hover-primary d-flex flex-center w-100px h-100px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-gray-200 bg-hover-success d-flex flex-center w-100px h-100px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-gray-200 bg-hover-danger d-flex flex-center w-100px h-100px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-gray-200 bg-hover-warning d-flex flex-center w-100px h-100px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-gray-200 bg-hover-dark d-flex flex-center w-100px h-100px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-gray-200 bg-hover-info d-flex flex-center w-100px h-100px"></div>
+							</div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;div class="bg-gray-200 bg-hover-primary"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-200 bg-hover-success"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-200 bg-hover-danger"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-200 bg-hover-warning"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-200 bg-hover-dark"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-200 bg-hover-info"&gt;&lt;/div&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+					<!--begin::Example-->
+					<div class="example">
+						<p>
+							Use custom
+							<code>.bg-hover-state-{color}</code>class to set a darken hover background color:
+						</p>
+						<div class="example-preview">
+							<div class="d-flex">
+								<div class="bg-gray-200 bg-hover-state-primary d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-gray-200 bg-hover-state-success d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-gray-200 bg-hover-state-danger d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-gray-200 bg-hover-state-warning d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-gray-200 bg-hover-state-dark d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-gray-200 bg-hover-state-info d-flex flex-center w-75px h-75px"></div>
+							</div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;div class="bg-gray-200 bg-hover-state-primary"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-200 bg-hover-state-success"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-200 bg-hover-state-danger"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-200 bg-hover-state-warning"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-200 bg-hover-state-dark"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-200 bg-hover-state-info"&gt;&lt;/div&gt;
+						</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Custom Border Radius Utilities</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example mb-15">
+						<p>
+							Metronic adds 2 new
+							<code>rounded-sm</code>and
+							<code>rounded-lg</code>border radius classes to enable more sizing options for border radius:
+						</p>
+						<div class="example-preview">
+							<div class="d-flex">
+								<div class="bg-gray-200 d-flex flex-center w-100px h-100px mr-5 mb-1 mb-md-0 rounded-sm"></div>
+								<div class="bg-gray-200 d-flex flex-center w-100px h-100px mr-5 mb-1 mb-md-0 rounded"></div>
+								<div class="bg-gray-200 d-flex flex-center w-100px h-100px mr-5 mb-1 mb-md-0 rounded-lg"></div>
+							</div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;div class="bg-gray-200 rounded-sm"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-200 rounded"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-200 rounded-lg"&gt;&lt;/div&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+					<!--begin::Example-->
+					<div class="example">
+						<p>Subtractive border radius classes:</p>
+						<div class="example-preview">
+							<div class="d-flex">
+								<div class="bg-gray-200 d-flex flex-center w-100px h-100px mr-5 mb-1 mb-md-0 rounded-lg rounded-top-0"></div>
+								<div class="bg-gray-200 d-flex flex-center w-100px h-100px mr-5 mb-1 mb-md-0 rounded-lg rounded-bottom-0"></div>
+								<div class="bg-gray-200 d-flex flex-center w-100px h-100px mr-5 mb-1 mb-md-0 rounded-lg rounded-left-0"></div>
+								<div class="bg-gray-200 d-flex flex-center w-100px h-100px mr-5 mb-1 mb-md-0 rounded-lg rounded-right-0"></div>
+							</div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;div class="bg-gray-200 rounded-lg rounded-top-0"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-200 rounded-lg rounded-bottom-0"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-200 rounded-lg rounded-left-0"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-200 rounded-lg rounded-right-0"&gt;&lt;/div&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Background Radial Gradient Color</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>
+							Use
+							<code>bg-radial-gradient-{color}</code>class format to set a background radial gradient color.
+						</p>
+						<div class="example-preview">
+							<div class="d-flex mb-5">
+								<div class="bg-radial-gradient-primary d-flex flex-center w-150px h-150px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-radial-gradient-success d-flex flex-center w-150px h-150px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-radial-gradient-info d-flex flex-center w-150px h-150px mr-5 mb-1 mb-md-0"></div>
+							</div>
+							<div class="d-flex mb-5">
+								<div class="bg-radial-gradient-danger d-flex flex-center w-150px h-150px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-radial-gradient-warning d-flex flex-center w-150px h-150px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-radial-gradient-dark d-flex flex-center w-150px h-150px mr-5"></div>
+							</div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;div class="bg-radial-gradient-primary"&gt;&lt;/div&gt;
+						&lt;div class="bg-radial-gradient-success"&gt;&lt;/div&gt;
+						&lt;div class="bg-radial-gradient-info"&gt;&lt;/div&gt;
+						&lt;div class="bg-radial-gradient-danger"&gt;&lt;/div&gt;
+						&lt;div class="bg-radial-gradient-warning"&gt;&lt;/div&gt;
+						&lt;div class="bg-radial-gradient-dark"&gt;&lt;/div&gt;
+						</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+		</div>
+		<div class="col-xl-6">
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Background Color With Opacity</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>
+							Use
+							<code>bg-{color}-o-{opacity}</code>class format to set a background color with opacity level in range
+							<code>1 to 20(0.5 - 1)</code>. For example,
+							<code>bg-primary-o-10</code>sets primary background color with
+							<code>opacity: 0.1</code>.
+						</p>
+						<div class="example-preview">
+							<div class="d-flex mb-5">
+								<div class="bg-primary-o-10 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-primary-o-20 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-primary-o-30 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-primary-o-40 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-primary-o-50 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-primary d-flex flex-center w-75px h-75px mr-5"></div>
+							</div>
+							<div class="d-flex mb-5">
+								<div class="bg-success-o-10 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-success-o-20 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-success-o-30 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-success-o-40 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-success-o-50 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-success d-flex flex-center w-75px h-75px mr-5"></div>
+							</div>
+							<div class="d-flex mb-5">
+								<div class="bg-warning-o-10 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-warning-o-20 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-warning-o-30 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-warning-o-40 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-warning-o-50 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-warning d-flex flex-center w-75px h-75px mr-5"></div>
+							</div>
+							<div class="d-flex">
+								<div class="bg-danger-o-10 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-danger-o-20 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-danger-o-30 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-danger-o-40 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-danger-o-50 d-flex flex-center w-75px h-75px mr-5 mb-1 mb-md-0"></div>
+								<div class="bg-danger d-flex flex-center w-75px h-75px mr-5"></div>
+							</div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;div class="bg-primary-o-10"&gt;&lt;/div&gt;
+						&lt;div class="bg-primary-o-20"&gt;&lt;/div&gt;
+						&lt;div class="bg-primary-o-30"&gt;&lt;/div&gt;
+						&lt;div class="bg-primary-o-40"&gt;&lt;/div&gt;
+						&lt;div class="bg-primary-o-50"&gt;&lt;/div&gt;
+						&lt;div class="bg-primary"&gt;&lt;/div&gt;
+
+						&lt;div class="bg-success-o-10"&gt;&lt;/div&gt;
+						&lt;div class="bg-success-o-20"&gt;&lt;/div&gt;
+						&lt;div class="bg-success-o-30"&gt;&lt;/div&gt;
+						&lt;div class="bg-success-o-40"&gt;&lt;/div&gt;
+						&lt;div class="bg-success-o-50"&gt;&lt;/div&gt;
+						&lt;div class="bg-success"&gt;
+
+						&lt;div class="bg-warning-o-10"&gt;&lt;/div&gt;
+						&lt;div class="bg-warning-o-20"&gt;&lt;/div&gt;
+						&lt;div class="bg-warning-o-30"&gt;&lt;/div&gt;
+						&lt;div class="bg-warning-o-40"&gt;&lt;/div&gt;
+						&lt;div class="bg-warning-o-50"&gt;&lt;/div&gt;
+						&lt;div class="bg-warning"&gt;
+
+						&lt;div class="bg-danger-o-10"&gt;&lt;/div&gt;
+						&lt;div class="bg-danger-o-20"&gt;&lt;/div&gt;
+						&lt;div class="bg-danger-o-30"&gt;&lt;/div&gt;
+						&lt;div class="bg-danger-o-40"&gt;&lt;/div&gt;
+						&lt;div class="bg-danger-o-50"&gt;&lt;/div&gt;
+						&lt;div class="bg-danger"&gt;&lt;/div&gt;</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Diagonal Background Colors</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example">
+						<p>
+							Use
+							<code>.bg-diagonal</code>,
+							<code>.bg-diagonal-{color}</code>and
+							<code>.bg-diagonal-r-{color}</code>class format to set diagonal background colors.
+						</p>
+						<div class="example-preview">
+							<div class="bg-diagonal bg-diagonal-primary bg-diagonal-r-light rounded h-150px mb-5"></div>
+							<div class="bg-diagonal bg-diagonal-success bg-diagonal-r-danger rounded h-150px mb-5"></div>
+							<div class="bg-diagonal bg-diagonal-info bg-diagonal-r-warning rounded h-150px"></div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;div class="bg-diagonal bg-diagonal-primary bg-diagonal-r-light rounded h-150px"&gt;&lt;/div&gt;
+						&lt;div class="bg-diagonal bg-diagonal-success bg-diagonal-r-danger rounded h-150px"&gt;&lt;/div&gt;
+						&lt;div class="bg-diagonal bg-diagonal-info bg-diagonal-r-warning rounded h-150px"&gt;&lt;/div&gt;
+						</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Predefined Height &amp; Width Responsive Classes</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<!--begin::Example-->
+					<div class="example mb-15">
+						<ul class="px-5">
+							<li class="py-2">
+								Use
+								<code>.h-{size}px</code>and
+								<code>.w-{size}px</code>class format to set fixed height and width in pixels to any element.
+							</li>
+							<li class="py-2">
+								Use
+								<code>.min-h-{size}px</code>and
+								<code>.min-w-{size}px</code>class format to set minimum height and width in pixels to any element.
+							</li>
+							<li class="py-2">
+								Use
+								<code>.max-w-{size}px</code>and
+								<code>.max-w-{size}px</code>class format to set maximum height and width in pixels to any element.
+							</li>
+							<li class="py-2">
+								Size
+								<code>{size}</code>accepts values in range
+								<code>1,2,3,4,5,10,15,20,25,30 ... 95,100,125,150,175,200,225 ... 500,550,600,650 ...1000</code>.
+							</li>
+						</ul>
+						<div class="example-preview">
+							<div class="d-flex">
+								<div class="bg-gray-100 w-75px h-75px mr-2"></div>
+								<div class="bg-gray-100 min-w-100px min-h-100px mr-2"></div>
+								<div class="bg-gray-100 max-w-125px max-h-125px">Lorem Ipsum is simply dummy text of the printing Lorem Ipsum is simply Lorem Ipsum is simply m Ipsum is simply</div>
+							</div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;div class="bg-gray-100 w-75px h-75px mr-2"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-100 min-w-100px min-h-100px mr-2"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-100 max-w-125px max-h-125px"&gt;
+							Lorem Ipsum is simply dummy text of the printing Lorem Ipsum is simply  Lorem Ipsum is simply m Ipsum is simply
+						&lt;/div&gt;
+						</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+					<!--begin::Example-->
+					<div class="example">
+						For responsive variations for each breakpoint
+						<code>sm,md,lg,xl,xxl</code>
+						<ul class="px-5">
+							<li class="py-2">
+								Use
+								<code>.h-{breakpoint}-{size}px</code>and
+								<code>.w-{breakpoint}-{size}px</code>class format to set fixed height and width in pixels to any element.
+							</li>
+							<li class="py-2">
+								Use
+								<code>.min-h-{breakpoint}-{size}px</code>and
+								<code>.min-w-{breakpoint}-{size}px</code>class format to set minimum height and width in pixels to any element.
+							</li>
+							<li class="py-2">
+								Use
+								<code>.max-w-{breakpoint}-{size}px</code>and
+								<code>.max-w-{breakpoint}-{size}px</code>class format to set maximum height and width in pixels to any element.
+							</li>
+						</ul>
+						<div class="example-preview">
+							<div class="d-flex">
+								<div class="bg-gray-100 w-50px h-50px w-lg-75px h-lg-75px mr-2"></div>
+								<div class="bg-gray-100 min-w-50px min-h-50px min-w-lg-100px min-h-lg-100px mr-2"></div>
+								<div class="bg-gray-100 max-w-75px max-h-75px max-w-125px max-h-125px">Lorem Ipsum is simply dummy text of the printing Lorem Ipsum is simply Lorem Ipsum is simply m Ipsum is simply</div>
+							</div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+						&lt;div class="bg-gray-100 w-50px h-50px w-lg-75px h-lg-75px mr-2"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-100 min-w-50px min-h-50px min-w-lg-100px min-h-lg-100px mr-2"&gt;&lt;/div&gt;
+						&lt;div class="bg-gray-100 max-w-75px max-h-75px max-w-125px max-h-125px"&gt;
+							Lorem Ipsum is simply dummy text of the printing Lorem Ipsum is simply  Lorem Ipsum is simply m Ipsum is simply
+						&lt;/div&gt;
+						</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+			<!--begin::Card-->
+			<div class="card card-custom gutter-b">
+				<div class="card-header">
+					<div class="card-title">
+						<h3 class="card-label">Extended Bootstrap Spacing Classes</h3>
+					</div>
+				</div>
+				<div class="card-body">
+					<p>
+						Metronic extends
+						<a class="font-weight-bold" href="https://getbootstrap.com/docs/4.6/utilities/spacing/" target="_blank">Bootstrap Spacing Classes</a>to support spacing classes from
+						<code>1</code>to
+						<code>40</code>to provide requied spacing option according to the Metronic design principles.
+					</p>
+					<!--begin::Example-->
+					<div class="example mb-15">
+						<div class="example-preview">
+							<div class="d-flex align-items-center">
+								<span class="p-5 bg-light mr-2">.p-5</span>
+								<span class="p-10 bg-light mr-2">.p-10</span>
+								<span class="p-15 bg-light mr-2">.p-15</span>
+							</div>
+							<div class="d-flex align-items-center">
+								<span class="m-5 p-5 bg-light">.m-5</span>
+								<span class="m-10 p-5 bg-light">.m-10</span>
+								<span class="m-15 p-5 bg-light">.m-15</span>
+							</div>
+						</div>
+						<div class="example-code">
+							<span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
+							<div class="example-highlight">
+								<pre>
+<code class="language-html">
+							&lt;div class="d-flex align-items-center"&gt;
+								&lt;span class="p-5 bg-light mr-2"&gt;
+									.p-5
+								&lt;/span&gt;
+								&lt;span class="p-10 bg-light mr-2"&gt;
+									.p-10
+								&lt;/span&gt;
+								&lt;span class="p-15 bg-light mr-2"&gt;
+									.p-15
+								&lt;/span&gt;
+							&lt;/div&gt;
+
+							&lt;div class="d-flex align-items-center"&gt;
+								&lt;span class="m-5 p-5 bg-light"&gt;
+									.m-5
+								&lt;/span&gt;
+								&lt;span class="m-10 p-5 bg-light"&gt;
+									.m-10
+								&lt;/span&gt;
+								&lt;span class="m-15 p-5 bg-light"&gt;
+									.m-15
+								&lt;/span&gt;
+							&lt;/div&gt;
+						</code>
+</pre>
+							</div>
+						</div>
+					</div>
+					<!--end::Example-->
+				</div>
+			</div>
+			<!--end::Card-->
+		</div>
+	</div>
+	<!--end::Row-->
+</div>
+<!--end::Container-->
+
