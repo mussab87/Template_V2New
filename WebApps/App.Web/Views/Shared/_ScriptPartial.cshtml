@@ -68,4 +68,39 @@
 }
 
 
+@if (ViewBag.Title == "ListViews")
+{
+    <!--begin::Page Vendors(used by this page)-->
+    <script src="~/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+    <!--end::Page Vendors-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="~/assets/js/pages/features/calendar/list-view.js"></script>
+    <!--end::Page Scripts-->
+}
 
+@if (ViewBag.Title == "ExternalEvents")
+{
+    <!--begin::Page Vendors(used by this page)-->
+    <script src="~/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+    <!--end::Page Vendors-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="~/assets/js/pages/features/calendar/external-events.js"></script>
+    <!--end::Page Scripts-->
+}
+
+@if (ViewBag.Title == "Apexcharts")
+{
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="~/assets/js/pages/features/charts/apexcharts.js"></script>
+    <!--end::Page Scripts-->
+}
+
+@if (ViewBag.Title == "FlotCharts")
+{
+    <!--begin::Page Vendors(used by this page)-->
+    <script src="~/assets/plugins/custom/flot/flot.bundle.js"></script>
+    <!--end::Page Vendors-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="~/assets/js/pages/features/charts/flotcharts.js"></script>
+    <!--end::Page Scripts-->
+}

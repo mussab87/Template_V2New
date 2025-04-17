@@ -354,4 +354,138 @@ public class CustomController : BaseController
     }
     #endregion
 
+
+    /// <summary>
+    /// Calendar Features
+    /// </summary>
+    /// <returns></returns>
+    #region ListViews  
+    public IActionResult ListViews()
+    {
+        return View();
+    }
+    #endregion
+
+    #region ExternalEvents  
+    public IActionResult ExternalEvents()
+    {
+        return View();
+    }
+    #endregion
+
+
+    /// <summary>
+    /// Charts Features
+    /// </summary>
+    /// <returns></returns>
+    #region Apexcharts  
+    public IActionResult Apexcharts()
+    {
+        return View();
+    }
+    #endregion
+
+    #region FlotCharts  
+    public IActionResult FlotCharts()
+    {
+        return View();
+    }
+    #endregion
+
+
+
+    /// <summary>
+    /// Miscellaneous Features
+    /// </summary>
+    /// <returns></returns>
+    #region KanbanBoard  
+    public IActionResult KanbanBoard()
+    {
+        return View();
+    }
+    #endregion
+
+    #region StickyPanels  
+    public IActionResult StickyPanels()
+    {
+        return View();
+    }
+    #endregion
+
+    #region BlockUI  
+    public IActionResult BlockUI()
+    {
+        return View();
+    }
+    #endregion
+
+    #region PerfectScrollbar  
+    public IActionResult PerfectScrollbar()
+    {
+        return View();
+    }
+    #endregion
+
+    #region TreeView  
+    public IActionResult TreeView()
+    {
+        return View();
+    }
+    #endregion
+
+    #region BootstrapNotify  
+    public IActionResult BootstrapNotify()
+    {
+        return View();
+    }
+    #endregion
+
+    #region Toastr  
+    public IActionResult Toastr()
+    {
+        return View();
+    }
+    #endregion
+
+    //#region Pagination  
+    //public IActionResult Pagination()
+    //{
+    //    return View();
+    //}
+    //#endregion
+
+    //#region Symbol  
+    //public IActionResult Symbol()
+    //{
+    //    return View();
+    //}
+    //#endregion
+
+    //#region Spinners  
+    //public IActionResult Spinners()
+    //{
+    //    return View();
+    //}
+    //#endregion
+
+    //#region Iconbox  
+    //public IActionResult Iconbox()
+    //{
+    //    return View();
+    //}
+    //#endregion
+
+    //#region Callout  
+    //public IActionResult Callout()
+    //{
+    //    return View();
+    //}
+    //#endregion
+
+    //#region Ribbons  
+    //public IActionResult Ribbons()
+    //{
+    //    return View();
+    //}
+    //#endregion
 }

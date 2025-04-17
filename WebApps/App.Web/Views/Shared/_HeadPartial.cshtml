@@ -38,7 +38,29 @@
             .card-body {
                 direction: ltr;
             }
+
+            .language-html{
+                direction: ltr;
+            }
+            .row{
+                direction: ltr;
+            }
         </style>
     }
 
+    @if (ViewBag.Title == "ListViews")
+    {
+        <!--begin::Page Vendors Styles(used by this page)-->
+        <link href="~/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+        <!--end::Page Vendors Styles-->
+    }
+
+    @if (ViewBag.Title == "ExternalEvents")
+    {
+        <!--begin::Page Vendors Styles(used by this page)-->
+        <link href="~/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+        <!--end::Page Vendors Styles-->
+    }
+
+    
 </head>
